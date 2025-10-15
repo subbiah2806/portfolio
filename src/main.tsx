@@ -13,7 +13,7 @@ createRoot(rootElement).render(
   <StrictMode>
     <ErrorBoundary>
       <HelmetProvider>
-        <BrowserRouter>
+        <BrowserRouter basename="/portfolio">
           <App />
         </BrowserRouter>
       </HelmetProvider>
