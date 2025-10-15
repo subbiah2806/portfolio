@@ -2,6 +2,8 @@
 
 Lead Frontend Developer with 7+ years of experience in React, TypeScript, and modern web technologies.
 
+🌐 **Live Site**: [https://subbiah2806.github.io/portfolio](https://subbiah2806.github.io/portfolio)
+
 ## Tech Stack
 
 - **Frontend**: React 18, TypeScript, Vite
@@ -66,8 +68,11 @@ npm run dev
 # Alternative start command
 npm run start
 
-# Build for production
+# Build for production (local)
 npm run build
+
+# Build for GitHub Pages deployment
+npm run build:github
 
 # Preview production build
 npm run preview
@@ -181,19 +186,34 @@ The portfolio uses a custom Tailwind CSS design system with:
 
 ## Deployment
 
+### Current Deployment: GitHub Pages
+
+🚀 **Live Site**: [https://subbiah2806.github.io/portfolio](https://subbiah2806.github.io/portfolio)
+
+This portfolio is automatically deployed to GitHub Pages via GitHub Actions on every push to the `main` branch.
+
+**Deployment Workflow**:
+
+- Automatic deployment on push to `main`
+- Build command: `npm run build:github`
+- Uses environment-based configuration (`.env.github`)
+- Deploys to `gh-pages` branch automatically
+
 ### Build for Production
 
 ```bash
+# Local build
 npm run build
+
+# GitHub Pages build (with /portfolio base path)
+npm run build:github
 ```
 
 This creates an optimized production build in the `dist/` directory.
 
-### Deployment Options
+### Alternative Deployment Options
 
-**Recommended platforms**:
-
-1. **Vercel** (Recommended)
+1. **Vercel**
 
    ```bash
    # Install Vercel CLI
@@ -208,10 +228,7 @@ This creates an optimized production build in the `dist/` directory.
    - Build command: `npm run build`
    - Publish directory: `dist`
 
-3. **GitHub Pages**
-   - Build and push `dist/` to `gh-pages` branch
-
-4. **Cloudflare Pages**
+3. **Cloudflare Pages**
    - Connect repository
    - Build command: `npm run build`
    - Output directory: `dist`
