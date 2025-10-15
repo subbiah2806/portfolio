@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-neutral-50 text-neutral-900 transition-colors duration-300 dark:bg-neutral-900 dark:text-neutral-100;
+    font-family:
+      'Inter',
+      system-ui,
+      -apple-system,
+      sans-serif;
+  }
+}
+
+@layer utilities {
+  /* Pitch Black Background with White Gradient */
+  .background-gradient {
+    background: linear-gradient(
+      135deg,
+      theme('colors.neutral.50') 0%,
+      theme('colors.neutral.100') 100%
+    );
+  }
+
+  .dark .background-gradient {
+    background:
+      radial-gradient(
+        circle at 100% 0%,
+        rgba(255, 255, 255, 0.12) 0%,
+        rgba(255, 255, 255, 0.05) 25%,
+        transparent 50%
+      ),
+      #000000;
+  }
+
+  /* Professional Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Floating gradient ball animations */
+  @keyframes float-1 {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(80%, 20%);
+    }
+    50% {
+      transform: translate(60%, 70%);
+    }
+    75% {
+      transform: translate(10%, 80%);
+    }
+  }
+
+  @keyframes float-2 {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(-70%, 30%);
+    }
+    50% {
+      transform: translate(-40%, 60%);
+    }
+    75% {
+      transform: translate(-80%, 40%);
+    }
+  }
+
+  .animate-float-1 {
+    animation: float-1 20s ease-in-out infinite;
+  }
+
+  .animate-float-2 {
+    animation: float-2 15s ease-in-out infinite;
+  }
+
+  /* Utility classes for professional interactions */
+  .clickable {
+    @apply cursor-pointer select-none transition-all duration-200 hover:opacity-80 active:scale-95;
+  }
+
+  .card {
+    @apply rounded-lg bg-white p-6 shadow-soft transition-all duration-300 hover:shadow-medium dark:bg-neutral-800;
+  }
+}
+
+@layer components {
+  /* Remove focus outline on mouse click, keep for keyboard navigation (accessibility) */
+  *:focus:not(:focus-visible) {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Preserve focus ring for keyboard navigation only */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary-500/50 ring-offset-2 ring-offset-neutral-50 dark:ring-offset-neutral-900;
+  }
+
+  /* Scrollbar for professional look */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-neutral-200 dark:bg-neutral-700;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-neutral-400 dark:bg-neutral-500;
+  }
+}
+
+/* Professional Typography */
+.prose {
+  @apply text-neutral-800 dark:text-neutral-200;
+}
+
+/* Prose headings color */
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  @apply text-neutral-900 dark:text-neutral-100;
+}
