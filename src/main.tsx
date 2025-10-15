@@ -9,11 +9,13 @@ import ErrorBoundary from './components/ui/ErrorBoundary';
 const rootElement = document.getElementById('root');
 if (!rootElement) throw new Error('Failed to find the root element');
 
+const basename = import.meta.env.VITE_BASE_PATH || '/';
+
 createRoot(rootElement).render(
   <StrictMode>
     <ErrorBoundary>
       <HelmetProvider>
-        <BrowserRouter basename="/portfolio">
+        <BrowserRouter basename={basename}>
           <App />
         </BrowserRouter>
       </HelmetProvider>
