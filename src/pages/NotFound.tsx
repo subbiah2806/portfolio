@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { IconHome, IconFolder } from '../components/icons';
 
 const NotFound = (): JSX.Element => {
   return (
@@ -33,14 +34,7 @@ const NotFound = (): JSX.Element => {
               to="/"
               className="inline-flex items-center justify-center gap-2 rounded-lg border border-primary-600/50 bg-primary-900/30 px-6 py-3 font-medium text-primary-300 transition-all duration-300 hover:border-primary-500 hover:bg-primary-800/40 hover:shadow-medium"
             >
-              <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                />
-              </svg>
+              <IconHome style={{ fontSize: '20px' }} />
               Go to Home
             </Link>
 
@@ -48,14 +42,7 @@ const NotFound = (): JSX.Element => {
               to="/projects"
               className="inline-flex items-center justify-center gap-2 rounded-lg border border-neutral-700/50 bg-neutral-800/50 px-6 py-3 font-medium text-neutral-300 transition-all duration-300 hover:border-neutral-600/50 hover:bg-neutral-800/70 hover:shadow-medium"
             >
-              <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
-                />
-              </svg>
+              <IconFolder style={{ fontSize: '20px' }} />
               View Projects
             </Link>
           </div>

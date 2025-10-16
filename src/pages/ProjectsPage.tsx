@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Projects from '../components/features/Projects';
 import { fadeInUp } from '../utils/animations';
 import { useReducedMotion } from '../hooks/useReducedMotion';
+import { IconArrowLeft } from '../components/icons';
 
 const ProjectsPage = (): JSX.Element => {
   const prefersReducedMotion = useReducedMotion();
@@ -24,14 +25,7 @@ const ProjectsPage = (): JSX.Element => {
             to="/"
             className="mb-8 inline-flex items-center gap-2 text-sm text-neutral-600 transition-colors duration-300 hover:text-primary-600 dark:text-neutral-400 dark:hover:text-primary-400"
           >
-            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
+            <IconArrowLeft style={{ fontSize: '16px' }} />
             Back to Home
           </Link>
 

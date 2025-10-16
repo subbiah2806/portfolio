@@ -7,6 +7,7 @@ import { resumeData } from '../data/resume';
 import { projects } from '../data/projects';
 import { fadeInUp, staggerContainer } from '../utils/animations';
 import { useReducedMotion } from '../hooks/useReducedMotion';
+import { IconArrowRight } from '../components/icons';
 
 const Home = (): JSX.Element => {
   const prefersReducedMotion = useReducedMotion();
@@ -138,14 +139,7 @@ const Home = (): JSX.Element => {
               className="inline-flex items-center gap-2 rounded-lg border border-primary-400 bg-primary-100 px-6 py-3 font-medium text-primary-700 transition-all duration-300 hover:border-primary-500 hover:bg-primary-200 hover:shadow-medium dark:border-primary-600/50 dark:bg-primary-900/30 dark:text-primary-300 dark:hover:bg-primary-800/40"
             >
               View All Projects
-              <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
+              <IconArrowRight style={{ fontSize: '20px' }} />
             </Link>
           </div>
         </div>
