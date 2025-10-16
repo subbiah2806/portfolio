@@ -2,7 +2,7 @@
  * Portfolio Resume Data
  *
  * SOURCE: /assets/subbiah_resume.txt
- * LAST SYNCED: 2025-10-14
+ * LAST SYNCED: 2025-10-16
  *
  * To update: Ensure this file matches the content in assets/subbiah_resume.txt
  */
@@ -14,7 +14,9 @@ export const resumeData: ResumeData = {
   location: 'Dallas, TX',
   phone: 'xxx-xxx-xxxx',
   email: 'subbiah2806@gmail.com',
-  github: 'GitHub',
+  github: 'https://github.com/subbiah2806',
+  portfolio: 'https://subbiah2806.github.io/portfolio',
+  linkedin: 'https://www.linkedin.com/in/subbiah-c-31b339184/',
   workVisa: 'H1b (I140 Approved)',
 
   summary:

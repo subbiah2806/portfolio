@@ -36,6 +36,8 @@ export interface ResumeData {
   phone: string;
   email: string;
   github: string;
+  portfolio: string;
+  linkedin?: string;
   workVisa: string;
   summary: string;
   skills: Skills;

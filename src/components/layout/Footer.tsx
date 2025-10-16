@@ -7,17 +7,17 @@ const Footer = (): JSX.Element => {
   const socialLinks = [
     {
       name: 'GitHub',
-      url: 'https://github.com/subbiah',
+      url: 'https://github.com/subbiah2806',
       icon: <IconGitHub style={{ fontSize: '20px' }} />,
     },
     {
       name: 'LinkedIn',
-      url: 'https://linkedin.com/in/subbiah-chandramouli',
+      url: 'https://www.linkedin.com/in/subbiah-c-31b339184/',
       icon: <IconLinkedIn style={{ fontSize: '20px' }} />,
     },
     {
       name: 'Email',
-      url: 'mailto:subbiah.c@example.com',
+      url: 'mailto:subbiah2806@gmail.com',
       icon: <IconEmail style={{ fontSize: '20px' }} />,
     },
   ];

@@ -121,12 +121,12 @@ const Contact = (): JSX.Element => {
     {
       icon: <IconLinkedIn style={{ fontSize: '24px' }} />,
       label: 'LinkedIn',
-      href: 'https://linkedin.com/in/subbiah-chandramouli',
+      href: 'https://www.linkedin.com/in/subbiah-c-31b339184/',
     },
     {
       icon: <IconGitHub style={{ fontSize: '24px' }} />,
       label: 'GitHub',
-      href: 'https://github.com/subbiah',
+      href: 'https://github.com/subbiah2806',
     },
   ];
 

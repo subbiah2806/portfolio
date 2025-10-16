@@ -239,7 +239,7 @@ This creates an optimized production build in the `dist/` directory.
 - **Email**: subbiah2806@gmail.com
 - **Phone**: 669-236-9786
 - **Location**: Dallas, TX
-- **LinkedIn**: [linkedin.com/in/subbiah-chandramouli](https://linkedin.com/in/subbiah-chandramouli)
+- **LinkedIn**: [linkedin.com/in/subbiah-chandramouli](https://www.linkedin.com/in/subbiah-c-31b339184/)
 - **GitHub**: [github.com/subbiah](https://github.com/subbiah)
 
 ## Work Authorization

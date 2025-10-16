@@ -75,7 +75,7 @@ const SEO = ({
       '@type': 'Place',
       name: 'Remote',
     },
-    sameAs: ['https://github.com/subbiah2806', 'https://linkedin.com/in/subbiah-chandramouli'],
+    sameAs: ['https://github.com/subbiah2806', 'https://www.linkedin.com/in/subbiah-c-31b339184/'],
     worksFor: [
       {
         '@type': 'Organization',
