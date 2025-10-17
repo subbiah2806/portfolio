@@ -5,8 +5,6 @@ import reactRefresh from 'eslint-plugin-react-refresh';
 import tseslint from 'typescript-eslint';
 import react from 'eslint-plugin-react';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
-import prettier from 'eslint-plugin-prettier';
-import prettierConfig from 'eslint-config-prettier';
 import unusedImports from 'eslint-plugin-unused-imports';
 
 export default tseslint.config(
@@ -28,7 +26,6 @@ export default tseslint.config(
       'react-refresh': reactRefresh,
       react,
       'jsx-a11y': jsxA11y,
-      prettier,
       'unused-imports': unusedImports,
     },
     rules: {
@@ -36,12 +33,10 @@ export default tseslint.config(
       ...react.configs.recommended.rules,
       ...react.configs['jsx-runtime'].rules,
       ...jsxA11y.configs.recommended.rules,
-      ...prettierConfig.rules,
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true, allowExportNames: ['useCustomCursor'] },
       ],
-      'prettier/prettier': 'error',
       '@typescript-eslint/no-unused-vars': 'off',
       'unused-imports/no-unused-imports': 'error',
       'unused-imports/no-unused-vars': [
@@ -58,4 +53,11 @@ export default tseslint.config(
       'jsx-a11y/no-static-element-interactions': 'warn',
     },
   },
+  // Disable react-refresh warnings for shadcn UI components
+  {
+    files: ['src/components/ui/**/*.{ts,tsx}'],
+    rules: {
+      'react-refresh/only-export-components': 'off',
+    },
+  }
 );
