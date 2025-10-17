@@ -8,9 +8,7 @@ export default function Hero(): JSX.Element {
     <div className="relative flex min-h-screen items-center justify-center overflow-hidden px-4">
       <div className="z-10 max-w-4xl animate-fade-in text-center">
         <div className="mb-8 inline-block animate-slide-up">
-          <Badge variant="outline" className="font-mono">
-            Open to opportunities
-          </Badge>
+          <Badge className="font-mono">Open to opportunities</Badge>
         </div>
 
         <h1 className="mb-6 animate-slide-up text-5xl font-bold text-foreground md:text-7xl">

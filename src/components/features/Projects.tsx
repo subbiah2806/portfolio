@@ -55,7 +55,7 @@ const ProjectCard = memo(({ project, prefersReducedMotion }: ProjectCardProps) =
           </p>
 
           {/* Impact */}
-          <div className="mb-4 rounded-lg border border-accent/30 bg-accent/20 p-3">
+          <div className="mb-4 rounded-lg border border-border bg-background p-3">
             <p className="text-sm font-medium text-accent-foreground">
               <span className="mr-1">📊</span>
               {project.impact}

@@ -10,6 +10,7 @@ import { fadeInUp, staggerContainer } from '../utils/animations';
 import { useReducedMotion } from '../hooks/useReducedMotion';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
+import { Card, CardHeader, CardContent } from '../components/ui/card';
 
 const Home = (): JSX.Element => {
   const prefersReducedMotion = useReducedMotion();
@@ -62,45 +63,52 @@ const Home = (): JSX.Element => {
               return (
                 <motion.div
                   key={project.id}
-                  className="group rounded-xl border bg-card p-6 backdrop-blur-sm transition-all duration-300 hover:border-primary hover:shadow-large"
                   variants={fadeInUp}
                   whileHover={prefersReducedMotion ? {} : { y: -8, scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                 >
-                  {/* Category Badge */}
-                  <div className="mb-4 flex items-center justify-between">
-                    <Badge variant="primary">{project.category}</Badge>
-                    <span className="text-xs text-muted-foreground">{project.year}</span>
-                  </div>
+                  <Card className="group h-full backdrop-blur-sm transition-all duration-300 hover:border-primary hover:shadow-lg">
+                    <CardHeader>
+                      {/* Category Badge */}
+                      <div className="mb-4 flex items-center justify-between">
+                        <Badge variant="primary">{project.category}</Badge>
+                        <span className="text-xs text-muted-foreground">{project.year}</span>
+                      </div>
 
-                  {/* Project Title */}
-                  <h3 className="mb-2 text-xl font-bold transition-colors group-hover:text-primary">
-                    {project.title}
-                  </h3>
+                      {/* Project Title */}
+                      <h3 className="mb-2 text-xl font-bold transition-colors group-hover:text-primary">
+                        {project.title}
+                      </h3>
 
-                  {/* Company */}
-                  <p className="mb-3 text-sm font-medium text-primary">{project.company}</p>
+                      {/* Company */}
+                      <p className="mb-3 text-sm font-medium text-primary">{project.company}</p>
+                    </CardHeader>
 
-                  {/* Description */}
-                  <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
-                    {project.description}
-                  </p>
+                    <CardContent>
+                      {/* Description */}
+                      <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+                        {project.description}
+                      </p>
 
-                  {/* Impact */}
-                  <div className="mb-4 rounded-lg border border-accent/30 bg-accent/20 p-3">
-                    <p className="text-sm font-medium text-accent-foreground">
-                      <span className="mr-1">📊</span>
-                      {project.impact}
-                    </p>
-                  </div>
+                      {/* Impact */}
+                      <div className="mb-4 rounded-lg border border-border bg-background p-3">
+                        <p className="text-sm font-medium text-accent-foreground">
+                          <span className="mr-1">📊</span>
+                          {project.impact}
+                        </p>
+                      </div>
 
-                  {/* Tech Stack */}
-                  <div className="flex flex-wrap gap-2">
-                    {project.techStack.slice(0, 3).map((tech) => (
-                      <Badge key={tech}>{tech}</Badge>
-                    ))}
-                    {project.techStack.length > 3 && <Badge>+{project.techStack.length - 3}</Badge>}
-                  </div>
+                      {/* Tech Stack */}
+                      <div className="flex flex-wrap gap-2">
+                        {project.techStack.slice(0, 3).map((tech) => (
+                          <Badge key={tech}>{tech}</Badge>
+                        ))}
+                        {project.techStack.length > 3 && (
+                          <Badge>+{project.techStack.length - 3}</Badge>
+                        )}
+                      </div>
+                    </CardContent>
+                  </Card>
                 </motion.div>
               );
             })}
@@ -143,16 +151,16 @@ const Home = (): JSX.Element => {
             viewport={{ once: true }}
           >
             {resumeData.education.map((edu, index) => (
-              <motion.div
-                key={index}
-                className="rounded-xl border bg-card p-6 backdrop-blur-sm transition-all duration-300 hover:border-border hover:shadow-large"
-                variants={fadeInUp}
-              >
-                <h3 className="mb-2 text-2xl font-bold text-foreground">{edu.degree}</h3>
-                <p className="mb-1 text-lg font-semibold text-primary">{edu.school}</p>
-                <p className="text-muted-foreground">
-                  {edu.location} • {edu.date}
-                </p>
+              <motion.div key={index} variants={fadeInUp}>
+                <Card className="backdrop-blur-sm transition-all duration-300 hover:border-border hover:shadow-lg">
+                  <CardContent className="pt-6">
+                    <h3 className="mb-2 text-2xl font-bold text-foreground">{edu.degree}</h3>
+                    <p className="mb-1 text-lg font-semibold text-primary">{edu.school}</p>
+                    <p className="text-muted-foreground">
+                      {edu.location} • {edu.date}
+                    </p>
+                  </CardContent>
+                </Card>
               </motion.div>
             ))}
           </motion.div>
