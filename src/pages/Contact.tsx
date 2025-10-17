@@ -19,6 +19,17 @@ import {
   IconBriefcase,
   IconSpinner,
 } from '../components/icons';
+import { Button } from '../components/ui/button';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '../components/ui/form';
+import { Input } from '../components/ui/input';
+import { Textarea } from '../components/ui/textarea';
 
 // Zod validation schema
 const contactSchema = z.object({
@@ -38,14 +49,15 @@ const Contact = (): JSX.Element => {
   const [showSuccessBanner, setShowSuccessBanner] = useState(false);
   const prefersReducedMotion = useReducedMotion();
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting },
-    reset,
-  } = useForm<ContactFormData>({
+  const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
     mode: 'onBlur',
+    defaultValues: {
+      name: '',
+      email: '',
+      subject: '',
+      message: '',
+    },
   });
 
   // Auto-hide success banner after 5 seconds
@@ -74,13 +86,13 @@ const Contact = (): JSX.Element => {
         console.log('Form submitted:', data);
         await new Promise((resolve) => setTimeout(resolve, 1500));
         setSubmitStatus('success');
-        reset();
+        form.reset();
       } catch (error) {
         console.error('Form submission error:', error);
         setSubmitStatus('error');
       }
     },
-    [reset]
+    [form]
   );
 
   // Memoize close banner handler
@@ -136,7 +148,7 @@ const Contact = (): JSX.Element => {
         {/* Back Button */}
         <Link
           to="/"
-          className="mb-8 inline-flex items-center gap-2 text-sm text-neutral-600 transition-colors duration-300 hover:text-primary-500 dark:text-neutral-400 dark:hover:text-primary-400"
+          className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors duration-300 hover:text-primary"
         >
           <IconArrowLeft style={{ fontSize: '16px' }} />
           Back to Home
@@ -144,10 +156,8 @@ const Contact = (): JSX.Element => {
 
         {/* Page Title */}
         <motion.div className="mb-16 text-center" {...animation} variants={fadeInUp}>
-          <h1 className="mb-4 text-5xl font-bold text-neutral-900 dark:text-neutral-100">
-            Get In Touch
-          </h1>
-          <p className="text-lg text-neutral-700 dark:text-neutral-400">
+          <h1 className="mb-4 text-5xl font-bold text-foreground">Get In Touch</h1>
+          <p className="text-lg text-muted-foreground">
             Have a project in mind? Let&rsquo;s discuss how we can work together.
           </p>
         </motion.div>
@@ -155,7 +165,7 @@ const Contact = (): JSX.Element => {
         {/* Success Banner */}
         {showSuccessBanner && (
           <motion.div
-            className="mb-8 rounded-lg border border-success-600/50 bg-success-500/20 p-4"
+            className="mb-8 rounded-lg border border-success/50 bg-success/20 p-4"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -165,20 +175,18 @@ const Contact = (): JSX.Element => {
               <div className="flex items-start gap-3">
                 <IconCheckCircle
                   style={{ fontSize: '20px' }}
-                  className="mt-0.5 flex-shrink-0 text-success-500"
+                  className="mt-0.5 flex-shrink-0 text-success"
                 />
                 <div>
-                  <p className="font-medium text-success-500">
-                    Thank you! Your message has been sent.
-                  </p>
-                  <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
+                  <p className="font-medium text-success">Thank you! Your message has been sent.</p>
+                  <p className="mt-1 text-sm text-muted-foreground">
                     I&rsquo;ll get back to you as soon as possible.
                   </p>
                 </div>
               </div>
               <button
                 onClick={handleCloseBanner}
-                className="clickable text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-300"
+                className="clickable text-muted-foreground transition-colors hover:text-foreground"
                 aria-label="Close success message"
               >
                 <IconClose style={{ fontSize: '20px' }} />
@@ -190,7 +198,7 @@ const Contact = (): JSX.Element => {
         {/* Error Banner */}
         {submitStatus === 'error' && (
           <motion.div
-            className="mb-8 rounded-lg border border-error-600/50 bg-error-500/20 p-4"
+            className="mb-8 rounded-lg border border-destructive/50 bg-destructive/20 p-4"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
@@ -198,15 +206,15 @@ const Contact = (): JSX.Element => {
             <div className="flex items-start gap-3">
               <IconAlertCircle
                 style={{ fontSize: '20px' }}
-                className="mt-0.5 flex-shrink-0 text-error-500"
+                className="mt-0.5 flex-shrink-0 text-destructive"
               />
               <div>
-                <p className="font-medium text-error-500">Oops! Something went wrong.</p>
-                <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
+                <p className="font-medium text-destructive">Oops! Something went wrong.</p>
+                <p className="mt-1 text-sm text-muted-foreground">
                   Please try again or email me directly at{' '}
                   <a
                     href="mailto:subbiah2806@gmail.com"
-                    className="text-error-400 hover:text-error-300 underline"
+                    className="text-destructive underline hover:text-destructive/80"
                   >
                     subbiah2806@gmail.com
                   </a>
@@ -219,10 +227,8 @@ const Contact = (): JSX.Element => {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
           {/* Contact Information */}
           <motion.div {...animation} variants={fadeInUp}>
-            <h2 className="mb-6 text-2xl font-bold text-neutral-900 dark:text-neutral-100">
-              Contact Information
-            </h2>
-            <p className="mb-8 text-neutral-700 dark:text-neutral-400">
+            <h2 className="mb-6 text-2xl font-bold text-foreground">Contact Information</h2>
+            <p className="mb-8 text-muted-foreground">
               Feel free to reach out through any of these channels. I&rsquo;m always open to
               discussing new projects, creative ideas, or opportunities to be part of your vision.
             </p>
@@ -235,14 +241,12 @@ const Contact = (): JSX.Element => {
                   href={method.href}
                   target={method.href.startsWith('http') ? '_blank' : undefined}
                   rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className="clickable flex items-start gap-4 rounded-lg border border-neutral-200 bg-white p-4 transition-all duration-300 hover:border-primary-500 hover:shadow-medium dark:border-neutral-700/50 dark:bg-neutral-800/50 dark:hover:border-primary-600/50"
+                  className="clickable flex items-start gap-4 rounded-lg border bg-card p-4 transition-all duration-300 hover:border-primary hover:shadow-medium"
                 >
-                  <div className="text-primary-500 dark:text-primary-400">{method.icon}</div>
+                  <div className="text-primary">{method.icon}</div>
                   <div>
-                    <h3 className="mb-1 font-semibold text-neutral-900 dark:text-neutral-100">
-                      {method.label}
-                    </h3>
-                    <p className="text-sm text-neutral-600 dark:text-neutral-400">{method.value}</p>
+                    <h3 className="mb-1 font-semibold text-foreground">{method.label}</h3>
+                    <p className="text-sm text-muted-foreground">{method.value}</p>
                   </div>
                 </a>
               ))}
@@ -250,7 +254,7 @@ const Contact = (): JSX.Element => {
 
             {/* Social Links */}
             <div className="mt-8">
-              <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
+              <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-foreground">
                 Connect with me
               </h3>
               <div className="flex gap-4">
@@ -260,7 +264,7 @@ const Contact = (): JSX.Element => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="clickable flex h-12 w-12 items-center justify-center rounded-lg border border-neutral-200 bg-white text-neutral-600 transition-all duration-300 hover:border-primary-500 hover:text-primary-500 hover:shadow-medium dark:border-neutral-700/50 dark:bg-neutral-800/50 dark:text-neutral-400 dark:hover:border-primary-600/50 dark:hover:text-primary-400"
+                    className="clickable flex h-12 w-12 items-center justify-center rounded-lg border bg-card text-muted-foreground transition-all duration-300 hover:border-primary hover:text-primary hover:shadow-medium"
                     aria-label={social.label}
                   >
                     {social.icon}
@@ -270,27 +274,25 @@ const Contact = (): JSX.Element => {
             </div>
 
             {/* Availability Info */}
-            <div className="mt-8 rounded-lg border border-primary-300 bg-primary-50 p-6 dark:border-primary-700/30 dark:bg-primary-900/20">
-              <h3 className="mb-2 font-semibold text-primary-700 dark:text-primary-300">
-                Currently Available
-              </h3>
-              <p className="text-sm text-neutral-700 dark:text-neutral-400">
+            <div className="mt-8 rounded-lg border border-primary/30 bg-primary/10 p-6">
+              <h3 className="mb-2 font-semibold text-primary-foreground">Currently Available</h3>
+              <p className="text-sm text-muted-foreground">
                 I&rsquo;m actively seeking new opportunities as a Lead Frontend Developer. Available
                 for full-time positions and consulting projects.
               </p>
-              <div className="mt-4 flex items-center gap-2 text-xs text-neutral-600 dark:text-neutral-500">
+              <div className="mt-4 flex items-center gap-2 text-xs text-muted-foreground">
                 <IconBriefcase style={{ fontSize: '16px' }} />
                 <span>Work Visa: H1B (I-140 Approved)</span>
               </div>
             </div>
 
             {/* Prefer Email */}
-            <div className="mt-6 text-center text-sm text-neutral-600 dark:text-neutral-500">
+            <div className="mt-6 text-center text-sm text-muted-foreground">
               <p>
                 Prefer email?{' '}
                 <a
                   href="mailto:subbiah2806@gmail.com"
-                  className="text-primary-600 underline hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
+                  className="text-primary underline hover:text-primary/80"
                 >
                   Send a direct email
                 </a>
@@ -300,144 +302,103 @@ const Contact = (): JSX.Element => {
 
           {/* Contact Form */}
           <motion.div {...animation} variants={fadeInUp}>
-            <h2 className="mb-6 text-2xl font-bold text-neutral-900 dark:text-neutral-100">
-              Send a Message
-            </h2>
+            <h2 className="mb-6 text-2xl font-bold text-foreground">Send a Message</h2>
 
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-              {/* Name Field */}
-              <div>
-                <label
-                  htmlFor="name"
-                  className="mb-2 block text-sm font-medium text-neutral-700 dark:text-neutral-300"
-                >
-                  Name <span className="text-error-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  {...register('name')}
-                  className={`w-full rounded-lg border px-4 py-3 text-neutral-900 placeholder-neutral-500 transition-all duration-300 dark:text-neutral-100 ${
-                    errors.name
-                      ? 'border-error-500 bg-error-500/10'
-                      : 'border-neutral-300 bg-neutral-50 dark:border-neutral-700/50 dark:bg-neutral-800/50'
-                  }`}
-                  placeholder="Your name"
-                  aria-invalid={errors.name ? 'true' : 'false'}
-                  aria-describedby={errors.name ? 'name-error' : undefined}
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                {/* Name Field */}
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>
+                        Name <span className="text-destructive">*</span>
+                      </FormLabel>
+                      <FormControl>
+                        <Input placeholder="Your name" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-                {errors.name && (
-                  <p
-                    id="name-error"
-                    className="dark:text-error-400 mt-1 text-sm text-error-500"
-                    role="alert"
-                  >
-                    {errors.name.message}
-                  </p>
-                )}
-              </div>
 
-              {/* Email Field */}
-              <div>
-                <label
-                  htmlFor="email"
-                  className="mb-2 block text-sm font-medium text-neutral-700 dark:text-neutral-300"
-                >
-                  Email <span className="text-error-500">*</span>
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  {...register('email')}
-                  className={`w-full rounded-lg border px-4 py-3 text-neutral-900 placeholder-neutral-500 transition-all duration-300 dark:text-neutral-100 ${
-                    errors.email
-                      ? 'border-error-500 bg-error-500/10'
-                      : 'border-neutral-300 bg-neutral-50 dark:border-neutral-700/50 dark:bg-neutral-800/50'
-                  }`}
-                  placeholder="your.email@example.com"
-                  aria-invalid={errors.email ? 'true' : 'false'}
-                  aria-describedby={errors.email ? 'email-error' : undefined}
+                {/* Email Field */}
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>
+                        Email <span className="text-destructive">*</span>
+                      </FormLabel>
+                      <FormControl>
+                        <Input type="email" placeholder="your.email@example.com" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-                {errors.email && (
-                  <p
-                    id="email-error"
-                    className="dark:text-error-400 mt-1 text-sm text-error-500"
-                    role="alert"
-                  >
-                    {errors.email.message}
-                  </p>
-                )}
-              </div>
 
-              {/* Subject Field */}
-              <div>
-                <label
-                  htmlFor="subject"
-                  className="mb-2 block text-sm font-medium text-neutral-700 dark:text-neutral-300"
-                >
-                  Subject{' '}
-                  <span className="text-xs text-neutral-600 dark:text-neutral-500">(Optional)</span>
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  {...register('subject')}
-                  className="w-full rounded-lg border border-neutral-300 bg-neutral-50 px-4 py-3 text-neutral-900 placeholder-neutral-500 transition-all duration-300 dark:border-neutral-700/50 dark:bg-neutral-800/50 dark:text-neutral-100"
-                  placeholder="What would you like to discuss?"
+                {/* Subject Field */}
+                <FormField
+                  control={form.control}
+                  name="subject"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>
+                        Subject <span className="text-xs text-muted-foreground">(Optional)</span>
+                      </FormLabel>
+                      <FormControl>
+                        <Input placeholder="What would you like to discuss?" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
                 />
-              </div>
 
-              {/* Message Field */}
-              <div>
-                <label
-                  htmlFor="message"
-                  className="mb-2 block text-sm font-medium text-neutral-700 dark:text-neutral-300"
-                >
-                  Message <span className="text-error-500">*</span>
-                </label>
-                <textarea
-                  id="message"
-                  {...register('message')}
-                  rows={6}
-                  className={`w-full rounded-lg border px-4 py-3 text-neutral-900 placeholder-neutral-500 transition-all duration-300 dark:text-neutral-100 ${
-                    errors.message
-                      ? 'border-error-500 bg-error-500/10'
-                      : 'border-neutral-300 bg-neutral-50 dark:border-neutral-700/50 dark:bg-neutral-800/50'
-                  }`}
-                  placeholder="Tell me about your project or opportunity..."
-                  aria-invalid={errors.message ? 'true' : 'false'}
-                  aria-describedby={errors.message ? 'message-error' : undefined}
+                {/* Message Field */}
+                <FormField
+                  control={form.control}
+                  name="message"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>
+                        Message <span className="text-destructive">*</span>
+                      </FormLabel>
+                      <FormControl>
+                        <Textarea
+                          placeholder="Tell me about your project or opportunity..."
+                          rows={6}
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                      <p className="text-xs text-muted-foreground">
+                        Min 10 characters, max 1000 characters
+                      </p>
+                    </FormItem>
+                  )}
                 />
-                {errors.message && (
-                  <p
-                    id="message-error"
-                    className="dark:text-error-400 mt-1 text-sm text-error-500"
-                    role="alert"
-                  >
-                    {errors.message.message}
-                  </p>
-                )}
-                <p className="mt-1 text-xs text-neutral-600 dark:text-neutral-500">
-                  Min 10 characters, max 1000 characters
-                </p>
-              </div>
 
-              {/* Submit Button */}
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="clickable w-full rounded-lg border border-primary-400 bg-primary-100 px-6 py-3 font-medium text-primary-700 transition-all duration-300 hover:border-primary-500 hover:bg-primary-200 hover:shadow-medium disabled:cursor-not-allowed disabled:opacity-50 dark:border-primary-600/50 dark:bg-primary-900/30 dark:text-primary-300 dark:hover:bg-primary-800/40"
-              >
-                {isSubmitting ? (
-                  <span className="flex items-center justify-center gap-2">
-                    <IconSpinner style={{ fontSize: '20px' }} className="animate-spin" />
-                    Sending...
-                  </span>
-                ) : (
-                  'Send Message'
-                )}
-              </button>
-            </form>
+                {/* Submit Button */}
+                <Button
+                  type="submit"
+                  disabled={form.formState.isSubmitting}
+                  className="clickable w-full"
+                  variant="outline"
+                >
+                  {form.formState.isSubmitting ? (
+                    <span className="flex items-center justify-center gap-2">
+                      <IconSpinner style={{ fontSize: '20px' }} className="animate-spin" />
+                      Sending...
+                    </span>
+                  ) : (
+                    'Send Message'
+                  )}
+                </Button>
+              </form>
+            </Form>
           </motion.div>
         </div>
       </div>

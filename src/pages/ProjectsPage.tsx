@@ -23,7 +23,7 @@ const ProjectsPage = (): JSX.Element => {
           {/* Back Button */}
           <Link
             to="/"
-            className="mb-8 inline-flex items-center gap-2 text-sm text-neutral-600 transition-colors duration-300 hover:text-primary-600 dark:text-neutral-400 dark:hover:text-primary-400"
+            className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors duration-300 hover:text-primary"
           >
             <IconArrowLeft style={{ fontSize: '16px' }} />
             Back to Home
@@ -31,10 +31,8 @@ const ProjectsPage = (): JSX.Element => {
 
           {/* Page Title */}
           <motion.div className="mb-12" {...animation} variants={fadeInUp}>
-            <h1 className="mb-4 text-5xl font-bold text-neutral-900 dark:text-neutral-100">
-              All Projects
-            </h1>
-            <p className="text-lg text-neutral-700 dark:text-neutral-400">
+            <h1 className="mb-4 text-5xl font-bold text-foreground">All Projects</h1>
+            <p className="text-lg text-muted-foreground">
               A comprehensive showcase of my work across AI, security, performance optimization, and
               more.
             </p>

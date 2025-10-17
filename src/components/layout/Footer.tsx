@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { IconGitHub, IconLinkedIn, IconEmail } from '../icons';
+import { Mail } from 'lucide-react';
+import { IconGitHub, IconLinkedIn } from '../icons';
 
 const Footer = (): JSX.Element => {
   const currentYear = new Date().getFullYear();
@@ -8,17 +9,17 @@ const Footer = (): JSX.Element => {
     {
       name: 'GitHub',
       url: 'https://github.com/subbiah2806',
-      icon: <IconGitHub style={{ fontSize: '20px' }} />,
+      icon: <IconGitHub className="h-5 w-5" />,
     },
     {
       name: 'LinkedIn',
       url: 'https://www.linkedin.com/in/subbiah-c-31b339184/',
-      icon: <IconLinkedIn style={{ fontSize: '20px' }} />,
+      icon: <IconLinkedIn className="h-5 w-5" />,
     },
     {
       name: 'Email',
       url: 'mailto:subbiah2806@gmail.com',
-      icon: <IconEmail style={{ fontSize: '20px' }} />,
+      icon: <Mail className="h-5 w-5" />,
     },
   ];
 
@@ -29,16 +30,14 @@ const Footer = (): JSX.Element => {
   ];
 
   return (
-    <footer className="border-t border-neutral-200 bg-neutral-50 px-4 py-12 dark:border-neutral-700/50 dark:bg-neutral-900">
+    <footer className="border-t bg-muted px-4 py-12">
       <div className="mx-auto max-w-7xl">
         {/* Top Section */}
         <div className="mb-8 grid grid-cols-1 gap-8 md:grid-cols-3">
           {/* Brand Section */}
           <div>
-            <h3 className="mb-4 text-xl font-bold text-neutral-900 dark:text-neutral-100">
-              Subbiah C.
-            </h3>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400">
+            <h3 className="mb-4 text-xl font-bold text-foreground">Subbiah C.</h3>
+            <p className="text-sm text-muted-foreground">
               Lead Frontend Developer specializing in React, TypeScript, and modern web
               technologies.
             </p>
@@ -46,7 +45,7 @@ const Footer = (): JSX.Element => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
+            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-foreground">
               Quick Links
             </h4>
             <ul className="space-y-2">
@@ -54,7 +53,7 @@ const Footer = (): JSX.Element => {
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-sm text-neutral-600 transition-colors duration-300 hover:text-primary-600 dark:text-neutral-400 dark:hover:text-primary-400"
+                    className="text-sm text-muted-foreground transition-colors duration-300 hover:text-primary"
                   >
                     {link.name}
                   </Link>
@@ -65,7 +64,7 @@ const Footer = (): JSX.Element => {
 
           {/* Social Links */}
           <div>
-            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
+            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-foreground">
               Connect
             </h4>
             <div className="flex gap-4">
@@ -75,7 +74,7 @@ const Footer = (): JSX.Element => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-neutral-600 transition-colors duration-300 hover:text-primary-600 dark:text-neutral-400 dark:hover:text-primary-400"
+                  className="text-muted-foreground transition-colors duration-300 hover:text-primary"
                   aria-label={social.name}
                 >
                   {social.icon}
@@ -86,12 +85,12 @@ const Footer = (): JSX.Element => {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-neutral-300 pt-8 dark:border-neutral-800">
+        <div className="border-t pt-8">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-            <p className="text-center text-sm text-neutral-500 dark:text-neutral-500 md:text-left">
+            <p className="text-center text-sm text-muted-foreground md:text-left">
               &copy; {currentYear} Subbiah Chandramouli. All rights reserved.
             </p>
-            <p className="text-center font-mono text-xs text-neutral-500 dark:text-neutral-600 md:text-right">
+            <p className="text-center font-mono text-xs text-muted-foreground md:text-right">
               Built with React + TypeScript + Vite + Tailwind CSS
             </p>
           </div>

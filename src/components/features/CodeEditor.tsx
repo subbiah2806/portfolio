@@ -1,7 +1,8 @@
 import { useState, useMemo } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { vscDarkPlus, oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import type { Experience } from '../../types/resume.types';
+import { useThemeContext } from '../../contexts/ThemeContext';
 
 interface CodeEditorProps {
   experience: Experience[];
@@ -10,6 +11,7 @@ interface CodeEditorProps {
 export default function CodeEditor({ experience }: CodeEditorProps): JSX.Element {
   const [selectedJob, setSelectedJob] = useState<number>(0);
   const [copied, setCopied] = useState<boolean>(false);
+  const { theme } = useThemeContext();
   const job = experience[selectedJob];
 
   const generatedCode = useMemo((): string => {
@@ -43,40 +45,38 @@ export default ${job.company.replace(/\s+/g, '')}Experience;`;
 
   return (
     <div className="mx-auto w-full max-w-6xl animate-fade-in p-4">
-      <div className="overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-large dark:border-neutral-700/50 dark:bg-neutral-900">
+      <div className="overflow-hidden rounded-lg border bg-card shadow-large">
         {/* Editor Header */}
-        <div className="flex items-center justify-between border-b border-neutral-200 bg-neutral-100/80 px-4 py-2 dark:border-neutral-700/50 dark:bg-neutral-800/80">
+        <div className="flex items-center justify-between border-b bg-muted/80 px-4 py-2">
           <div className="flex items-center gap-2">
             <div className="flex gap-2">
-              <div className="h-3 w-3 rounded-full bg-error-500"></div>
-              <div className="h-3 w-3 rounded-full bg-warning-500"></div>
-              <div className="h-3 w-3 rounded-full bg-success-500"></div>
+              <div className="h-3 w-3 rounded-full bg-destructive"></div>
+              <div className="h-3 w-3 rounded-full bg-warning"></div>
+              <div className="h-3 w-3 rounded-full bg-success"></div>
             </div>
-            <div className="ml-4 font-mono text-sm text-neutral-600 dark:text-neutral-400">
-              experience.js
-            </div>
+            <div className="ml-4 font-mono text-sm text-muted-foreground">experience.js</div>
           </div>
 
           {/* Copy Button */}
           <button
             onClick={handleCopy}
-            className="clickable rounded px-3 py-1 font-mono text-xs text-neutral-600 transition-all duration-200 hover:bg-neutral-200/50 hover:text-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-700/50 dark:hover:text-neutral-200"
+            className="clickable rounded px-3 py-1 font-mono text-xs text-muted-foreground transition-all duration-200 hover:bg-muted/50 hover:text-foreground"
             aria-label="Copy code to clipboard"
           >
-            {copied ? <span className="text-success-500">✓ Copied!</span> : <span>Copy</span>}
+            {copied ? <span className="text-success">✓ Copied!</span> : <span>Copy</span>}
           </button>
         </div>
 
         {/* Tab Bar */}
-        <div className="flex flex-wrap gap-1 border-b border-neutral-200 bg-neutral-100/80 px-4 py-1 dark:border-neutral-700/50 dark:bg-neutral-800/80">
+        <div className="flex flex-wrap gap-1 border-b bg-muted/80 px-4 py-1">
           {experience.map((exp, index) => (
             <button
               key={index}
               onClick={() => setSelectedJob(index)}
               className={`clickable whitespace-nowrap rounded-t px-4 py-2 font-mono text-sm transition-colors duration-200 ${
                 selectedJob === index
-                  ? 'border-t-2 border-primary-500 bg-white text-primary-600 dark:bg-neutral-900 dark:text-primary-400'
-                  : 'text-neutral-600 hover:bg-neutral-200/50 hover:text-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-700/50 dark:hover:text-neutral-200'
+                  ? 'border-t-2 border-primary bg-card text-primary'
+                  : 'text-muted-foreground hover:bg-muted/50 hover:text-foreground'
               }`}
               aria-label={`View ${exp.company} experience`}
             >
@@ -89,7 +89,7 @@ export default ${job.company.replace(/\s+/g, '')}Experience;`;
         <div className="relative max-h-[600px] overflow-auto">
           <SyntaxHighlighter
             language="javascript"
-            style={vscDarkPlus}
+            style={theme === 'dark' ? vscDarkPlus : oneLight}
             showLineNumbers={true}
             customStyle={{
               margin: 0,
@@ -101,7 +101,7 @@ export default ${job.company.replace(/\s+/g, '')}Experience;`;
             lineNumberStyle={{
               minWidth: '3em',
               paddingRight: '1em',
-              color: '#6b7280',
+              color: theme === 'dark' ? '#6b7280' : '#9ca3af',
               userSelect: 'none',
             }}
             wrapLines={true}

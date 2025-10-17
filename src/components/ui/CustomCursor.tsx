@@ -77,8 +77,8 @@ export default function CustomCursor(): JSX.Element | null {
       <div
         className={`pointer-events-none fixed left-0 top-0 z-[9999] h-6 w-6 rounded-full border-2 transition-[border-color,background-color,transform,box-shadow] duration-100 ${
           isHovering
-            ? 'scale-150 border-yellow-400 bg-yellow-400/30 shadow-lg shadow-yellow-400/50'
-            : 'border-blue-500 bg-blue-500/20 dark:border-blue-400 dark:bg-blue-400/20'
+            ? 'scale-150 border-accent bg-accent/30 shadow-lg shadow-accent/50'
+            : 'border-primary bg-primary/20'
         }`}
         style={{
           left: `${position.x}px`,
@@ -90,7 +90,7 @@ export default function CustomCursor(): JSX.Element | null {
       {/* Inner dot */}
       <div
         className={`pointer-events-none fixed left-0 top-0 z-[9999] h-2 w-2 rounded-full transition-colors duration-100 ${
-          isHovering ? 'bg-yellow-400' : 'bg-blue-500 dark:bg-blue-400'
+          isHovering ? 'bg-accent' : 'bg-primary'
         }`}
         style={{
           left: `${position.x}px`,

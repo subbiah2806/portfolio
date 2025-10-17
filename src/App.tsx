@@ -20,10 +20,10 @@ function App(): JSX.Element {
         <SEO />
 
         {/* Background Gradient - Animated floating orbs */}
-        <div className="fixed inset-0 -z-10 h-screen w-screen bg-neutral-50 dark:bg-black">
-          <div className="absolute inset-0 overflow-hidden opacity-30 dark:opacity-40">
-            <div className="animate-float-1 absolute bottom-0 left-0 h-96 w-96 rounded-full bg-primary-400 blur-3xl dark:bg-primary-900"></div>
-            <div className="animate-float-2 absolute right-0 top-0 h-96 w-96 rounded-full bg-primary-400 blur-3xl dark:bg-primary-900"></div>
+        <div className="fixed inset-0 -z-10 h-screen w-screen bg-background">
+          <div className="absolute inset-0 overflow-hidden opacity-30">
+            <div className="animate-float-1 absolute bottom-0 left-0 h-96 w-96 rounded-full bg-primary blur-3xl"></div>
+            <div className="animate-float-2 absolute right-0 top-0 h-96 w-96 rounded-full bg-primary blur-3xl"></div>
           </div>
         </div>
 

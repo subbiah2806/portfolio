@@ -13,9 +13,154 @@ This is a personal portfolio website showcasing skills, projects, and experience
 
 ### Styling & UI
 
-- **TailwindCSS 3.4.3** - Utility-first CSS framework with custom color system
+- **TailwindCSS 3.4.3** - Utility-first CSS framework with shadcn Dark Matter theme
+- **shadcn/ui** - Component library built on Radix UI primitives
 - **Framer Motion 12.23.24** - Declarative animations
 - **@tailwindcss/typography** - Beautiful typographic defaults
+
+## shadcn Component Management
+
+**CRITICAL**: This project uses shadcn/ui with the Dark Matter theme. Follow these guidelines strictly.
+
+### Adding New Components
+
+Use shadcn CLI or MCP tools to add components:
+
+```bash
+# List available components
+npx shadcn@latest add
+
+# Add specific component
+npx shadcn@latest add button
+
+# Add multiple components
+npx shadcn@latest add button card badge
+```
+
+### shadcn MCP Tools Available
+
+```typescript
+// Search for components
+mcp__shadcn__search_items_in_registries({
+  registries: ['@shadcn'],
+  query: 'button',
+});
+
+// View component details
+mcp__shadcn__view_items_in_registries({
+  items: ['@shadcn/button'],
+});
+
+// Get usage examples
+mcp__shadcn__get_item_examples_from_registries({
+  registries: ['@shadcn'],
+  query: 'button-demo',
+});
+
+// Get list of project registries
+mcp__shadcn__get_project_registries();
+```
+
+### Installed shadcn Components
+
+Currently installed in `src/components/ui/`:
+
+- button, card, badge, alert
+- sheet, separator, tabs, skeleton
+- form, input, textarea, label
+
+### Color Usage Rules
+
+**CRITICAL**: NEVER use `bg-[hsl(var(--X))]` pattern
+
+❌ **WRONG**:
+
+```tsx
+<div className="bg-[hsl(var(--success))]">
+<div className="text-[hsl(var(--primary))]">
+<div className="border-[hsl(var(--destructive))]">
+```
+
+✅ **CORRECT**:
+
+```tsx
+<div className="bg-success">
+<div className="text-primary">
+<div className="border-destructive">
+
+// Available shadcn colors
+<div className="bg-primary">        // Warm yellow/gold
+<div className="bg-secondary">      // Teal/cyan blue
+<div className="bg-destructive">    // Red for errors
+<div className="bg-muted">          // Light gray
+<div className="bg-accent">         // Light accent
+<div className="bg-success">        // Green for success
+<div className="bg-warning">        // Orange/amber for warnings
+
+// With opacity
+<div className="bg-primary/20">    // 20% opacity
+<div className="text-success/50">  // 50% opacity
+```
+
+### Custom Colors in CSS Variables
+
+**CRITICAL**: OKLCH values must be stored WITHOUT the `oklch()` wrapper for opacity support.
+
+Current theme colors (Dark Matter):
+
+```css
+:root {
+  /* Core shadcn colors - OKLCH values WITHOUT oklch() wrapper */
+  --background: 1 0 0;
+  --foreground: 0.2101 0.0318 264.6645;
+  --primary: 0.6716 0.1368 48.513;
+  --secondary: 0.536 0.0398 196.028;
+  --muted: 0.967 0.0029 264.5419;
+  --accent: 0.9491 0 0;
+  --destructive: 0.6368 0.2078 25.3313;
+
+  /* Custom additions */
+  --success: 0.65 0.18 150;
+  --warning: 0.75 0.15 85;
+}
+```
+
+**Why no `oklch()` wrapper?**
+
+- CSS variables store just the color values
+- Tailwind wraps them with `oklch()` and adds `<alpha-value>` support
+- This enables opacity classes like `bg-primary/20`, `text-success/50`
+
+### When to Add New Colors
+
+If you need a new color:
+
+1. Add it to `src/index.css` as a CSS variable in OKLCH format **WITHOUT** `oklch()` wrapper
+2. Add it to `tailwind.config.js` colors object **WITH** `oklch()` wrapper and `<alpha-value>`
+3. Add it for both light and dark modes
+4. Use the color class directly (e.g., `bg-newcolor`)
+
+**Example**:
+
+```css
+/* src/index.css - WITHOUT oklch() wrapper */
+:root {
+  --info: 0.6 0.15 240;
+}
+
+.dark {
+  --info: 0.7 0.15 240;
+}
+```
+
+```js
+// tailwind.config.js - WITH oklch() wrapper and <alpha-value>
+colors: {
+  info: 'oklch(var(--info) / <alpha-value>)',
+}
+```
+
+**Result**: You can now use `bg-info`, `bg-info/20`, `text-info/50`, etc.
 
 ### Forms & Validation
 
@@ -117,8 +262,8 @@ export function IconName(props: SVGProps<SVGSVGElement>) {
 ```tsx
 // Use currentColor for primary elements
 // Use fill-currentColor utility or separate class for secondary colors
-<path stroke="currentColor" className="text-primary-600" d="..." />
-<path fill="currentColor" className="text-accent-500" d="..." />
+<path stroke="currentColor" className="text-primary" d="..." />
+<path fill="currentColor" className="text-secondary" d="..." />
 ```
 
 ### Usage Examples
@@ -127,16 +272,16 @@ export function IconName(props: SVGProps<SVGSVGElement>) {
 import { IconError, IconLoading, IconEmpty, IconEmail } from '@/components/icons';
 
 // Basic usage - inherits text color
-<IconError className="text-error-600" />
+<IconError className="text-destructive" />
 
 // With custom size using style prop (since width/height are 1em)
-<IconEmail style={{ fontSize: '24px' }} className="text-primary-600" />
+<IconEmail style={{ fontSize: '24px' }} className="text-primary" />
 
-// With custom color using Tailwind classes
-<IconLoading className="text-primary-600 dark:text-primary-400" style={{ fontSize: '32px' }} />
+// With custom color using shadcn classes
+<IconLoading className="text-primary" style={{ fontSize: '32px' }} />
 
 // With animation (IconLoading and IconSpinner work well with animate-spin)
-<IconSpinner className="animate-spin text-primary-500" style={{ fontSize: '48px' }} />
+<IconSpinner className="animate-spin text-primary" style={{ fontSize: '48px' }} />
 
 // Inline with text (1em size adapts to parent font size automatically)
 <span className="text-lg">
@@ -328,82 +473,6 @@ import { IconLoading } from '@/components/icons/IconLoading'; // This won't work
 - **Autocomplete** - IDE suggestions work correctly
 - **No confusion** - Only one way to import each thing
 
-## Custom Color System
-
-**CRITICAL**: This project uses a custom color palette. Never use default Tailwind colors.
-
-### Color Palette
-
-```typescript
-colors: {
-  primary: {
-    50: '#eff6ff',   // Lightest blue
-    100: '#dbeafe',
-    200: '#bfdbfe',
-    300: '#93c5fd',
-    400: '#60a5fa',
-    500: '#3b82f6',  // Main primary blue
-    600: '#2563eb',
-    700: '#1d4ed8',
-    800: '#1e40af',
-    900: '#1e3a8a',  // Navy
-  },
-  accent: {
-    50: '#ecfeff',
-    100: '#cffafe',
-    200: '#a5f3fc',
-    300: '#67e8f9',
-    400: '#22d3ee',
-    500: '#06b6d4',  // Main accent (cyan)
-    600: '#0891b2',
-    700: '#0e7490',
-    800: '#155e75',
-    900: '#164e63',
-  },
-  neutral: {
-    50: '#f8fafc',   // Almost white
-    100: '#f1f5f9',
-    200: '#e2e8f0',
-    300: '#cbd5e1',
-    400: '#94a3b8',
-    500: '#64748b',  // Mid gray
-    600: '#475569',
-    700: '#334155',
-    800: '#1e293b',
-    900: '#0f172a',  // Almost black
-  },
-  success: {
-    500: '#10b981',  // Green
-    600: '#059669',
-  },
-  warning: {
-    500: '#f59e0b',  // Amber
-    600: '#d97706',
-  },
-  error: {
-    500: '#ef4444',  // Red
-    600: '#dc2626',
-  },
-}
-```
-
-### Usage Examples
-
-```tsx
-// ✅ CORRECT - Using custom colors
-<button className="bg-primary-500 hover:bg-primary-600 text-white">
-  Click Me
-</button>
-
-<div className="bg-neutral-50 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-700">
-  Content
-</div>
-
-// ❌ WRONG - Never use default Tailwind colors
-<button className="bg-blue-500"> // NO!
-<div className="border-gray-300"> // NO!
-```
-
 ## Routing System
 
 Using **React Router DOM v7** with the following structure:
@@ -527,8 +596,8 @@ const shouldReduceMotion = useReducedMotion();
 
 ```tsx
 // In components
-<div className="bg-neutral-50 dark:bg-neutral-900">
-  <p className="text-neutral-900 dark:text-neutral-100">Content</p>
+<div className="bg-background">
+  <p className="text-foreground">Content</p>
 </div>;
 
 // Toggle theme
@@ -607,11 +676,11 @@ if (isLoading) {
 }
 
 if (error) {
-  return <div className="text-error-600">Error: {error.message}</div>;
+  return <div className="text-destructive">Error: {error.message}</div>;
 }
 
 if (!data?.length) {
-  return <div className="text-neutral-600">No data available</div>;
+  return <div className="text-muted-foreground">No data available</div>;
 }
 
 return <Content data={data} />;
@@ -766,8 +835,8 @@ npm run preview
 
 ### Styling Guidelines
 
-- **Only custom colors** (primary-_, accent-_, neutral-\*, success, warning, error)
-- Full dark mode support for all components
+- **Use shadcn color system** (primary, secondary, destructive, success, warning, muted, accent, background, foreground)
+- Full dark mode support for all components (shadcn colors adapt automatically)
 - Mobile-first responsive design
 - Accessibility (ARIA labels, semantic HTML)
 - Use Tailwind utility classes, avoid custom CSS
@@ -789,13 +858,13 @@ npm run preview
 
 ### ✅ Do This Instead
 
-- Use custom color system (bg-primary-500, text-neutral-900)
+- Use shadcn color system (bg-primary, bg-secondary, text-foreground, text-muted-foreground)
 - Use proper TypeScript types or `unknown`
 - Define named constants for all magic values
 - Single-purpose functions
 - Extract common code into utilities/hooks
 - Break large components into smaller ones
-- Always include `dark:` variants
+- Always include `dark:` variants (or use shadcn colors which adapt automatically)
 - **Use DataFetchWrapper for all data fetching** (loading, error, empty states)
 - Use contexts or composition pattern
 - Pure functions with useEffect for side effects
@@ -876,7 +945,7 @@ Your code is successful when:
 
 ### Styling & Accessibility
 
-- ✅ Only custom colors (never default Tailwind)
+- ✅ Use shadcn colors (never default Tailwind colors like blue-500, gray-900)
 - ✅ Full dark mode support
 - ✅ Responsive and accessible
 - ✅ Semantic HTML and ARIA labels

@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Menu } from 'lucide-react';
 import ThemeToggle from '../ui/ThemeToggle';
 import CursorToggle from '../ui/CursorToggle';
 import AudioPlayer from '../ui/AudioPlayer';
+import { Button } from '../ui/button';
+import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from '../ui/sheet';
 
 const Header = (): JSX.Element => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -56,7 +59,7 @@ const Header = (): JSX.Element => {
 
   return (
     <header
-      className={`fixed left-0 right-0 top-0 z-50 h-16 border-b border-neutral-200 bg-white/80 backdrop-blur-md transition-all duration-300 dark:border-neutral-700/50 dark:bg-neutral-900/80 ${
+      className={`fixed left-0 right-0 top-0 z-50 h-16 border-b bg-background/80 backdrop-blur-md transition-all duration-300 ${
         isScrolled ? 'shadow-lg' : ''
       }`}
     >
@@ -64,7 +67,7 @@ const Header = (): JSX.Element => {
         {/* Logo/Name */}
         <Link
           to="/"
-          className="text-xl font-bold text-neutral-900 transition-colors duration-300 hover:text-primary-600 dark:text-neutral-100 dark:hover:text-primary-400"
+          className="text-xl font-bold text-foreground transition-colors duration-300 hover:text-primary"
         >
           Subbiah C.
         </Link>
@@ -77,21 +80,19 @@ const Header = (): JSX.Element => {
                 key={link.path}
                 to={link.path}
                 className={`relative pb-1 text-sm font-medium transition-all duration-300 ${
-                  isActive(link.path)
-                    ? 'text-primary-600 dark:text-primary-400'
-                    : 'text-neutral-600 hover:text-primary-600 dark:text-neutral-400 dark:hover:text-primary-400'
+                  isActive(link.path) ? 'text-primary' : 'text-muted-foreground hover:text-primary'
                 }`}
               >
                 {link.label}
                 {isActive(link.path) && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary-400"></span>
+                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"></span>
                 )}
               </Link>
             ) : (
               <button
                 key={link.path}
                 onClick={() => handleSmoothScroll(link.path)}
-                className="text-sm font-medium text-neutral-600 transition-all duration-300 hover:text-primary-600 dark:text-neutral-400 dark:hover:text-primary-400"
+                className="text-sm font-medium text-muted-foreground transition-all duration-300 hover:text-primary"
               >
                 {link.label}
               </button>
@@ -109,75 +110,51 @@ const Header = (): JSX.Element => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="flex flex-col items-center justify-center gap-1.5 p-2 md:hidden"
-            aria-label="Toggle mobile menu"
-            aria-expanded={isMobileMenuOpen}
-          >
-            <span
-              className={`h-0.5 w-6 bg-neutral-900 transition-all duration-300 dark:bg-neutral-100 ${
-                isMobileMenuOpen ? 'translate-y-2 rotate-45' : ''
-              }`}
-            ></span>
-            <span
-              className={`h-0.5 w-6 bg-neutral-900 transition-all duration-300 dark:bg-neutral-100 ${
-                isMobileMenuOpen ? 'opacity-0' : 'opacity-100'
-              }`}
-            ></span>
-            <span
-              className={`h-0.5 w-6 bg-neutral-900 transition-all duration-300 dark:bg-neutral-100 ${
-                isMobileMenuOpen ? '-translate-y-2 -rotate-45' : ''
-              }`}
-            ></span>
-          </button>
+          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+            <SheetTrigger asChild className="md:hidden">
+              <Button variant="ghost" size="icon" aria-label="Toggle mobile menu">
+                <Menu className="h-6 w-6" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+              <SheetHeader>
+                <SheetTitle>Navigation</SheetTitle>
+              </SheetHeader>
+              <nav className="mt-8 flex flex-col gap-6">
+                {navLinks.map((link) => (
+                  <div key={link.path}>
+                    {link.isRoute ? (
+                      <Link
+                        to={link.path}
+                        className={`text-lg font-medium transition-colors duration-300 ${
+                          isActive(link.path)
+                            ? 'text-primary'
+                            : 'text-foreground hover:text-primary'
+                        }`}
+                      >
+                        {link.label}
+                      </Link>
+                    ) : (
+                      <button
+                        onClick={() => handleSmoothScroll(link.path)}
+                        className="text-lg font-medium text-foreground transition-colors duration-300 hover:text-primary"
+                      >
+                        {link.label}
+                      </button>
+                    )}
+                  </div>
+                ))}
+
+                {/* Mobile Controls */}
+                <div className="mt-8 flex gap-4 border-t border-border pt-6">
+                  <AudioPlayer variant="inline" />
+                  <ThemeToggle variant="inline" />
+                  <CursorToggle variant="inline" />
+                </div>
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
-      </div>
-
-      {/* Mobile Menu Overlay */}
-      <div
-        className={`fixed inset-0 top-16 z-40 bg-white/95 backdrop-blur-md transition-all duration-300 dark:bg-neutral-900/95 md:hidden ${
-          isMobileMenuOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
-        }`}
-      >
-        <nav className="flex h-full flex-col items-center justify-center gap-8 px-8">
-          {navLinks.map((link, index) => (
-            <div
-              key={link.path}
-              className={`transition-all duration-300 ${
-                isMobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-              }`}
-              style={{ transitionDelay: `${index * 50}ms` }}
-            >
-              {link.isRoute ? (
-                <Link
-                  to={link.path}
-                  className={`text-2xl font-medium transition-colors duration-300 ${
-                    isActive(link.path)
-                      ? 'text-primary-600 dark:text-primary-400'
-                      : 'text-neutral-700 hover:text-primary-600 dark:text-neutral-400 dark:hover:text-primary-400'
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              ) : (
-                <button
-                  onClick={() => handleSmoothScroll(link.path)}
-                  className="text-2xl font-medium text-neutral-700 transition-colors duration-300 hover:text-primary-600 dark:text-neutral-400 dark:hover:text-primary-400"
-                >
-                  {link.label}
-                </button>
-              )}
-            </div>
-          ))}
-
-          {/* Mobile Audio, Theme and Cursor Toggles */}
-          <div className="mt-8 flex gap-4">
-            <AudioPlayer variant="fixed" />
-            <ThemeToggle variant="fixed" />
-            <CursorToggle variant="fixed" />
-          </div>
-        </nav>
       </div>
     </header>
   );

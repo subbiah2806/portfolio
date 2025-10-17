@@ -58,13 +58,13 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
   render(): ReactNode {
     if (this.state.hasError) {
       return (
-        <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-neutral-900 via-neutral-900 to-neutral-800 px-4">
-          <div className="w-full max-w-2xl rounded-xl border border-neutral-700/50 bg-neutral-800/50 p-8 backdrop-blur-sm">
+        <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-background via-background to-secondary px-4">
+          <div className="w-full max-w-2xl rounded-xl border bg-card p-8 backdrop-blur-sm">
             {/* Error Icon */}
             <div className="mb-6 flex justify-center">
-              <div className="rounded-full bg-error-500/20 p-4">
+              <div className="rounded-full bg-destructive/20 p-4">
                 <svg
-                  className="h-12 w-12 text-error-500"
+                  className="h-12 w-12 text-destructive"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -81,29 +81,29 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
             </div>
 
             {/* Error Message */}
-            <h1 className="mb-4 text-center text-3xl font-bold text-neutral-100">
+            <h1 className="mb-4 text-center text-3xl font-bold text-foreground">
               Something went wrong
             </h1>
 
-            <p className="mb-6 text-center text-lg text-neutral-400">
+            <p className="mb-6 text-center text-lg text-muted-foreground">
               We&rsquo;re sorry for the inconvenience. An unexpected error has occurred.
             </p>
 
             {/* Error Details (only in development) */}
             {import.meta.env.DEV && this.state.error && (
-              <div className="mb-6 rounded-lg border border-neutral-700 bg-neutral-900/50 p-4">
-                <p className="text-error-400 mb-2 font-mono text-sm font-semibold">
+              <div className="mb-6 rounded-lg border bg-secondary/50 p-4">
+                <p className="mb-2 font-mono text-sm font-semibold text-destructive">
                   Error Details:
                 </p>
-                <p className="mb-3 font-mono text-sm text-neutral-300">
+                <p className="mb-3 font-mono text-sm text-card-foreground">
                   {this.state.error.toString()}
                 </p>
                 {this.state.errorInfo && (
                   <details className="cursor-pointer">
-                    <summary className="mb-2 font-mono text-xs text-neutral-500 hover:text-neutral-400">
+                    <summary className="mb-2 font-mono text-xs text-muted-foreground hover:text-foreground">
                       Component Stack Trace
                     </summary>
-                    <pre className="overflow-x-auto font-mono text-xs text-neutral-500">
+                    <pre className="overflow-x-auto font-mono text-xs text-muted-foreground">
                       {this.state.errorInfo}
                     </pre>
                   </details>
@@ -115,20 +115,20 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
             <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
               <button
                 onClick={this.handleReset}
-                className="rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white shadow-lg transition-all duration-300 hover:bg-primary-700"
+                className="rounded-lg bg-primary px-6 py-3 font-semibold text-primary-foreground shadow-lg transition-all duration-300 hover:bg-primary/90"
               >
                 Try Again
               </button>
               <button
                 onClick={() => (window.location.href = '/')}
-                className="rounded-lg border border-neutral-700 bg-neutral-800/50 px-6 py-3 font-semibold text-neutral-200 backdrop-blur-sm transition-all duration-300 hover:bg-neutral-700/50"
+                className="rounded-lg border bg-card px-6 py-3 font-semibold text-card-foreground backdrop-blur-sm transition-all duration-300 hover:bg-card/50"
               >
                 Go to Home
               </button>
             </div>
 
             {/* Support Information */}
-            <p className="mt-8 text-center font-mono text-xs text-neutral-500">
+            <p className="mt-8 text-center font-mono text-xs text-muted-foreground">
               If the problem persists, please contact support or refresh the page.
             </p>
           </div>

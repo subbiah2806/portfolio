@@ -3,24 +3,85 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    @apply border-border;
+  }
+
   body {
-    @apply bg-neutral-50 text-neutral-900 transition-colors duration-300 dark:bg-neutral-900 dark:text-neutral-100;
+    @apply bg-background text-foreground;
     font-family:
       'Inter',
       system-ui,
       -apple-system,
       sans-serif;
   }
+
+  :root {
+    /* shadcn/ui Dark Matter Theme - Light Mode */
+    /* OKLCH values without oklch() wrapper for opacity support */
+    --background: 1 0 0;
+    --foreground: 0.2101 0.0318 264.6645;
+    --card: 1 0 0;
+    --card-foreground: 0.2101 0.0318 264.6645;
+    --popover: 1 0 0;
+    --popover-foreground: 0.2101 0.0318 264.6645;
+    --primary: 0.6716 0.1368 48.513;
+    --primary-foreground: 1 0 0;
+    --secondary: 0.536 0.0398 196.028;
+    --secondary-foreground: 1 0 0;
+    --muted: 0.967 0.0029 264.5419;
+    --muted-foreground: 0.551 0.0234 264.3637;
+    --accent: 0.9491 0 0;
+    --accent-foreground: 0.2101 0.0318 264.6645;
+    --destructive: 0.6368 0.2078 25.3313;
+    --border: 0.85 0.0058 264.5313;
+    --input: 0.85 0.0058 264.5313;
+    --ring: 0.6716 0.1368 48.513;
+    --chart-1: 0.594 0.0443 196.0233;
+    --chart-2: 0.7214 0.1337 49.9802;
+    --chart-3: 0.8721 0.0864 68.5474;
+    --chart-4: 0.6268 0 0;
+    --chart-5: 0.683 0 0;
+    --success: 0.65 0.18 150;
+    --warning: 0.75 0.15 85;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* shadcn/ui Dark Matter Theme - Dark Mode */
+    /* OKLCH values without oklch() wrapper for opacity support */
+    --background: 0.1689 0.0226 264.2966;
+    --foreground: 0.9844 0.0071 264.1899;
+    --card: 0.1689 0.0226 264.2966;
+    --card-foreground: 0.9844 0.0071 264.1899;
+    --popover: 0.1689 0.0226 264.2966;
+    --popover-foreground: 0.9844 0.0071 264.1899;
+    --primary: 0.6716 0.1368 48.513;
+    --primary-foreground: 1 0 0;
+    --secondary: 0.2761 0.0239 264.1916;
+    --secondary-foreground: 0.9844 0.0071 264.1899;
+    --muted: 0.2565 0.0245 264.3191;
+    --muted-foreground: 0.6946 0.0146 264.2533;
+    --accent: 0.2761 0.0239 264.1916;
+    --accent-foreground: 0.9844 0.0071 264.1899;
+    --destructive: 0.6368 0.2078 25.3313;
+    --border: 0.35 0.0239 264.1916;
+    --input: 0.35 0.0239 264.1916;
+    --ring: 0.6716 0.1368 48.513;
+    --chart-1: 0.594 0.0443 196.0233;
+    --chart-2: 0.7214 0.1337 49.9802;
+    --chart-3: 0.8721 0.0864 68.5474;
+    --chart-4: 0.6268 0 0;
+    --chart-5: 0.683 0 0;
+    --success: 0.7 0.18 150;
+    --warning: 0.8 0.15 85;
+  }
 }
 
 @layer utilities {
   /* Pitch Black Background with White Gradient */
   .background-gradient {
-    background: linear-gradient(
-      135deg,
-      theme('colors.neutral.50') 0%,
-      theme('colors.neutral.100') 100%
-    );
+    background: linear-gradient(135deg, oklch(var(--muted)) 0%, oklch(var(--background)) 100%);
   }
 
   .dark .background-gradient {
@@ -31,7 +92,7 @@
         rgba(255, 255, 255, 0.05) 25%,
         transparent 50%
       ),
-      #000000;
+      oklch(var(--background));
   }
 
   /* Professional Animations */
@@ -113,7 +174,7 @@
   }
 
   .card {
-    @apply rounded-lg bg-white p-6 shadow-soft transition-all duration-300 hover:shadow-medium dark:bg-neutral-800;
+    @apply rounded-lg bg-card p-6 shadow-soft transition-all duration-300 hover:shadow-medium;
   }
 }
 
@@ -126,7 +187,7 @@
 
   /* Preserve focus ring for keyboard navigation only */
   *:focus-visible {
-    @apply outline-none ring-2 ring-primary-500/50 ring-offset-2 ring-offset-neutral-50 dark:ring-offset-neutral-900;
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
   }
 
   /* Scrollbar for professional look */
@@ -135,17 +196,17 @@
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-neutral-200 dark:bg-neutral-700;
+    @apply bg-muted;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply rounded-full bg-neutral-400 dark:bg-neutral-500;
+    @apply rounded-full bg-muted-foreground;
   }
 }
 
 /* Professional Typography */
 .prose {
-  @apply text-neutral-800 dark:text-neutral-200;
+  @apply text-foreground;
 }
 
 /* Prose headings color */
@@ -155,5 +216,5 @@
 .prose h4,
 .prose h5,
 .prose h6 {
-  @apply text-neutral-900 dark:text-neutral-100;
+  @apply text-foreground;
 }
