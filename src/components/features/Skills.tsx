@@ -1,6 +1,6 @@
 import { resumeData } from '../../data/resume';
-import { Card, CardHeader, CardContent } from '../ui/card';
-import { Badge } from '../ui/badge';
+import { Card, CardHeader, CardContent } from '@subbiah/component/components/ui/card';
+import { Badge } from '@subbiah/component/components/ui/badge';
 
 interface SkillCategory {
   name: string;

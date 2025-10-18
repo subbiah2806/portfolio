@@ -19,7 +19,7 @@ import {
   IconBriefcase,
   IconSpinner,
 } from '../components/icons';
-import { Button } from '../components/ui/button';
+import { Button } from '@subbiah/component/components/ui/button';
 import {
   Form,
   FormControl,
@@ -27,9 +27,9 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '../components/ui/form';
-import { Input } from '../components/ui/input';
-import { Textarea } from '../components/ui/textarea';
+} from '@subbiah/component/components/ui/form';
+import { Input } from '@subbiah/component/components/ui/input';
+import { Textarea } from '@subbiah/component/components/ui/textarea';
 
 // Zod validation schema
 const contactSchema = z.object({

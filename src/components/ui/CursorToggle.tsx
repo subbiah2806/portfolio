@@ -1,6 +1,6 @@
 import { MousePointer2, Circle } from 'lucide-react';
 import { useCursorContext } from '../../contexts/CursorContext';
-import { Button } from './button';
+import { Button } from '@subbiah/component/components/ui/button';
 import { cn } from '../../lib/utils';
 
 interface CursorToggleProps {

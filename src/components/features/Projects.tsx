@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import { projects, projectCategories, type ProjectCategory } from '../../data/projects';
 import { fadeInUp, staggerContainer } from '../../utils/animations';
 import { useReducedMotion } from '../../hooks/useReducedMotion';
-import { Card, CardHeader, CardContent } from '../ui/card';
-import { Badge } from '../ui/badge';
-import { Button } from '../ui/button';
+import { Card, CardHeader, CardContent } from '@subbiah/component/components/ui/card';
+import { Badge } from '@subbiah/component/components/ui/badge';
+import { Button } from '@subbiah/component/components/ui/button';
 
 type CategoryColorKey = 'AI' | 'Security' | 'Performance' | 'DevOps' | 'Testing' | 'Visualization';
 
