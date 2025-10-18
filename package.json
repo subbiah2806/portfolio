@@ -13,9 +13,11 @@
     "eslint:fix": "eslint . --ext .ts,.tsx --fix",
     "prettier:fix": "prettier --write \"src/**/*.{ts,tsx,css}\"",
     "type-check": "tsc --noEmit",
-    "prepare": "husky"
+    "prepare": "husky",
+    "install-link": "npm install && cd ../component && npm link && cd ../portfolio && npm link @subbiah/component"
   },
   "dependencies": {
+    "@subbiah/component": "file:../component",
     "@hookform/resolvers": "^5.2.2",
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-label": "^2.1.7",

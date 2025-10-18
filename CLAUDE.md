@@ -2,6 +2,45 @@
 
 This is a personal portfolio website showcasing skills, projects, and experience as a Lead Front-End Developer.
 
+## Component Library
+
+**CRITICAL**: This project uses the `@subbiah/component` library for all shared UI components, contexts, and utilities.
+
+### Using the Component Library
+
+All components, contexts, icons, and utilities are imported from `@subbiah/component`:
+
+```tsx
+import { Button, Card, Input, Badge, DataFetchWrapper } from '@subbiah/component';
+import { IconLoading, IconError, IconEmail } from '@subbiah/component';
+import { useThemeContext, useCursorContext } from '@subbiah/component';
+```
+
+### Adding New Components
+
+**IMPORTANT**: If any component is required that could be reused, create it in `@subbiah/component` (located at `../component`), NOT in this project.
+
+Only create components in this project if they are:
+
+- Specific to the portfolio content (e.g., ProjectCard, SkillsSection)
+- Not reusable across other projects
+
+### Linking the Component Library
+
+After installing dependencies or updating the component library:
+
+```bash
+npm run install-link
+```
+
+This will:
+
+1. Install all dependencies
+2. Link the component library globally
+3. Link `@subbiah/component` to this project
+
+See `../component/CLAUDE.md` for full component library documentation.
+
 ## Tech Stack
 
 ### Core Technologies

@@ -5,17 +5,13 @@ import { cn } from '../../lib/utils';
 
 interface CursorToggleProps {
   onToggle?: () => void;
-  variant?: 'fixed' | 'inline';
 }
 
 /**
  * Toggle button for custom cursor
  * Only shows on devices that support fine pointer and don't prefer reduced motion
  */
-export default function CursorToggle({
-  onToggle,
-  variant = 'inline',
-}: CursorToggleProps): JSX.Element | null {
+export default function CursorToggle({ onToggle }: CursorToggleProps): JSX.Element | null {
   const { isEnabled, toggleCursor, canUseCursor } = useCursorContext();
 
   // Don't render toggle on touch devices or if user prefers reduced motion
@@ -30,14 +26,10 @@ export default function CursorToggle({
 
   return (
     <Button
-      variant="ghost"
+      variant="outline"
       size="icon"
       onClick={handleToggle}
-      className={cn(
-        'clickable rounded-full',
-        variant === 'fixed' &&
-          'fixed right-20 top-6 z-50 border border-border bg-background/50 backdrop-blur-sm'
-      )}
+      className={cn('rounded-full')}
       aria-label={isEnabled ? 'Disable custom cursor' : 'Enable custom cursor'}
       title={isEnabled ? 'Disable custom cursor' : 'Enable custom cursor'}
     >

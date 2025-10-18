@@ -1,10 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu } from 'lucide-react';
-import ThemeToggle from '../ui/ThemeToggle';
-import CursorToggle from '../ui/CursorToggle';
+import { ThemeToggle, CursorToggle, Button } from '@subbiah/component';
 import AudioPlayer from '../ui/AudioPlayer';
-import { Button } from '../ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from '../ui/sheet';
 
 const Header = (): JSX.Element => {
@@ -104,9 +102,9 @@ const Header = (): JSX.Element => {
         <div className="flex items-center gap-4">
           {/* Control Buttons */}
           <div className="hidden items-center gap-2 sm:flex">
-            <AudioPlayer variant="inline" />
-            <CursorToggle variant="inline" />
-            <ThemeToggle variant="inline" />
+            <AudioPlayer />
+            <CursorToggle />
+            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
@@ -147,9 +145,9 @@ const Header = (): JSX.Element => {
 
                 {/* Mobile Controls */}
                 <div className="mt-8 flex gap-4 border-t border-border pt-6">
-                  <AudioPlayer variant="inline" />
-                  <ThemeToggle variant="inline" />
-                  <CursorToggle variant="inline" />
+                  <AudioPlayer />
+                  <ThemeToggle />
+                  <CursorToggle />
                 </div>
               </nav>
             </SheetContent>

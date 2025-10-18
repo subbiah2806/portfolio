@@ -5,13 +5,9 @@ import { cn } from '../../lib/utils';
 
 interface ThemeToggleProps {
   onToggle?: () => void;
-  variant?: 'fixed' | 'inline';
 }
 
-export default function ThemeToggle({
-  onToggle,
-  variant = 'inline',
-}: ThemeToggleProps): JSX.Element {
+export default function ThemeToggle({ onToggle }: ThemeToggleProps): JSX.Element {
   const { isDark, toggleTheme: handleToggle } = useThemeContext();
 
   const toggleTheme = (): void => {
@@ -21,14 +17,10 @@ export default function ThemeToggle({
 
   return (
     <Button
-      variant="ghost"
+      variant="outline"
       size="icon"
       onClick={toggleTheme}
-      className={cn(
-        'clickable rounded-full',
-        variant === 'fixed' &&
-          'fixed right-6 top-6 z-50 border border-border bg-background/50 backdrop-blur-sm'
-      )}
+      className={cn('clickable rounded-full')}
       aria-label="Toggle theme"
     >
       {isDark ? (

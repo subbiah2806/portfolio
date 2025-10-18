@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { useCursorContext } from '../../contexts/CursorContext';
+import { useCursorContext } from '@subbiah/component';
 
 interface Position {
   x: number;
@@ -77,7 +77,7 @@ export default function CustomCursor(): JSX.Element | null {
       <div
         className={`pointer-events-none fixed left-0 top-0 z-[9999] h-6 w-6 rounded-full border-2 transition-[border-color,background-color,transform,box-shadow] duration-100 ${
           isHovering
-            ? 'scale-150 border-accent bg-accent/30 shadow-lg shadow-accent/50'
+            ? 'scale-150 border-primary bg-accent/30 shadow-lg shadow-accent/50'
             : 'border-primary bg-primary/20'
         }`}
         style={{
@@ -90,7 +90,7 @@ export default function CustomCursor(): JSX.Element | null {
       {/* Inner dot */}
       <div
         className={`pointer-events-none fixed left-0 top-0 z-[9999] h-2 w-2 rounded-full transition-colors duration-100 ${
-          isHovering ? 'bg-accent' : 'bg-primary'
+          isHovering ? 'bg-primary' : 'bg-primary'
         }`}
         style={{
           left: `${position.x}px`,

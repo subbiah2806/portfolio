@@ -79,22 +79,6 @@
 }
 
 @layer utilities {
-  /* Pitch Black Background with White Gradient */
-  .background-gradient {
-    background: linear-gradient(135deg, oklch(var(--muted)) 0%, oklch(var(--background)) 100%);
-  }
-
-  .dark .background-gradient {
-    background:
-      radial-gradient(
-        circle at 100% 0%,
-        rgba(255, 255, 255, 0.12) 0%,
-        rgba(255, 255, 255, 0.05) 25%,
-        transparent 50%
-      ),
-      oklch(var(--background));
-  }
-
   /* Floating gradient ball animations */
   @keyframes float-1 {
     0%,

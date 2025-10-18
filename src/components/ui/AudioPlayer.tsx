@@ -1,25 +1,15 @@
 import { Volume2, VolumeX } from 'lucide-react';
-import { useAudioContext } from '../../contexts/AudioContext';
-import { Button } from './button';
-import { cn } from '../../lib/utils';
+import { useAudioContext, Button, cn } from '@subbiah/component';
 
-interface AudioPlayerProps {
-  variant?: 'fixed' | 'inline';
-}
-
-export default function AudioPlayer({ variant = 'inline' }: AudioPlayerProps): JSX.Element {
+export default function AudioPlayer(): JSX.Element {
   const { isMuted, toggleMute } = useAudioContext();
 
   return (
     <Button
-      variant="ghost"
+      variant="outline"
       size="icon"
       onClick={toggleMute}
-      className={cn(
-        'clickable rounded-full',
-        variant === 'fixed' &&
-          'fixed bottom-6 right-6 z-50 border border-border bg-background/50 backdrop-blur-sm'
-      )}
+      className={cn('clickable rounded-full')}
       aria-label="Toggle mute"
     >
       {isMuted ? (
