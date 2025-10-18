@@ -1,5 +1,7 @@
 import { Volume2, VolumeX } from 'lucide-react';
-import { useAudioContext, Button, cn } from '@subbiah/component';
+import { useAudioContext } from '@subbiah/component/contexts/AudioContext';
+import { Button } from '@subbiah/component/components/ui/button';
+import { cn } from '@subbiah/component/lib/utils';
 
 export default function AudioPlayer(): JSX.Element {
   const { isMuted, toggleMute } = useAudioContext();

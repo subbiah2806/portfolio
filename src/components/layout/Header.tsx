@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu } from 'lucide-react';
-import { ThemeToggle, CursorToggle, Button } from '@subbiah/component';
+import ThemeToggle from '@subbiah/component/components/ThemeToggle';
+import CursorToggle from '@subbiah/component/components/CursorToggle';
+import { Button } from '@subbiah/component/components/ui/button';
 import AudioPlayer from '../ui/AudioPlayer';
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from '../ui/sheet';
 

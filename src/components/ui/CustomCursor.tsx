@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { useCursorContext } from '@subbiah/component';
+import { useCursorContext } from '@subbiah/component/contexts/CursorContext';
 
 interface Position {
   x: number;

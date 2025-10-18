@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus, oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import type { Experience } from '../../types/resume.types';
-import { useThemeContext } from '@subbiah/component';
+import { useThemeContext } from '@subbiah/component/contexts/ThemeContext';
 
 interface CodeEditorProps {
   experience: Experience[];

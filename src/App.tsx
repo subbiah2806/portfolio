@@ -1,5 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
-import { SEO, ScrollToTop, BackgroundGradient } from '@subbiah/component';
+import SEO from '@subbiah/component/components/SEO';
+import ScrollToTop from '@subbiah/component/components/ScrollToTop';
+import BackgroundGradient from '@subbiah/component/components/BackgroundGradient';
 import CustomCursor from './components/ui/CustomCursor';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';

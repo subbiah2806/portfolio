@@ -8,12 +8,33 @@ This is a personal portfolio website showcasing skills, projects, and experience
 
 ### Using the Component Library
 
-All components, contexts, icons, and utilities are imported from `@subbiah/component`:
+**CRITICAL**: Import directly from component files, NOT from a barrel index.
 
 ```tsx
-import { Button, Card, Input, Badge, DataFetchWrapper } from '@subbiah/component';
-import { IconLoading, IconError, IconEmail } from '@subbiah/component';
-import { useThemeContext, useCursorContext } from '@subbiah/component';
+// UI Components
+import { Button } from '@subbiah/component/components/ui/button';
+import { Card, CardHeader, CardContent } from '@subbiah/component/components/ui/card';
+import { Input } from '@subbiah/component/components/ui/input';
+import { Badge } from '@subbiah/component/components/ui/badge';
+
+// Utility Components
+import DataFetchWrapper from '@subbiah/component/components/DataFetchWrapper';
+import BackgroundGradient from '@subbiah/component/components/BackgroundGradient';
+
+// Icons (all in one file)
+import { IconLoading, IconError, IconEmail } from '@subbiah/component/components/icons';
+
+// Contexts
+import { useThemeContext } from '@subbiah/component/contexts/ThemeContext';
+import { useCursorContext } from '@subbiah/component/contexts/CursorContext';
+import { useAudioContext } from '@subbiah/component/contexts/AudioContext';
+
+// Utilities
+import { cn } from '@subbiah/component/lib/utils';
+
+// Providers
+import { ComponentProvider } from '@subbiah/component/providers/ComponentProvider';
+import ErrorBoundary from '@subbiah/component/components/ErrorBoundary';
 ```
 
 ### Adding New Components
