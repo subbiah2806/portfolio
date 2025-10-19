@@ -29,6 +29,6 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": ["src"],
-  "exclude": ["node_modules", "../component", "node_modules/@subbiah/component"],
+  "exclude": ["node_modules", "node_modules/@subbiah/component"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

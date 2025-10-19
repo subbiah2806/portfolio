@@ -244,7 +244,7 @@ colors: {
 src/
 ├── components/          # React components
 │   ├── icons/          # Standardized icon components (LoadingIcon, ErrorIcon, etc.)
-│   ├── ui/             # Reusable UI components (DataFetchWrapper, buttons, inputs, modals, etc.)
+│   ├── ui/             # shadcn/ui components (buttons, inputs, cards, etc.)
 │   ├── layout/         # Layout components (header, footer, navigation)
 │   └── features/       # Feature-specific components (hero, projects, skills)
 ├── pages/              # Route page components (one per route)
@@ -685,7 +685,7 @@ import { Helmet } from 'react-helmet-async';
 **RECOMMENDED**: Use the `DataFetchWrapper` component to handle all data fetching states consistently:
 
 ```tsx
-import DataFetchWrapper from '@/components/ui/DataFetchWrapper';
+import DataFetchWrapper from '@subbiah/component/components/DataFetchWrapper';
 
 function MyComponent() {
   const [data, setData] = useState<User[]>([]);

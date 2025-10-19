@@ -4,8 +4,14 @@ import { Menu } from 'lucide-react';
 import ThemeToggle from '@subbiah/component/components/ThemeToggle';
 import CursorToggle from '@subbiah/component/components/CursorToggle';
 import { Button } from '@subbiah/component/components/ui/button';
-import AudioPlayer from '../ui/AudioPlayer';
-import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from '../ui/sheet';
+import AudioPlayer from '@subbiah/component/components/AudioPlayer';
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetHeader,
+  SheetTitle,
+} from '@subbiah/component/components/ui/sheet';
 
 const Header = (): JSX.Element => {
   const [isScrolled, setIsScrolled] = useState(false);

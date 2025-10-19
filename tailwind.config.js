@@ -6,7 +6,7 @@ export default {
   content: [
     './index.html',
     './src/**/*.{js,ts,jsx,tsx}',
-    '../component/src/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@subbiah/component/src/**/*.{js,ts,jsx,tsx}',
   ],
   plugins: [...(baseConfig.plugins || []), require('@tailwindcss/typography')],
 };

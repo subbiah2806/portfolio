@@ -7,6 +7,7 @@ import ErrorBoundary from '@subbiah/component/components/ErrorBoundary';
 import '@subbiah/component/styles';
 import './index.css';
 import App from './App';
+import { GlobalProviders } from './contexts';
 
 const rootElement = document.getElementById('root');
 if (!rootElement) throw new Error('Failed to find the root element');
@@ -18,9 +19,11 @@ createRoot(rootElement).render(
     <ErrorBoundary>
       <HelmetProvider>
         <ComponentProvider>
-          <BrowserRouter basename={basename}>
-            <App />
-          </BrowserRouter>
+          <GlobalProviders>
+            <BrowserRouter basename={basename}>
+              <App />
+            </BrowserRouter>
+          </GlobalProviders>
         </ComponentProvider>
       </HelmetProvider>
     </ErrorBoundary>
