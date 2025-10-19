@@ -8,5 +8,4 @@ export default {
     './src/**/*.{js,ts,jsx,tsx}',
     './node_modules/@subbiah/component/src/**/*.{js,ts,jsx,tsx}',
   ],
-  plugins: [...(baseConfig.plugins || []), require('@tailwindcss/typography')],
 };

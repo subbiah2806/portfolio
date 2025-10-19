@@ -12,6 +12,11 @@ export default defineConfig(({ mode }) => {
       alias: {
         '@': path.resolve(__dirname, './src'),
       },
+      // CRITICAL: Prevents React duplication in monorepo - DO NOT REMOVE
+      dedupe: ['react', 'react-dom'],
+    },
+    optimizeDeps: {
+      include: ['react', 'react-dom'],
     },
   };
 });

@@ -1,6 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
 import SEO from '@subbiah/component/components/SEO';
-import ScrollToTop from '@subbiah/component/components/ScrollToTop';
 import BackgroundGradient from '@subbiah/component/components/BackgroundGradient';
 import CustomCursor from '@subbiah/component/components/CustomCursor';
 import Header from './components/layout/Header';
@@ -23,9 +22,6 @@ function App(): JSX.Element {
 
       {/* Custom Cursor */}
       <CustomCursor />
-
-      {/* Scroll to Top on Route Change */}
-      <ScrollToTop />
 
       {/* Header Navigation */}
       <Header />
