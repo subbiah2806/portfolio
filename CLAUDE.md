@@ -123,7 +123,7 @@ mcp__shadcn__get_project_registries();
 
 ### Installed shadcn Components
 
-Currently installed in `src/components/ui/`:
+**Note**: These components are now available in the `@subbiah/reusable` library at `components/ui/`.
 
 - button, card, badge, alert
 - sheet, separator, tabs, skeleton

@@ -16,7 +16,7 @@ const SEO = ({
   image = 'https://avatars.githubusercontent.com/subbiah2806',
   url = 'https://subbiah.dev',
   type = 'profile',
-}: SEOProps): JSX.Element => {
+}: SEOProps) => {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Person',

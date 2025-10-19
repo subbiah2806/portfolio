@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu } from 'lucide-react';
-import ThemeToggle from '@subbiah/reusable/components/ThemeToggle';
-import CursorToggle from '@subbiah/reusable/components/CursorToggle';
+import ThemeToggle from '@subbiah/reusable/statefulComponents/theme/toggle';
+import CursorToggle from '@subbiah/reusable/statefulComponents/cursor/toggle';
 import { Button } from '@subbiah/reusable/components/ui/button';
-import AudioPlayer from '@subbiah/reusable/components/AudioPlayer';
+import { AudioToogle } from '@subbiah/reusable/statefulComponents/audio/toggle';
 import {
   Sheet,
   SheetContent,
@@ -110,7 +110,7 @@ const Header = (): JSX.Element => {
         <div className="flex items-center gap-4">
           {/* Control Buttons */}
           <div className="hidden items-center gap-2 sm:flex">
-            <AudioPlayer />
+            <AudioToogle />
             <CursorToggle />
             <ThemeToggle />
           </div>
@@ -153,7 +153,7 @@ const Header = (): JSX.Element => {
 
                 {/* Mobile Controls */}
                 <div className="mt-8 flex gap-4 border-t border-border pt-6">
-                  <AudioPlayer />
+                  <AudioToogle />
                   <ThemeToggle />
                   <CursorToggle />
                 </div>

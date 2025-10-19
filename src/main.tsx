@@ -2,9 +2,8 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
-import { ComponentProvider } from '@subbiah/reusable/providers/ComponentProvider';
+import { InitializeReusableChunks } from '@subbiah/reusable/initializeReusableChunks';
 import ErrorBoundary from '@subbiah/reusable/components/ErrorBoundary';
-import '@subbiah/reusable/styles';
 import './index.css';
 import App from './App';
 import { GlobalProviders } from './contexts';
@@ -16,15 +15,15 @@ const basename = import.meta.env.VITE_BASE_PATH || '/';
 
 createRoot(rootElement).render(
   <StrictMode>
-    <ErrorBoundary>
+    <ErrorBoundary isDev={import.meta.env.DEV}>
       <HelmetProvider>
-        <ComponentProvider>
+        <InitializeReusableChunks>
           <GlobalProviders>
             <BrowserRouter basename={basename}>
               <App />
             </BrowserRouter>
           </GlobalProviders>
-        </ComponentProvider>
+        </InitializeReusableChunks>
       </HelmetProvider>
     </ErrorBoundary>
   </StrictMode>

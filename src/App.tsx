@@ -1,7 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
-import SEO from '@subbiah/reusable/components/SEO';
 import BackgroundGradient from '@subbiah/reusable/components/BackgroundGradient';
-import CustomCursor from '@subbiah/reusable/components/CustomCursor';
+import SEO from './components/SEO';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 
@@ -19,9 +18,6 @@ function App(): JSX.Element {
 
       {/* Background Gradient - Animated floating orbs */}
       <BackgroundGradient />
-
-      {/* Custom Cursor */}
-      <CustomCursor />
 
       {/* Header Navigation */}
       <Header />

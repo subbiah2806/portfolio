@@ -17,10 +17,7 @@
 
     /* Path Aliases */
     "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"],
-      "@subbiah/reusable/*": ["./node_modules/@subbiah/reusable/src/*"]
-    },
+    "paths": {},
 
     /* Linting */
     "strict": true,
