@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu } from 'lucide-react';
-import ThemeToggle from '@subbiah/component/components/ThemeToggle';
-import CursorToggle from '@subbiah/component/components/CursorToggle';
-import { Button } from '@subbiah/component/components/ui/button';
-import AudioPlayer from '@subbiah/component/components/AudioPlayer';
+import ThemeToggle from '@subbiah/reusable/components/ThemeToggle';
+import CursorToggle from '@subbiah/reusable/components/CursorToggle';
+import { Button } from '@subbiah/reusable/components/ui/button';
+import AudioPlayer from '@subbiah/reusable/components/AudioPlayer';
 import {
   Sheet,
   SheetContent,
   SheetTrigger,
   SheetHeader,
   SheetTitle,
-} from '@subbiah/component/components/ui/sheet';
+} from '@subbiah/reusable/components/ui/sheet';
 
 const Header = (): JSX.Element => {
   const [isScrolled, setIsScrolled] = useState(false);

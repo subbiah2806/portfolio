@@ -12,12 +12,12 @@
     "type-check": "tsc --noEmit",
     "prepare": "husky",
     "reset": "rm -rf ./nodemodules && rm -rf package-lock.json",
-    "install-link": "rm -rf ./nodemodules && rm -rf package-lock.json && npm i && cd ../component && rm -rf ./nodemodules && rm -rf package-lock.json && npm i && npm link && cd ../portfolio && npm link @subbiah/component"
+    "install-link": "npm run reset && npm i && cd ../component && rm -rf ./nodemodules && rm -rf package-lock.json && npm i && npm link && cd ../portfolio && npm link @subbiah/reusable"
   },
   "dependencies": {
     "@hookform/resolvers": "5.2.2",
     "@radix-ui/react-tabs": "1.1.13",
-    "@subbiah/component": "github:subbiah2806/component#3c081e401f18aeb10de65f22a659f1e9e3eed864",
+    "@subbiah/reusable": "github:subbiah2806/component#main",
     "@types/react-syntax-highlighter": "15.5.13",
     "framer-motion": "12.23.24",
     "lucide-react": "0.546.0",

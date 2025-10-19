@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { IconHome, IconFolder } from '../components/icons';
+import { IconHome, IconFolder } from '@subbiah/reusable/icons/index';
 
 const NotFound = (): JSX.Element => {
   return (

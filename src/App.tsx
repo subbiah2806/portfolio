@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
-import SEO from '@subbiah/component/components/SEO';
-import BackgroundGradient from '@subbiah/component/components/BackgroundGradient';
-import CustomCursor from '@subbiah/component/components/CustomCursor';
+import SEO from '@subbiah/reusable/components/SEO';
+import BackgroundGradient from '@subbiah/reusable/components/BackgroundGradient';
+import CustomCursor from '@subbiah/reusable/components/CustomCursor';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 

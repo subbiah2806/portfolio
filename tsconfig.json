@@ -18,7 +18,8 @@
     /* Path Aliases */
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@subbiah/reusable/*": ["./node_modules/@subbiah/reusable/src/*"]
     },
 
     /* Linting */

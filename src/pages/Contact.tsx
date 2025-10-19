@@ -18,8 +18,8 @@ import {
   IconClose,
   IconBriefcase,
   IconSpinner,
-} from '../components/icons';
-import { Button } from '@subbiah/component/components/ui/button';
+} from '@subbiah/reusable/icons/index';
+import { Button } from '@subbiah/reusable/components/ui/button';
 import {
   Form,
   FormControl,
@@ -27,9 +27,9 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@subbiah/component/components/ui/form';
-import { Input } from '@subbiah/component/components/ui/input';
-import { Textarea } from '@subbiah/component/components/ui/textarea';
+} from '@subbiah/reusable/components/ui/form';
+import { Input } from '@subbiah/reusable/components/ui/input';
+import { Textarea } from '@subbiah/reusable/components/ui/textarea';
 
 // Zod validation schema
 const contactSchema = z.object({

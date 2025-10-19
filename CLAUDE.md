@@ -4,7 +4,7 @@ This is a personal portfolio website showcasing skills, projects, and experience
 
 ## Component Library
 
-**CRITICAL**: This project uses the `@subbiah/component` library for all shared UI components, contexts, and utilities.
+**CRITICAL**: This project uses the `@subbiah/reusable` library for all shared UI components, contexts, and utilities.
 
 ### Using the Component Library
 
@@ -12,34 +12,34 @@ This is a personal portfolio website showcasing skills, projects, and experience
 
 ```tsx
 // UI Components
-import { Button } from '@subbiah/component/components/ui/button';
-import { Card, CardHeader, CardContent } from '@subbiah/component/components/ui/card';
-import { Input } from '@subbiah/component/components/ui/input';
-import { Badge } from '@subbiah/component/components/ui/badge';
+import { Button } from '@subbiah/reusable/components/ui/button';
+import { Card, CardHeader, CardContent } from '@subbiah/reusable/components/ui/card';
+import { Input } from '@subbiah/reusable/components/ui/input';
+import { Badge } from '@subbiah/reusable/components/ui/badge';
 
 // Utility Components
-import DataFetchWrapper from '@subbiah/component/components/DataFetchWrapper';
-import BackgroundGradient from '@subbiah/component/components/BackgroundGradient';
+import DataFetchWrapper from '@subbiah/reusable/components/DataFetchWrapper';
+import BackgroundGradient from '@subbiah/reusable/components/BackgroundGradient';
 
 // Icons (all in one file)
-import { IconLoading, IconError, IconEmail } from '@subbiah/component/components/icons';
+import { IconLoading, IconError, IconEmail } from '@subbiah/reusable/components/icons';
 
 // Contexts
-import { useThemeContext } from '@subbiah/component/contexts/ThemeContext';
-import { useCursorContext } from '@subbiah/component/contexts/CursorContext';
-import { useAudioContext } from '@subbiah/component/contexts/AudioContext';
+import { useThemeContext } from '@subbiah/reusable/contexts/ThemeContext';
+import { useCursorContext } from '@subbiah/reusable/contexts/CursorContext';
+import { useAudioContext } from '@subbiah/reusable/contexts/AudioContext';
 
 // Utilities
-import { cn } from '@subbiah/component/lib/utils';
+import { cn } from '@subbiah/reusable/lib/utils';
 
 // Providers
-import { ComponentProvider } from '@subbiah/component/providers/ComponentProvider';
-import ErrorBoundary from '@subbiah/component/components/ErrorBoundary';
+import { ComponentProvider } from '@subbiah/reusable/providers/ComponentProvider';
+import ErrorBoundary from '@subbiah/reusable/components/ErrorBoundary';
 ```
 
 ### Adding New Components
 
-**IMPORTANT**: If any component is required that could be reused, create it in `@subbiah/component` (located at `../component`), NOT in this project.
+**IMPORTANT**: If any component is required that could be reused, create it in `@subbiah/reusable` (located at `../component`), NOT in this project.
 
 Only create components in this project if they are:
 
@@ -58,7 +58,7 @@ This will:
 
 1. Install all dependencies
 2. Link the component library globally
-3. Link `@subbiah/component` to this project
+3. Link `@subbiah/reusable` to this project
 
 See `../component/CLAUDE.md` for full component library documentation.
 
@@ -685,7 +685,7 @@ import { Helmet } from 'react-helmet-async';
 **RECOMMENDED**: Use the `DataFetchWrapper` component to handle all data fetching states consistently:
 
 ```tsx
-import DataFetchWrapper from '@subbiah/component/components/DataFetchWrapper';
+import DataFetchWrapper from '@subbiah/reusable/components/DataFetchWrapper';
 
 function MyComponent() {
   const [data, setData] = useState<User[]>([]);

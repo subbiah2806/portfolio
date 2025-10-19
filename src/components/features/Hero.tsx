@@ -1,7 +1,7 @@
 import { resumeData } from '../../data/resume';
 import { MapPin, Mail, Phone } from 'lucide-react';
-import { Badge } from '@subbiah/component/components/ui/badge';
-import { Button } from '@subbiah/component/components/ui/button';
+import { Badge } from '@subbiah/reusable/components/ui/badge';
+import { Button } from '@subbiah/reusable/components/ui/button';
 
 export default function Hero(): JSX.Element {
   return (

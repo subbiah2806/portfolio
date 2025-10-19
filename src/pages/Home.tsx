@@ -8,9 +8,9 @@ import { resumeData } from '../data/resume';
 import { projects } from '../data/projects';
 import { fadeInUp, staggerContainer } from '../utils/animations';
 import { useReducedMotion } from '../hooks/useReducedMotion';
-import { Button } from '@subbiah/component/components/ui/button';
-import { Badge } from '@subbiah/component/components/ui/badge';
-import { Card, CardHeader, CardContent } from '@subbiah/component/components/ui/card';
+import { Button } from '@subbiah/reusable/components/ui/button';
+import { Badge } from '@subbiah/reusable/components/ui/badge';
+import { Card, CardHeader, CardContent } from '@subbiah/reusable/components/ui/card';
 
 const Home = (): JSX.Element => {
   const prefersReducedMotion = useReducedMotion();
