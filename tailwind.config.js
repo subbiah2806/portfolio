@@ -4,6 +4,7 @@ import baseConfig from '@subbiah/component/tailwind.config';
 export default {
   ...baseConfig,
   content: [
+    ...baseConfig.content,
     './index.html',
     './src/**/*.{js,ts,jsx,tsx}',
     './node_modules/@subbiah/component/src/**/*.{js,ts,jsx,tsx}',
