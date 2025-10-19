@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback, memo } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { fadeInUp } from '../utils/animations';
@@ -27,9 +26,10 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@subbiah/reusable/components/ui/form';
+} from '@subbiah/reusable/components/ui/form/index';
 import { Input } from '@subbiah/reusable/components/ui/input';
 import { Textarea } from '@subbiah/reusable/components/ui/textarea';
+import { useForm } from '@subbiah/reusable/components/ui/form/context';
 
 // Zod validation schema
 const contactSchema = z.object({

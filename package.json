@@ -17,7 +17,7 @@
   "dependencies": {
     "@hookform/resolvers": "5.2.2",
     "@radix-ui/react-tabs": "1.1.13",
-    "@subbiah/reusable": "github:subbiah2806/component#02ee94dd6f45efaab428bb25e9376f214b49df60",
+    "@subbiah/reusable": "github:subbiah2806/component#af7145dd3398cd4515f29cc9e702bb181e97db79",
     "@types/react-syntax-highlighter": "15.5.13",
     "framer-motion": "12.23.24",
     "lucide-react": "0.546.0",

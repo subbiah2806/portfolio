@@ -1,4 +1,37 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+# Update component library to latest commit
+echo "🔍 Fetching latest component library commit..."
+
+# Get the latest commit hash from the component repo
+LATEST_COMMIT=$(git ls-remote https://github.com/subbiah2806/component.git HEAD | awk '{print $1}')
+
+if [ -z "$LATEST_COMMIT" ]; then
+  echo "❌ Failed to fetch latest commit from component library"
+  exit 1
+fi
+
+echo "✅ Latest component library commit: $LATEST_COMMIT"
+
+# Current commit in package.json
+CURRENT_REF=$(grep -o '@subbiah/reusable.*github:subbiah2806/component#[a-f0-9]*' package.json | grep -o '#[a-f0-9]*' | cut -c2-)
+
+if [ "$CURRENT_REF" = "$LATEST_COMMIT" ]; then
+  echo "✅ Component library already up to date"
+else
+  echo "📝 Updating package.json with latest commit..."
+
+  # Update package.json with the latest commit
+  sed -i.bak "s|@subbiah/reusable.*github:subbiah2806/component#[a-f0-9]*|@subbiah/reusable\": \"github:subbiah2806/component#$LATEST_COMMIT|g" package.json
+
+  # Remove backup file
+  rm -f package.json.bak
+
+  # Stage the updated package.json
+  git add package.json
+
+  echo "✅ Updated component library reference to $LATEST_COMMIT"
+fi
+
 npx lint-staged
