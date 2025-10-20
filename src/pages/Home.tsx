@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { lazy, Suspense } from 'react';
 import Hero from '../components/features/Hero';
 import Skills from '../components/features/Skills';
-import CodeEditor from '../components/features/CodeEditor';
 import { resumeData } from '../data/resume';
 import { projects } from '../data/projects';
 import { fadeInUp, staggerContainer } from '../utils/animations';
@@ -11,6 +11,9 @@ import { useReducedMotion } from '../hooks/useReducedMotion';
 import { Button } from '@subbiah/reusable/components/ui/button';
 import { Badge } from '@subbiah/reusable/components/ui/badge';
 import { Card, CardHeader, CardContent } from '@subbiah/reusable/components/ui/card';
+
+// Lazy load CodeEditor to avoid bundling 8.7MB react-syntax-highlighter in main chunk
+const CodeEditor = lazy(() => import('../components/features/CodeEditor'));
 
 const Home = (): JSX.Element => {
   const prefersReducedMotion = useReducedMotion();
@@ -136,7 +139,15 @@ const Home = (): JSX.Element => {
             {/* Click through the tabs to explore each role */}
           </p>
         </div>
-        <CodeEditor experience={resumeData.experience} />
+        <Suspense
+          fallback={
+            <div className="flex h-64 items-center justify-center">
+              <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
+            </div>
+          }
+        >
+          <CodeEditor experience={resumeData.experience} />
+        </Suspense>
       </motion.section>
 
       {/* Education Section */}

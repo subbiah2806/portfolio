@@ -7,6 +7,7 @@
     "dev": "vite",
     "start": "vite",
     "build": "vite build",
+    "analyze": "ANALYZE=true vite build && open dist/stats.html",
     "preview": "vite preview",
     "type-check": "tsc --noEmit",
     "prepare": "husky",
@@ -14,7 +15,7 @@
     "install-link": "npm run reset && npm i && cd ../component && rm -rf ./nodemodules && rm -rf package-lock.json && npm i && npm link && cd ../portfolio && npm link @subbiah/reusable"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.67.0",
+    "@anthropic-ai/sdk": "0.67.0",
     "@hookform/resolvers": "5.2.2",
     "@radix-ui/react-tabs": "1.1.13",
     "@subbiah/reusable": "github:subbiah2806/component#efd85336aee79d0b4f75560d151810b53dfe9823",
@@ -25,12 +26,13 @@
     "react-dom": "19.2.0",
     "react-helmet-async": "2.0.5",
     "react-hook-form": "7.65.0",
-    "react-markdown": "^10.1.0",
+    "react-markdown": "10.1.0",
     "react-router-dom": "7.9.4",
     "react-syntax-highlighter": "15.6.6",
     "zod": "4.1.12"
   },
   "devDependencies": {
+    "@types/node": "24.9.0",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
     "@vitejs/plugin-react": "4.3.0",
@@ -38,6 +40,7 @@
     "husky": "9.1.7",
     "lint-staged": "16.2.4",
     "postcss": "8.4.38",
+    "rollup-plugin-visualizer": "6.0.5",
     "tailwindcss": "3.4.3",
     "typescript": "5.4.5",
     "vite": "5.2.11"
