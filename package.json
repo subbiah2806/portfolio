@@ -7,7 +7,6 @@
     "dev": "vite",
     "start": "vite",
     "build": "vite build",
-    "build:github": "vite build --mode github",
     "preview": "vite preview",
     "type-check": "tsc --noEmit",
     "prepare": "husky",
