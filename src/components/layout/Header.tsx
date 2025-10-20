@@ -4,7 +4,7 @@ import { Menu } from 'lucide-react';
 import ThemeToggle from '@subbiah/reusable/statefulComponents/theme/toggle';
 import CursorToggle from '@subbiah/reusable/statefulComponents/cursor/toggle';
 import { Button } from '@subbiah/reusable/components/ui/button';
-import { AudioToogle } from '@subbiah/reusable/statefulComponents/audio/toggle';
+import { AudioToggle } from '@subbiah/reusable/statefulComponents/audio/toggle';
 import {
   Sheet,
   SheetContent,
@@ -60,6 +60,7 @@ const Header = (): JSX.Element => {
     { path: '/projects', label: 'Projects', isRoute: true },
     { path: 'experience', label: 'Experience', isRoute: false },
     { path: 'skills', label: 'Skills', isRoute: false },
+    { path: '/chat', label: 'Chat', isRoute: true },
     { path: '/contact', label: 'Contact', isRoute: true },
   ];
 
@@ -110,7 +111,7 @@ const Header = (): JSX.Element => {
         <div className="flex items-center gap-4">
           {/* Control Buttons */}
           <div className="hidden items-center gap-2 sm:flex">
-            <AudioToogle />
+            <AudioToggle />
             <CursorToggle />
             <ThemeToggle />
           </div>
@@ -153,7 +154,7 @@ const Header = (): JSX.Element => {
 
                 {/* Mobile Controls */}
                 <div className="mt-8 flex gap-4 border-t border-border pt-6">
-                  <AudioToogle />
+                  <AudioToggle />
                   <ThemeToggle />
                   <CursorToggle />
                 </div>

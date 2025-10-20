@@ -15,9 +15,10 @@
     "install-link": "npm run reset && npm i && cd ../component && rm -rf ./nodemodules && rm -rf package-lock.json && npm i && npm link && cd ../portfolio && npm link @subbiah/reusable"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.67.0",
     "@hookform/resolvers": "5.2.2",
     "@radix-ui/react-tabs": "1.1.13",
-    "@subbiah/reusable": "github:subbiah2806/component#af7145dd3398cd4515f29cc9e702bb181e97db79",
+    "@subbiah/reusable": "github:subbiah2806/component#efd85336aee79d0b4f75560d151810b53dfe9823",
     "@types/react-syntax-highlighter": "15.5.13",
     "framer-motion": "12.23.24",
     "lucide-react": "0.546.0",
@@ -25,6 +26,7 @@
     "react-dom": "19.2.0",
     "react-helmet-async": "2.0.5",
     "react-hook-form": "7.65.0",
+    "react-markdown": "^10.1.0",
     "react-router-dom": "7.9.4",
     "react-syntax-highlighter": "15.6.6",
     "zod": "4.1.12"
