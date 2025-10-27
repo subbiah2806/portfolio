@@ -1,6 +1,6 @@
 # Subbiah Chandramouli - Portfolio
 
-Lead Frontend Developer with 7+ years of experience in React, TypeScript, and modern web technologies.
+Lead Software Developer with 7+ years of experience in React, TypeScript, and modern web technologies.
 
 🌐 **Live Site**: [https://subbiah2806.github.io/portfolio](https://subbiah2806.github.io/portfolio)
 

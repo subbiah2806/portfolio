@@ -18,7 +18,7 @@
     "@anthropic-ai/sdk": "0.67.0",
     "@hookform/resolvers": "5.2.2",
     "@radix-ui/react-tabs": "1.1.13",
-    "@subbiah/reusable": "github:subbiah2806/component#efd85336aee79d0b4f75560d151810b53dfe9823",
+    "@subbiah/reusable": "github:subbiah2806/component#bcbd9cbecfb53adc9edcbfb96ca01a02eefb1fe7",
     "@types/react-syntax-highlighter": "15.5.13",
     "framer-motion": "12.23.24",
     "lucide-react": "0.546.0",

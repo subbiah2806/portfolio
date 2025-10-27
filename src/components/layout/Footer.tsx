@@ -38,7 +38,7 @@ const Footer = (): JSX.Element => {
           <div>
             <h3 className="mb-4 text-xl font-bold text-foreground">Subbiah C.</h3>
             <p className="text-sm text-muted-foreground">
-              Lead Frontend Developer specializing in React, TypeScript, and modern web
+              Lead Software Developer specializing in React, TypeScript, and modern web
               technologies.
             </p>
           </div>

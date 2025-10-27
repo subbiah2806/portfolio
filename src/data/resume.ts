@@ -20,7 +20,7 @@ export const resumeData: ResumeData = {
   workVisa: 'H1b (I140 Approved)',
 
   summary:
-    'Lead Frontend Developer with 7+ years of experience building web applications for enterprise security platforms. Specialize in React, Vue, and TypeScript, with recent focus on integrating AI tools into development workflows to boost team productivity. Architected scalable solutions, and consistently delivered performant applications serving hundreds of enterprise clients.',
+    'Lead Software Developer with 7+ years of experience building web applications for enterprise security platforms. Specialize in React, Vue, and TypeScript, with recent focus on integrating AI tools into development workflows to boost team productivity. Architected scalable solutions, and consistently delivered performant applications serving hundreds of enterprise clients.',
 
   skills: {
     frontend: ['React 18', 'Vue 3', 'TypeScript', 'Next.js', 'Redux', 'React Query', 'TanStack'],
@@ -48,7 +48,7 @@ export const resumeData: ResumeData = {
 
   experience: [
     {
-      title: 'Lead Frontend Developer',
+      title: 'Lead Software Developer',
       company: 'Praetorian',
       location: 'Remote',
       period: 'Sep 2023 – Oct 2025',
@@ -65,7 +65,7 @@ export const resumeData: ResumeData = {
       ],
     },
     {
-      title: 'Senior Frontend Developer',
+      title: 'Senior Software Developer',
       company: 'Banyan Security',
       location: 'Remote',
       period: 'Jun 2022 – Aug 2023',
@@ -80,7 +80,7 @@ export const resumeData: ResumeData = {
       ],
     },
     {
-      title: 'Senior Frontend Developer',
+      title: 'Senior Software Developer',
       company: 'Logichub',
       location: 'CA',
       period: 'Dec 2019 – May 2022',
@@ -97,7 +97,7 @@ export const resumeData: ResumeData = {
       ],
     },
     {
-      title: 'Frontend Developer',
+      title: 'Software Developer',
       company: 'Apple',
       location: 'CA',
       period: 'July 2018 – Nov 2019',

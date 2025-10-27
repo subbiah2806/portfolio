@@ -277,7 +277,7 @@ const Contact = (): JSX.Element => {
             <div className="mt-8 rounded-lg border border-primary/30 bg-primary/10 p-6">
               <h3 className="mb-2 font-semibold text-primary-foreground">Currently Available</h3>
               <p className="text-sm text-muted-foreground">
-                I&rsquo;m actively seeking new opportunities as a Lead Frontend Developer. Available
+                I&rsquo;m actively seeking new opportunities as a Lead Software Developer. Available
                 for full-time positions and consulting projects.
               </p>
               <div className="mt-4 flex items-center gap-2 text-xs text-muted-foreground">

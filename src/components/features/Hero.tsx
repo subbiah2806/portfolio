@@ -16,7 +16,7 @@ export default function Hero(): JSX.Element {
         </h1>
 
         <p className="mb-4 animate-slide-up text-xl font-semibold text-card-foreground md:text-2xl">
-          Lead Frontend Developer
+          Lead Software Developer
         </p>
 
         <p className="mx-auto mb-8 max-w-3xl animate-slide-up text-lg leading-relaxed text-muted-foreground">
