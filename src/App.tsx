@@ -26,25 +26,58 @@ function App(): JSX.Element {
       <Header />
 
       {/* Main Content - Add padding-top to account for fixed header */}
-      <ErrorBoundary isDev={import.meta.env.DEV}>
-        <main className="relative z-10 pt-16">
-          <Suspense
-            fallback={
-              <div className="flex h-screen items-center justify-center">
-                <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
-              </div>
-            }
-          >
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/projects" element={<ProjectsPage />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/chat" element={<Chat />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Suspense>
-        </main>
-      </ErrorBoundary>
+      <main className="relative z-10 pt-16">
+        <Suspense
+          fallback={
+            <div className="flex h-screen items-center justify-center">
+              <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
+            </div>
+          }
+        >
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <ErrorBoundary isDev={import.meta.env.DEV}>
+                  <Home />
+                </ErrorBoundary>
+              }
+            />
+            <Route
+              path="/projects"
+              element={
+                <ErrorBoundary isDev={import.meta.env.DEV}>
+                  <ProjectsPage />
+                </ErrorBoundary>
+              }
+            />
+            <Route
+              path="/contact"
+              element={
+                <ErrorBoundary isDev={import.meta.env.DEV}>
+                  <Contact />
+                </ErrorBoundary>
+              }
+            />
+            <Route
+              path="/chat"
+              element={
+                <ErrorBoundary isDev={import.meta.env.DEV}>
+                  <Chat />
+                </ErrorBoundary>
+              }
+            />
+            <Route
+              path="*"
+              element={
+                <ErrorBoundary isDev={import.meta.env.DEV}>
+                  <NotFound />
+                </ErrorBoundary>
+              }
+            />
+          </Routes>
+        </Suspense>
+      </main>
 
       {/* Footer */}
       <Footer />
