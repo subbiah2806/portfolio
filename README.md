@@ -255,4 +255,4 @@ This portfolio is for personal use. All rights reserved.
 
 Built with ❤️ using React + TypeScript + Vite + Tailwind CSS
 
-**Last Updated**: January 2025
+**Last Updated**: January 2025.
