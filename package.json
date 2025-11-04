@@ -16,7 +16,7 @@
   "dependencies": {
     "@anthropic-ai/sdk": "0.67.0",
     "@hookform/resolvers": "5.2.2",
-    "@subbiah/reusable": "github:subbiah2806/component#3898f0b51ca0756500243c632b1fdf814b642f24",
+    "@subbiah/reusable": "github:subbiah2806/component#35ce70f966e9765113bc5698148dae52e8335816",
     "framer-motion": "12.23.24",
     "lucide-react": "0.546.0",
     "react": "19.2.0",
@@ -24,6 +24,7 @@
     "react-helmet-async": "2.0.5",
     "react-markdown": "10.1.0",
     "react-router-dom": "7.9.4",
+    "react-hook-form": "7.65.0",
     "react-syntax-highlighter": "15.6.6",
     "zod": "4.1.12"
   },
@@ -31,6 +32,7 @@
     "@types/node": "24.9.0",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
+    "@types/react-syntax-highlighter": "15.5.13",
     "@vitejs/plugin-react": "4.3.0",
     "autoprefixer": "10.4.19",
     "husky": "9.1.7",
