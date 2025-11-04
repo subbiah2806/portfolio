@@ -34,7 +34,7 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.VITE_ANTHROPIC_API_KEY }}
         run: |
-          echo "VITE_BASE_PATH=/portfolio" > .env
+          echo "VITE_BASE_PATH=/portfolio/" > .env
           echo "VITE_ANTHROPIC_API_KEY=$ANTHROPIC_API_KEY" >> .env
 
       - name: Build for GitHub Pages
