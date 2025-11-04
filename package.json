@@ -16,7 +16,7 @@
   "dependencies": {
     "@anthropic-ai/sdk": "0.67.0",
     "@hookform/resolvers": "5.2.2",
-    "@subbiah/reusable": "github:subbiah2806/component#35ce70f966e9765113bc5698148dae52e8335816",
+    "@subbiah/reusable": "github:subbiah2806/component#9f010f8649eaf002075961862f1ad42538c95a0a",
     "framer-motion": "12.23.24",
     "lucide-react": "0.546.0",
     "react": "19.2.0",

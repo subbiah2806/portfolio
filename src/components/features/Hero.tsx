@@ -8,7 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@subbiah/reusable/components/ui/dropdown-menu';
-import { downloadResume, type ResumeFormat } from '@subbiah/reusable/lib/generateResume';
+import { downloadResume, type ResumeFormat } from '@subbiah/reusable/lib/generateResume/index';
 import { fetchResumeData } from '../../utils';
 
 export default function Hero(): JSX.Element {
