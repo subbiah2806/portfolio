@@ -1,0 +1,144 @@
+{
+  "firstName": "Subbiah",
+  "lastName": "Chandramouli",
+  "email": "subbiah2806@gmail.com",
+  "phone": "669-236-9786",
+  "github": "https://github.com/subbiah2806",
+  "website": "https://subbiah2806.github.io/portfolio",
+  "linkedin": "https://www.linkedin.com/in/subbiah-c-31b339184/",
+  "visaStatus": "H1B (I140 approved)",
+  "preferredLocations": ["Dallas, TX"],
+  "openToRemote": true,
+  "experience": [
+    {
+      "company": "Praetorian",
+      "location": "Remote",
+      "position": "Lead Software Developer",
+      "startDate": "2023-09",
+      "endDate": "2025-10",
+      "achievements": [
+        "Architected multi-agent AI system with specialized agents for React, Tailwind, Go, AWS, code review, code analysis, and security scanning; created Claude Code orchestration commands for intelligent agent routing",
+        "Conducted daily code reviews with offshore development team, establishing React best practices and design patterns that improved code quality",
+        "Developed AI-powered Playwright automation framework allowing developers to write tests in plain English with GPT-4o-mini and auto-healing capabilities",
+        "Optimized Neo4j bulk operations to update 250k records in under a minute through a batch async API call",
+        "Developed interactive attack graph visualization for security attack path creation and threat analysis",
+        "Created real-time vulnerability detection system with AI-powered recommendations",
+        "Designed a custom component library with Storybook, reducing development time by 30%",
+        "Contributed to backend services in Go, working with AWS Lambda, Neo4j graph database, DynamoDB, and Amazon SQS"
+      ],
+      "companyDescription": "Praetorian Security is a leading offensive cybersecurity company that helps organizations identify and mitigate security risks."
+    },
+    {
+      "company": "Banyan Security",
+      "location": "Remote",
+      "position": "Senior Software Developer",
+      "startDate": "2022-06",
+      "endDate": "2023-08",
+      "achievements": [
+        "Architected zero-touch login Chrome extension for Google Admin-controlled users to access Banyan services quickly and securely, while also blocking pages based on admin ITP policy selection",
+        "Devised a free trial onboarding platform which allowed prospective customers the opportunity to test its onboarding system prior to purchase",
+        "Developed a web view to configure the public domain routed through Banyan's service tunnel",
+        "Developed a Chrome extension that leveraged OAuth login and Node-Forge certificates to securely list hosted websites and services in Banyan, while also blocking pages based on admin ITP policy selection",
+        "Collaborated with backend Node.js team and designers to implement RESTful API integrations and optimize component architecture"
+      ],
+      "companyDescription": "Banyan Security is a cloud-native, zero trust security platform that provides secure access to applications and resources from anywhere, enabling organizations to protect users, devices, and data across on-premises, cloud, and hybrid environments."
+    },
+    {
+      "company": "Logichub",
+      "location": "CA",
+      "position": "Senior Software Developer",
+      "startDate": "2019-12",
+      "endDate": "2022-05",
+      "achievements": [
+        "Recognized expertise and knowledgeability by leadership and promoted from Lead Front-End Web Developer to Front-End Engineering Manager",
+        "Ideated performance solutions and reduced application load time from 6 seconds to 1-2 seconds. Allowed developers to quickly reconstruct bugs by sending Redux snapshots to the server when the user's interface crashes",
+        "Architected React state management solution migrating legacy Backbone.js application to React with Redux.",
+        "Integral contributor in creating and integrating user interfaces, upgrading applications, and employing coding styles which included useSelector, useDispatch, lazy load-store, and route which led to applications remaining current on the node and react versions",
+        "Automated repeated Git and JIRA workflow which saved developers 16 man hours weekly",
+        "Shifted class-based components to functional components with React hooks which enabled developers to adapt to the latest coding standards",
+        "Minimized subscription costs through building in-house chatbots, single-click onboarding, self-trail, and step-by-step onboarding instead of using subscription services like Bento",
+        "Reignited weekly Sprint which led to clear weekly estimates and aided in more efficient planning and precise execution of 20% more tasks"
+      ],
+      "companyDescription": "A security automation platform specializing in advanced SOAR, threat detection, and response workflows for cybersecurity teams."
+    },
+    {
+      "company": "Apple",
+      "location": "CA",
+      "position": "Software Developer",
+      "startDate": "2018-07",
+      "endDate": "2019-11",
+      "achievements": [
+        "Within 18 months employed AngularJS, Vue.js, and Protractor Automation applications and completed 3 projects",
+        "Implemented $state.go and improved Applications navigation speed by 50%",
+        "Piloted and guided 2 junior developers on a significant and successful Web End to End (E2E) testing methodology automation project and reduced the QA load time by half",
+        "Acquired transferrable internationalization knowledge from Apple Genius Vue.js web application",
+        "Performed UI team 1 to 1 sessions to resolve challenges",
+        "Created new user groups and restricted functionalities to prevent data theft"
+      ],
+      "companyDescription": "Coordinated with stakeholders and technical teams, created user groups with restricted functionalities, and conducted User Acceptance Testing."
+    },
+    {
+      "company": "Texas A&M University",
+      "location": "TX",
+      "position": "Graduate Teaching Assistant",
+      "startDate": "2017-07",
+      "endDate": "2017-12",
+      "achievements": [
+        "Provided instructional support to undergraduate students in computer science courses and graded assignments"
+      ],
+      "companyDescription": "Research and teaching role under Dr. Zhaohui Wang focusing on artificial neural networks and fingerprint recognition algorithms."
+    }
+  ],
+  "skills": {
+    "Frontend": [
+      "React 18",
+      "Vue 3",
+      "TypeScript",
+      "Next.js",
+      "Redux (Thunk, Saga, Toolkit)",
+      "React Query",
+      "TanStack"
+    ],
+    "AI Tools": [
+      "OpenAI Codex",
+      "Anthropic Claude Code",
+      "Devin AI",
+      "Cursor AI",
+      "Prompt Engineering",
+      "RAG",
+      "AI-Powered UX"
+    ],
+    "Performance": [
+      "Code Splitting",
+      "Lazy Loading",
+      "Vite",
+      "Custom Component Libraries",
+      "Storybook"
+    ],
+    "Styling": ["Tailwind CSS", "CSS-in-JS", "Responsive Design", "Design Systems", "Material UI"],
+    "Backend": [
+      "Go",
+      "Node.js",
+      "AWS Lambda",
+      "Amazon SQS",
+      "Neo4j",
+      "DynamoDB",
+      "REST APIs",
+      "AWS Cognito"
+    ],
+    "DevOps & Cloud": ["Git", "GitHub Actions", "AWS CloudFormation", "Amazon EC2", "LogRocket"]
+  },
+  "education": [
+    {
+      "institution": "Texas A&M University - Kingsville",
+      "degree": "Master of Science",
+      "dates": "August 2016 - May 2018"
+    },
+    {
+      "institution": "SAVEETHA ENGINEERING COLLEGE",
+      "degree": "Bachelor of Science",
+      "dates": "August 2011 - August 2015"
+    }
+  ],
+  "summary": "Lead Software Developer with 7+ years of experience building web applications for enterprise security platforms. Specialize in React, Vue, and TypeScript, with expertise in Redux state management, code reviews, and leading teams through modern framework migrations. Architected scalable solutions, and consistently delivered performant applications serving hundreds of enterprise clients."
+}
