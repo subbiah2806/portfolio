@@ -17,7 +17,7 @@ createRoot(rootElement).render(
   <StrictMode>
     <ErrorBoundary isDev={import.meta.env.DEV}>
       <HelmetProvider>
-        <InitializeReusableChunks>
+        <InitializeReusableChunks applyToBody>
           <GlobalProviders>
             <BrowserRouter basename={basename}>
               <App />
