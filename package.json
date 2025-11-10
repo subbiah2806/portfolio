@@ -16,7 +16,7 @@
   "dependencies": {
     "@anthropic-ai/sdk": "0.67.0",
     "@hookform/resolvers": "5.2.2",
-    "@subbiah/reusable": "github:subbiah2806/component#a12dfe5f342509f1c0daecf3bee6ecd8ef5ee9e1",
+    "@subbiah/reusable": "github:subbiah2806/component#303567a5c5e5ebfcc0aa2432e82778841d7797c0",
     "framer-motion": "12.23.24",
     "lucide-react": "0.546.0",
     "react": "19.2.0",
@@ -40,7 +40,7 @@
     "postcss": "8.4.38",
     "rollup-plugin-visualizer": "6.0.5",
     "tailwindcss": "3.4.3",
-    "typescript": "5.4.5",
+    "typescript": "5.9.3",
     "vite": "5.2.11"
   },
   "lint-staged": {
