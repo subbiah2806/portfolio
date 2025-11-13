@@ -4,7 +4,7 @@
   "version": "2.0.0",
   "type": "module",
   "scripts": {
-    "start": "npx kill-port 4123 && vite --port 4123",
+    "start": "vite",
     "build": "vite build",
     "analyze": "ANALYZE=true vite build && open dist/stats.html",
     "preview": "vite preview",
@@ -16,7 +16,7 @@
   "dependencies": {
     "@anthropic-ai/sdk": "0.67.0",
     "@hookform/resolvers": "5.2.2",
-    "@subbiah/reusable": "github:subbiah2806/component#303567a5c5e5ebfcc0aa2432e82778841d7797c0",
+    "@subbiah/reusable": "github:subbiah2806/component#a0254971247cbfb6f689f2099000c1b2a5d600e4",
     "framer-motion": "12.23.24",
     "lucide-react": "0.546.0",
     "react": "19.2.0",

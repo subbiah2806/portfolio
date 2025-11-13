@@ -24,6 +24,9 @@ export default defineConfig(({ mode }) => {
         : []),
     ],
     base: env.VITE_BASE_PATH || '/',
+    server: {
+      port: parseInt(env.PORTFOLIO_PORT) || 4000,
+    },
     resolve: {
       // CRITICAL: Prevents React duplication in monorepo - DO NOT REMOVE
       dedupe: ['react', 'react-dom'],
