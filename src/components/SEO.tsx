@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async';
 
 interface SEOProps {
   title?: string;
@@ -109,7 +108,7 @@ const SEO = ({
   };
 
   return (
-    <Helmet>
+    <>
       {/* Primary Meta Tags */}
       <title>{title}</title>
       <meta name="title" content={title} />
@@ -151,7 +150,7 @@ const SEO = ({
 
       {/* JSON-LD Structured Data */}
       <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
-    </Helmet>
+    </>
   );
 };
 

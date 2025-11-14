@@ -13,7 +13,7 @@ Lead Software Developer with 7+ years of experience in React, TypeScript, and mo
 - **Animations**: Framer Motion
 - **Code Highlighting**: React Syntax Highlighter
 - **SEO**: React Helmet Async
-- **Code Quality**: ESLint, Prettier, Husky, lint-staged
+- **Code Quality**: ESLint, Prettier, lint-staged
 
 ## Features
 
@@ -98,7 +98,7 @@ npm run type-check
 1. **Start the dev server**: `npm run dev`
 2. **Make changes**: Edit files in `src/` directory
 3. **Check types**: `npm run type-check` (runs automatically on commit)
-4. **Lint code**: `npm run lint` (auto-fixes on commit via Husky)
+4. **Lint code**: `npm run lint`
 5. **Build**: `npm run build` before deploying
 
 ## Custom Design System
