@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, memo } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -44,7 +44,7 @@ const contactSchema = z.object({
 
 type ContactFormData = z.infer<typeof contactSchema>;
 
-const Contact = (): JSX.Element => {
+export const Contact = (): JSX.Element => {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [showSuccessBanner, setShowSuccessBanner] = useState(false);
   const prefersReducedMotion = useReducedMotion();
@@ -405,5 +405,3 @@ const Contact = (): JSX.Element => {
     </div>
   );
 };
-
-export default memo(Contact);

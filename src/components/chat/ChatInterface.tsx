@@ -213,5 +213,3 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({
     </Card>
   );
 };
-
-export default ChatInterface;

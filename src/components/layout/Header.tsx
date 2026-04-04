@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu } from 'lucide-react';
-import ThemeToggle from '@allsetlabs/reusable/statefulComponents/theme/toggle';
-import CursorToggle from '@allsetlabs/reusable/statefulComponents/cursor/toggle';
+import { ThemeToggle } from '@allsetlabs/reusable/statefulComponents/theme/toggle';
+import { CursorToggle } from '@allsetlabs/reusable/statefulComponents/cursor/toggle';
 import { Button } from '@allsetlabs/reusable/components/ui/button';
 import { AudioToggle } from '@allsetlabs/reusable/statefulComponents/audio/toggle';
 import {
@@ -13,7 +13,7 @@ import {
   SheetTitle,
 } from '@allsetlabs/reusable/components/ui/sheet';
 
-const Header = (): JSX.Element => {
+export const Header = (): JSX.Element => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -166,5 +166,3 @@ const Header = (): JSX.Element => {
     </header>
   );
 };
-
-export default Header;

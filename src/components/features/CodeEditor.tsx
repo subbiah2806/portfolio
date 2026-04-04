@@ -8,7 +8,7 @@ interface CodeEditorProps {
   experience: Experience[];
 }
 
-export default function CodeEditor({ experience }: CodeEditorProps): JSX.Element {
+export function CodeEditor({ experience }: CodeEditorProps): JSX.Element {
   const [selectedJob, setSelectedJob] = useState<number>(0);
   const [copied, setCopied] = useState<boolean>(false);
   const { resolvedTheme } = useThemeContext();

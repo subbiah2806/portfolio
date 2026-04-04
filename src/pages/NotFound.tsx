@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { IconHome, IconFolder } from '@allsetlabs/reusable/icons/index';
 
-const NotFound = (): JSX.Element => {
+export const NotFound = (): JSX.Element => {
   return (
     <div className="flex min-h-screen items-center justify-center px-4">
       <div className="mx-auto max-w-2xl text-center">
@@ -73,5 +73,3 @@ const NotFound = (): JSX.Element => {
     </div>
   );
 };
-
-export default NotFound;

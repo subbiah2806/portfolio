@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { lazy, Suspense } from 'react';
 import Hero from '../components/features/Hero';
-import Skills from '../components/features/Skills';
+import { Skills } from '../components/features/Skills';
 import { resumeData } from '../data/resume';
 import { projects } from '../data/projects';
 import { fadeInUp, staggerContainer } from '../utils/animations';
@@ -13,9 +13,11 @@ import { Badge } from '@allsetlabs/reusable/components/ui/badge';
 import { Card, CardHeader, CardContent } from '@allsetlabs/reusable/components/ui/card';
 
 // Lazy load CodeEditor to avoid bundling 8.7MB react-syntax-highlighter in main chunk
-const CodeEditor = lazy(() => import('../components/features/CodeEditor'));
+const CodeEditor = lazy(() =>
+  import('../components/features/CodeEditor').then((m) => ({ default: m.CodeEditor }))
+);
 
-const Home = (): JSX.Element => {
+export const Home = (): JSX.Element => {
   const prefersReducedMotion = useReducedMotion();
   const previewProjects = projects.slice(0, 3);
 
@@ -180,5 +182,3 @@ const Home = (): JSX.Element => {
     </div>
   );
 };
-
-export default Home;

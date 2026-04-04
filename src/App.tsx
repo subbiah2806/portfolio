@@ -1,18 +1,20 @@
 import { Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
-import BackgroundGradient from '@allsetlabs/reusable/components/BackgroundGradient';
-import SEO from './components/SEO';
-import Header from './components/layout/Header';
-import Footer from './components/layout/Footer';
-import Home from './pages/Home';
+import { BackgroundGradient } from '@allsetlabs/reusable/components/BackgroundGradient';
+import { SEO } from './components/SEO';
+import { Header } from './components/layout/Header';
+import { Footer } from './components/layout/Footer';
+import { Home } from './pages/Home';
 
 // Lazy-loaded pages for better performance
-const ProjectsPage = lazy(() => import('./pages/ProjectsPage'));
-const Contact = lazy(() => import('./pages/Contact'));
-const Chat = lazy(() => import('./pages/Chat'));
-const NotFound = lazy(() => import('./pages/NotFound'));
+const ProjectsPage = lazy(() =>
+  import('./pages/ProjectsPage').then((m) => ({ default: m.ProjectsPage }))
+);
+const Contact = lazy(() => import('./pages/Contact').then((m) => ({ default: m.Contact })));
+const Chat = lazy(() => import('./pages/Chat').then((m) => ({ default: m.Chat })));
+const NotFound = lazy(() => import('./pages/NotFound').then((m) => ({ default: m.NotFound })));
 
-function App(): JSX.Element {
+export function App(): JSX.Element {
   return (
     <div className="relative min-h-screen">
       {/* SEO Meta Tags */}
@@ -48,5 +50,3 @@ function App(): JSX.Element {
     </div>
   );
 }
-
-export default App;

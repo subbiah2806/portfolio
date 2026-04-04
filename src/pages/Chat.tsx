@@ -16,7 +16,7 @@ const WELCOME_MESSAGE =
 /**
  * Chat page component - Full-page chatbot interface
  */
-const Chat = (): JSX.Element => {
+export const Chat = (): JSX.Element => {
   const prefersReducedMotion = useReducedMotion();
 
   // Disable animations if user prefers reduced motion
@@ -68,5 +68,3 @@ const Chat = (): JSX.Element => {
     </div>
   );
 };
-
-export default Chat;

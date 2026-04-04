@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import Projects from '../components/features/Projects';
+import { Projects } from '../components/features/Projects';
 import { fadeInUp } from '../utils/animations';
 import { useReducedMotion } from '../hooks/useReducedMotion';
 import { IconArrowLeft } from '@allsetlabs/reusable/icons/index';
 
-const ProjectsPage = (): JSX.Element => {
+export const ProjectsPage = (): JSX.Element => {
   const prefersReducedMotion = useReducedMotion();
 
   const animation = prefersReducedMotion
@@ -45,5 +45,3 @@ const ProjectsPage = (): JSX.Element => {
     </div>
   );
 };
-
-export default ProjectsPage;

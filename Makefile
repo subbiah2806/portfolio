@@ -7,7 +7,7 @@ NC := \033[0m
 
 PORT := 4000
 
-.PHONY: help install start stop clean
+.PHONY: help setup install start stop clean
 
 help:
 	@echo "$(BLUE)Portfolio Commands:$(NC)"
@@ -15,6 +15,11 @@ help:
 	@echo "  make start    - Start dev server"
 	@echo "  make stop     - Stop dev server"
 	@echo "  make clean    - Remove node_modules"
+
+setup:
+	@echo "$(BLUE)Checking system dependencies...$(NC)"
+	@command -v node >/dev/null 2>&1 || { echo "Installing Node.js..."; brew install node; }
+	@echo "$(GREEN)All system dependencies ready!$(NC)"
 
 install:
 	@echo "$(BLUE)Installing Portfolio...$(NC)"

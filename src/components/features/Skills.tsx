@@ -7,7 +7,7 @@ interface SkillCategory {
   skills: string[];
 }
 
-export default function Skills(): JSX.Element {
+export function Skills(): JSX.Element {
   const skillCategories: SkillCategory[] = [
     { name: 'Frontend', skills: resumeData.skills.frontend },
     { name: 'AI Tools', skills: resumeData.skills.aiTools },

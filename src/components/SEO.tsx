@@ -7,7 +7,7 @@ interface SEOProps {
   type?: string;
 }
 
-const SEO = ({
+export const SEO = ({
   title = 'Subbiah Chandramouli | Lead Software Developer | React, TypeScript, Web3',
   description = 'Lead Software Developer with 7+ years of experience in React, TypeScript, Next.js, Vue.js, and AI-powered development. Specialized in building scalable web applications, enterprise security platforms, and modern UI/UX. Expert in React 18, Vite, TailwindCSS, and AI tools integration.',
   keywords = 'frontend developer, software developer, lead developer, react developer, typescript, nextjs, vuejs, web3, blockchain, ethereum, solidity, tailwindcss, ai tools, claude code, openai, cursor ai, enterprise security, praetorian, banyan security, logichub, apple, texas a&m',
@@ -152,5 +152,3 @@ const SEO = ({
     </>
   );
 };
-
-export default SEO;

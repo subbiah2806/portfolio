@@ -40,7 +40,7 @@ const ProjectCard = memo(({ project, prefersReducedMotion }: ProjectCardProps) =
           </div>
 
           {/* Project Title */}
-          <h3 className="mb-2 text-xl font-bold transition-colors group-hover:text-primary dark:group-hover:text-primary">
+          <h3 className="mb-2 text-xl font-bold transition-colors group-hover:text-primary">
             {project.title}
           </h3>
 
@@ -76,7 +76,7 @@ const ProjectCard = memo(({ project, prefersReducedMotion }: ProjectCardProps) =
 
 ProjectCard.displayName = 'ProjectCard';
 
-function Projects(): JSX.Element {
+export function Projects(): JSX.Element {
   const [activeFilter, setActiveFilter] = useState<ProjectCategory>('All');
   const prefersReducedMotion = useReducedMotion();
 
@@ -157,5 +157,3 @@ function Projects(): JSX.Element {
     </div>
   );
 }
-
-export default memo(Projects);

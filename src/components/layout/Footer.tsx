@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { Mail } from 'lucide-react';
 import { IconGitHub, IconLinkedIn } from '@allsetlabs/reusable/icons/index';
 
-const Footer = (): JSX.Element => {
+export const Footer = (): JSX.Element => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
@@ -99,5 +99,3 @@ const Footer = (): JSX.Element => {
     </footer>
   );
 };
-
-export default Footer;
