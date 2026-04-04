@@ -11,7 +11,7 @@ import {
 import { downloadResume, type ResumeFormat } from '@allsetlabs/reusable/lib/generateResume/index';
 import { fetchResumeData } from '../../utils';
 
-export default function Hero(): JSX.Element {
+export function Hero(): JSX.Element {
   const handleDownloadResume = async (format: ResumeFormat): Promise<void> => {
     try {
       const data = await fetchResumeData();

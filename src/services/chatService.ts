@@ -248,5 +248,3 @@ export const initializeChatService = (): ChatService => {
     temperature: DEFAULT_TEMPERATURE,
   });
 };
-
-export default ChatService;

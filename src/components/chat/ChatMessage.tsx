@@ -89,7 +89,7 @@ export const ChatMessage = memo(({ message, isLastMessage = false }: ChatMessage
           {isUser ? (
             <p className="text-sm leading-relaxed text-foreground">{message.content}</p>
           ) : (
-            <div className="prose prose-sm max-w-none dark:prose-invert">
+            <div className="prose prose-sm max-w-none">
               <Markdown
                 components={{
                   // Customize paragraph spacing
@@ -150,11 +150,7 @@ export const ChatMessage = memo(({ message, isLastMessage = false }: ChatMessage
               className="absolute -right-2 -top-2 z-10 h-6 w-6 opacity-0 transition-opacity group-hover:opacity-100"
               aria-label={isCopied ? 'Copied!' : 'Copy message'}
             >
-              {isCopied ? (
-                <Check className="h-3 w-3 text-green-500" />
-              ) : (
-                <Copy className="h-3 w-3" />
-              )}
+              {isCopied ? <Check className="h-3 w-3 text-success" /> : <Copy className="h-3 w-3" />}
             </Button>
           )}
         </div>
@@ -167,5 +163,3 @@ export const ChatMessage = memo(({ message, isLastMessage = false }: ChatMessage
 });
 
 ChatMessage.displayName = 'ChatMessage';
-
-export default ChatMessage;

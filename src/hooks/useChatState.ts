@@ -176,5 +176,3 @@ export function useChatState() {
     clearError,
   };
 }
-
-export default useChatState;

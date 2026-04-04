@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { lazy, Suspense } from 'react';
-import Hero from '../components/features/Hero';
+import { Hero } from '../components/features/Hero';
 import { Skills } from '../components/features/Skills';
 import { resumeData } from '../data/resume';
 import { projects } from '../data/projects';
