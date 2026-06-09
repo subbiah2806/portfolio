@@ -1,15 +1,19 @@
 # Portfolio — Personal Website
 
-Personal portfolio site for Subbiah Chandramouli. A professional multi-page website showcasing work experience, projects, and skills. Features responsive design, dark mode (system preference detection), smooth animations with Framer Motion, SEO optimization, and accessibility compliance (WCAG AA).
+## Goal
 
-**Live**: https://subbiah2806.github.io/portfolio
+Personal portfolio site for Subbiah Chandramouli showcasing work experience, projects, and skills.
 
-## Structure
+## Description
+
+A professional multi-page website with responsive design, dark mode (system preference detection), smooth Framer Motion animations, SEO optimization, and WCAG AA accessibility compliance. Built with React + Vite + TypeScript. Deployed to GitHub Pages at https://subbiah2806.github.io/portfolio.
+
+## Architecture
 
 ```
 src/
 ├── components/
-│   ├── features/   # Hero, Projects, Skills, CodeEditor
+│   ├── features/   # Hero, Projects, Skills, CodeEditor sections
 │   ├── layout/     # Header, Footer
 │   └── ui/         # Reusable UI (SEO, ThemeToggle, etc.)
 ├── hooks/          # Custom hooks (useReducedMotion)
@@ -20,11 +24,15 @@ src/
 └── styles/         # Global styles
 ```
 
-## Working on This Module
+Stack: React + Vite + TypeScript + Tailwind CSS + Framer Motion + React Router v7. Uses `@allsetlabs/reusable` from `../forge`.
 
-- Uses the shared component library from `modules/component` — never use raw HTML elements
-- Tailwind with custom design system (no default Tailwind colors)
-- Framer Motion for animations; respects `prefers-reduced-motion`
-- React Router v7 for routing
-- Forms use React Hook Form + Zod validation
-- Deployed to GitHub Pages
+## Progress
+
+Live and deployed. Core pages (Home, Projects, Contact) are complete. Resume and project data live in `src/data/`.
+
+## Module-Specific Patterns
+
+- **Component library**: Import all UI from `@allsetlabs/reusable` — never use raw HTML elements
+- **Animations**: Framer Motion only; always respect `prefers-reduced-motion` via `useReducedMotion`
+- **Forms**: React Hook Form + Zod validation
+- **Deployment**: GitHub Pages — `npm run build` then push to `gh-pages` branch
