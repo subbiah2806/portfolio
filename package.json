@@ -15,7 +15,7 @@
   "dependencies": {
     "@anthropic-ai/sdk": "0.67.0",
     "@hookform/resolvers": "5.2.2",
-    "@allsetlabs/reusable": "github:subbiah2806/component#2e8aa6621243c42aed6cc55c1dfc4c63583a464c",
+    "@allsetlabs/reusable": "file:../ui",
     "framer-motion": "12.23.24",
     "lucide-react": "0.546.0",
     "react": "19.2.0",
