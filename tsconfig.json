@@ -18,7 +18,7 @@
     /* Path Aliases */
     "baseUrl": ".",
     "paths": {
-      "@allsetlabs/reusable/*": ["../ui/src/*"]
+      "@allsetlabs/reusable/*": ["../forge/src/*"]
     },
 
     /* Linting */
