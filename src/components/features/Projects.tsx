@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import { projects, projectCategories, type ProjectCategory } from '../../data/projects';
 import { fadeInUp, staggerContainer } from '../../utils/animations';
 import { useReducedMotion } from '../../hooks/useReducedMotion';
-import { Card, CardHeader, CardContent } from '@allsetlabs/reusable/components/ui/card';
-import { Badge } from '@allsetlabs/reusable/components/ui/badge';
-import { Button } from '@allsetlabs/reusable/components/ui/button';
+import { Card, CardHeader, CardContent } from '@allsetlabs/forge/components/ui/card';
+import { Badge } from '@allsetlabs/forge/components/ui/badge';
+import { Button } from '@allsetlabs/forge/components/ui/button';
 
 type CategoryColorKey = 'AI' | 'Security' | 'Performance' | 'DevOps' | 'Testing' | 'Visualization';
 

@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
-import { BackgroundGradient } from '@allsetlabs/reusable/components/BackgroundGradient';
+import { BackgroundGradient } from '@allsetlabs/forge/components/BackgroundGradient';
 import { SEO } from './components/SEO';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';

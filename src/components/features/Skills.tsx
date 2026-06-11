@@ -1,6 +1,6 @@
 import { resumeData } from '../../data/resume';
-import { Card, CardHeader, CardContent } from '@allsetlabs/reusable/components/ui/card';
-import { Badge } from '@allsetlabs/reusable/components/ui/badge';
+import { Card, CardHeader, CardContent } from '@allsetlabs/forge/components/ui/card';
+import { Badge } from '@allsetlabs/forge/components/ui/badge';
 
 interface SkillCategory {
   name: string;

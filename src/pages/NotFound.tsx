@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { IconHome, IconFolder } from '@allsetlabs/reusable/icons/index';
+import { IconHome, IconFolder } from '@allsetlabs/forge/icons/index';
 
 export const NotFound = (): JSX.Element => {
   return (

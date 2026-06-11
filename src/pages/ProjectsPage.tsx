@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Projects } from '../components/features/Projects';
 import { fadeInUp } from '../utils/animations';
 import { useReducedMotion } from '../hooks/useReducedMotion';
-import { IconArrowLeft } from '@allsetlabs/reusable/icons/index';
+import { IconArrowLeft } from '@allsetlabs/forge/icons/index';
 
 export const ProjectsPage = (): JSX.Element => {
   const prefersReducedMotion = useReducedMotion();

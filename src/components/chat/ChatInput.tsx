@@ -5,8 +5,8 @@
 
 import React, { useRef, useEffect, useCallback, useState } from 'react';
 import { Send } from 'lucide-react';
-import { Textarea } from '@allsetlabs/reusable/components/ui/textarea';
-import { Button } from '@allsetlabs/reusable/components/ui/button';
+import { Textarea } from '@allsetlabs/forge/components/ui/textarea';
+import { Button } from '@allsetlabs/forge/components/ui/button';
 
 interface ChatInputProps {
   onSendMessage: (message: string) => void;

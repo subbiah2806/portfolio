@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 import Markdown from 'react-markdown';
 import { User, Bot, Copy, Check } from 'lucide-react';
 import type { ChatMessage as ChatMessageType } from '../../types';
-import { Button } from '@allsetlabs/reusable/components/ui/button';
+import { Button } from '@allsetlabs/forge/components/ui/button';
 import { useReducedMotion } from '../../hooks/useReducedMotion';
 
 interface ChatMessageProps {

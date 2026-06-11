@@ -10,8 +10,8 @@ import { ChatMessage } from './ChatMessage';
 import { ChatInput } from './ChatInput';
 import { useChatState } from '../../hooks/useChatState';
 import { useReducedMotion } from '../../hooks/useReducedMotion';
-import { Card, CardContent, CardHeader, CardTitle } from '@allsetlabs/reusable/components/ui/card';
-import { Button } from '@allsetlabs/reusable/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@allsetlabs/forge/components/ui/card';
+import { Button } from '@allsetlabs/forge/components/ui/button';
 
 interface ChatInterfaceProps {
   className?: string;

@@ -24,7 +24,7 @@ src/
 └── styles/         # Global styles
 ```
 
-Stack: React + Vite + TypeScript + Tailwind CSS + Framer Motion + React Router v7. Uses `@allsetlabs/reusable` from `../forge`.
+Stack: React + Vite + TypeScript + Tailwind CSS + Framer Motion + React Router v7. Uses `@allsetlabs/forge` from `../forge`.
 
 ## Development Commands
 
@@ -44,7 +44,7 @@ Run `npm run type-check` and `npm run build` after code changes. For visual chan
 
 ## Module-Specific Patterns
 
-- **Component library**: Import all UI from `@allsetlabs/reusable` — never use raw HTML elements
+- **Component library**: Import all UI from `@allsetlabs/forge` — never use raw HTML elements
 - **Animations**: Framer Motion only; always respect `prefers-reduced-motion` via `useReducedMotion`
 - **Forms**: React Hook Form + Zod validation
 - **Deployment**: GitHub Pages — `npm run build` then push to `gh-pages` branch

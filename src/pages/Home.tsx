@@ -8,9 +8,9 @@ import { resumeData } from '../data/resume';
 import { projects } from '../data/projects';
 import { fadeInUp, staggerContainer } from '../utils/animations';
 import { useReducedMotion } from '../hooks/useReducedMotion';
-import { Button } from '@allsetlabs/reusable/components/ui/button';
-import { Badge } from '@allsetlabs/reusable/components/ui/badge';
-import { Card, CardHeader, CardContent } from '@allsetlabs/reusable/components/ui/card';
+import { Button } from '@allsetlabs/forge/components/ui/button';
+import { Badge } from '@allsetlabs/forge/components/ui/badge';
+import { Card, CardHeader, CardContent } from '@allsetlabs/forge/components/ui/card';
 
 // Lazy load CodeEditor to avoid bundling 8.7MB react-syntax-highlighter in main chunk
 const CodeEditor = lazy(() =>

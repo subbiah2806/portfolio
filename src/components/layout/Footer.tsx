@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Mail } from 'lucide-react';
-import { IconGitHub, IconLinkedIn } from '@allsetlabs/reusable/icons/index';
+import { IconGitHub, IconLinkedIn } from '@allsetlabs/forge/icons/index';
 
 export const Footer = (): JSX.Element => {
   const currentYear = new Date().getFullYear();

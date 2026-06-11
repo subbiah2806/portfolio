@@ -3,7 +3,7 @@
  * Handles fetching and processing resume data
  */
 
-import type { ResumeData } from '@allsetlabs/reusable/lib/generateResume';
+import type { ResumeData } from '@allsetlabs/forge/lib/generateResume';
 
 /**
  * Fetch resume data from public folder and clean metadata

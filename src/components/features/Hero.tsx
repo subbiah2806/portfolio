@@ -1,14 +1,14 @@
 import { resumeData } from '../../data/resume';
 import { MapPin, Mail, Phone, Download, FileText } from 'lucide-react';
-import { Badge } from '@allsetlabs/reusable/components/ui/badge';
-import { Button } from '@allsetlabs/reusable/components/ui/button';
+import { Badge } from '@allsetlabs/forge/components/ui/badge';
+import { Button } from '@allsetlabs/forge/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@allsetlabs/reusable/components/ui/dropdown-menu';
-import { downloadResume, type ResumeFormat } from '@allsetlabs/reusable/lib/generateResume/index';
+} from '@allsetlabs/forge/components/ui/dropdown-menu';
+import { downloadResume, type ResumeFormat } from '@allsetlabs/forge/lib/generateResume/index';
 import { fetchResumeData } from '../../utils';
 
 export function Hero(): JSX.Element {

@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu } from 'lucide-react';
-import { ThemeToggle } from '@allsetlabs/reusable/statefulComponents/theme/toggle';
-import { CursorToggle } from '@allsetlabs/reusable/statefulComponents/cursor/toggle';
-import { Button } from '@allsetlabs/reusable/components/ui/button';
-import { AudioToggle } from '@allsetlabs/reusable/statefulComponents/audio/toggle';
+import { ThemeToggle } from '@allsetlabs/forge/statefulComponents/theme/toggle';
+import { CursorToggle } from '@allsetlabs/forge/statefulComponents/cursor/toggle';
+import { Button } from '@allsetlabs/forge/components/ui/button';
+import { AudioToggle } from '@allsetlabs/forge/statefulComponents/audio/toggle';
 import {
   Sheet,
   SheetContent,
   SheetTrigger,
   SheetHeader,
   SheetTitle,
-} from '@allsetlabs/reusable/components/ui/sheet';
+} from '@allsetlabs/forge/components/ui/sheet';
 
 export const Header = (): JSX.Element => {
   const [isScrolled, setIsScrolled] = useState(false);

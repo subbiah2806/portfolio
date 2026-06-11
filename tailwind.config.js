@@ -1,4 +1,4 @@
-import baseConfig from '@allsetlabs/reusable/tailwind.config';
+import baseConfig from '@allsetlabs/forge/tailwind.config';
 
 /** @type {import('tailwindcss').Config} */
 export default {

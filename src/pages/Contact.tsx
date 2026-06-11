@@ -17,8 +17,8 @@ import {
   IconClose,
   IconBriefcase,
   IconSpinner,
-} from '@allsetlabs/reusable/icons/index';
-import { Button } from '@allsetlabs/reusable/components/ui/button';
+} from '@allsetlabs/forge/icons/index';
+import { Button } from '@allsetlabs/forge/components/ui/button';
 import {
   Form,
   FormControl,
@@ -26,10 +26,10 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@allsetlabs/reusable/components/ui/form/index';
-import { Input } from '@allsetlabs/reusable/components/ui/input';
-import { Textarea } from '@allsetlabs/reusable/components/ui/textarea';
-import { useForm } from '@allsetlabs/reusable/components/ui/form/context';
+} from '@allsetlabs/forge/components/ui/form/index';
+import { Input } from '@allsetlabs/forge/components/ui/input';
+import { Textarea } from '@allsetlabs/forge/components/ui/textarea';
+import { useForm } from '@allsetlabs/forge/components/ui/form/context';
 
 // Zod validation schema
 const contactSchema = z.object({

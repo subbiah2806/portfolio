@@ -10,12 +10,12 @@
     "preview": "vite preview",
     "type-check": "tsc --noEmit",
     "reset": "rm -rf ./nodemodules && rm -rf package-lock.json",
-    "install-link": "npm run reset && npm i && cd ../component && rm -rf ./nodemodules && rm -rf package-lock.json && npm i && npm link && cd ../portfolio && npm link @allsetlabs/reusable"
+    "install-link": "npm run reset && npm i && cd ../component && rm -rf ./nodemodules && rm -rf package-lock.json && npm i && npm link && cd ../portfolio && npm link @allsetlabs/forge"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "0.67.0",
     "@hookform/resolvers": "5.2.2",
-    "@allsetlabs/reusable": "file:../forge",
+    "@allsetlabs/forge": "file:../forge",
     "framer-motion": "12.23.24",
     "lucide-react": "0.546.0",
     "react": "19.2.0",
