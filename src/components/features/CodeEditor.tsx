@@ -44,23 +44,23 @@ export default ${job.company.replace(/\s+/g, '')}Experience;`;
   };
 
   return (
-    <div className="mx-auto w-full max-w-6xl animate-fade-in p-4">
-      <div className="overflow-hidden rounded-lg border bg-card shadow-large">
+    <div className="animate-fade-in mx-auto w-full max-w-6xl p-4">
+      <div className="bg-card shadow-large overflow-hidden rounded-lg border">
         {/* Editor Header */}
-        <div className="flex items-center justify-between border-b bg-muted/80 px-4 py-2">
+        <div className="bg-muted/80 flex items-center justify-between border-b px-4 py-2">
           <div className="flex items-center gap-2">
             <div className="flex gap-2">
-              <div className="h-3 w-3 rounded-full bg-destructive"></div>
-              <div className="h-3 w-3 rounded-full bg-warning"></div>
-              <div className="h-3 w-3 rounded-full bg-success"></div>
+              <div className="bg-destructive h-3 w-3 rounded-full"></div>
+              <div className="bg-warning h-3 w-3 rounded-full"></div>
+              <div className="bg-success h-3 w-3 rounded-full"></div>
             </div>
-            <div className="ml-4 font-mono text-sm text-muted-foreground">experience.js</div>
+            <div className="text-muted-foreground ml-4 font-mono text-sm">experience.js</div>
           </div>
 
           {/* Copy Button */}
           <button
             onClick={handleCopy}
-            className="clickable rounded px-3 py-1 font-mono text-xs text-muted-foreground transition-all duration-200 hover:bg-muted/50 hover:text-foreground"
+            className="clickable text-muted-foreground hover:bg-muted/50 hover:text-foreground rounded px-3 py-1 font-mono text-xs transition-all duration-200"
             aria-label="Copy code to clipboard"
           >
             {copied ? <span className="text-success">✓ Copied!</span> : <span>Copy</span>}
@@ -68,14 +68,14 @@ export default ${job.company.replace(/\s+/g, '')}Experience;`;
         </div>
 
         {/* Tab Bar */}
-        <div className="flex flex-wrap gap-1 border-b bg-muted/80 px-4 py-1">
+        <div className="bg-muted/80 flex flex-wrap gap-1 border-b px-4 py-1">
           {experience.map((exp, index) => (
             <button
               key={index}
               onClick={() => setSelectedJob(index)}
               className={`clickable whitespace-nowrap rounded-t px-4 py-2 font-mono text-sm transition-colors duration-200 ${
                 selectedJob === index
-                  ? 'border-t-2 border-primary bg-card text-primary'
+                  ? 'border-primary bg-card text-primary border-t-2'
                   : 'text-muted-foreground hover:bg-muted/50 hover:text-foreground'
               }`}
               aria-label={`View ${exp.company} experience`}

@@ -21,7 +21,7 @@ export function Skills(): JSX.Element {
   return (
     <div className="px-4 py-20">
       <div className="mx-auto max-w-6xl">
-        <h2 className="mb-12 animate-fade-in text-center text-4xl font-bold text-foreground">
+        <h2 className="animate-fade-in text-foreground mb-12 text-center text-4xl font-bold">
           Technology Skills
         </h2>
 

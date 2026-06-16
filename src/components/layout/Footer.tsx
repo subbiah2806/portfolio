@@ -30,14 +30,14 @@ export const Footer = (): JSX.Element => {
   ];
 
   return (
-    <footer className="border-t bg-muted px-4 py-12">
+    <footer className="bg-muted border-t px-4 py-12">
       <div className="mx-auto max-w-7xl">
         {/* Top Section */}
         <div className="mb-8 grid grid-cols-1 gap-8 md:grid-cols-3">
           {/* Brand Section */}
           <div>
-            <h3 className="mb-4 text-xl font-bold text-foreground">Subbiah C.</h3>
-            <p className="text-sm text-muted-foreground">
+            <h3 className="text-foreground mb-4 text-xl font-bold">Subbiah C.</h3>
+            <p className="text-muted-foreground text-sm">
               Lead Software Developer specializing in React, TypeScript, and modern web
               technologies.
             </p>
@@ -45,7 +45,7 @@ export const Footer = (): JSX.Element => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-foreground">
+            <h4 className="text-foreground mb-4 text-sm font-semibold uppercase tracking-wider">
               Quick Links
             </h4>
             <ul className="space-y-2">
@@ -53,7 +53,7 @@ export const Footer = (): JSX.Element => {
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-sm text-muted-foreground transition-colors duration-300 hover:text-primary"
+                    className="text-muted-foreground hover:text-primary text-sm transition-colors duration-300"
                   >
                     {link.name}
                   </Link>
@@ -64,7 +64,7 @@ export const Footer = (): JSX.Element => {
 
           {/* Social Links */}
           <div>
-            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-foreground">
+            <h4 className="text-foreground mb-4 text-sm font-semibold uppercase tracking-wider">
               Connect
             </h4>
             <div className="flex gap-4">
@@ -74,7 +74,7 @@ export const Footer = (): JSX.Element => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground transition-colors duration-300 hover:text-primary"
+                  className="text-muted-foreground hover:text-primary transition-colors duration-300"
                   aria-label={social.name}
                 >
                   {social.icon}
@@ -87,10 +87,10 @@ export const Footer = (): JSX.Element => {
         {/* Bottom Section */}
         <div className="border-t pt-8">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-            <p className="text-center text-sm text-muted-foreground md:text-left">
+            <p className="text-muted-foreground text-center text-sm md:text-left">
               &copy; {currentYear} Subbiah Chandramouli. All rights reserved.
             </p>
-            <p className="text-center font-mono text-xs text-muted-foreground md:text-right">
+            <p className="text-muted-foreground text-center font-mono text-xs md:text-right">
               Built with React + TypeScript + Vite + Tailwind CSS
             </p>
           </div>

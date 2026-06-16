@@ -31,32 +31,32 @@ const ProjectCard = memo(({ project, prefersReducedMotion }: ProjectCardProps) =
       whileHover={prefersReducedMotion ? {} : { y: -8, scale: 1.02 }}
       transition={{ duration: 0.3 }}
     >
-      <Card className="group h-full transition-all duration-300 hover:border-primary/50 hover:shadow-lg">
+      <Card className="hover:border-primary/50 group h-full transition-all duration-300 hover:shadow-lg">
         <CardHeader>
           {/* Category Badge */}
           <div className="mb-4 flex items-center justify-between">
             <Badge variant="primary">{project.category}</Badge>
-            <span className="text-xs text-muted-foreground">{project.year}</span>
+            <span className="text-muted-foreground text-xs">{project.year}</span>
           </div>
 
           {/* Project Title */}
-          <h3 className="mb-2 text-xl font-bold transition-colors group-hover:text-primary">
+          <h3 className="group-hover:text-primary mb-2 text-xl font-bold transition-colors">
             {project.title}
           </h3>
 
           {/* Company */}
-          <p className="mb-3 text-sm font-medium text-primary">{project.company}</p>
+          <p className="text-primary mb-3 text-sm font-medium">{project.company}</p>
         </CardHeader>
 
         <CardContent>
           {/* Description */}
-          <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+          <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
             {project.description}
           </p>
 
           {/* Impact */}
-          <div className="mb-4 rounded-lg border border-border bg-background p-3">
-            <p className="text-sm font-medium text-accent-foreground">
+          <div className="border-border bg-background mb-4 rounded-lg border p-3">
+            <p className="text-accent-foreground text-sm font-medium">
               <span className="mr-1">📊</span>
               {project.impact}
             </p>
@@ -95,8 +95,8 @@ export function Projects(): JSX.Element {
     <div className="px-4 py-20">
       <div className="mx-auto max-w-6xl">
         {/* Section Header */}
-        <h2 className="mb-4 text-center text-4xl font-bold text-foreground">Featured Projects</h2>
-        <p className="mb-12 text-center text-muted-foreground">
+        <h2 className="text-foreground mb-4 text-center text-4xl font-bold">Featured Projects</h2>
+        <p className="text-muted-foreground mb-12 text-center">
           Explore my key achievements and impactful projects across AI, security, and performance
           optimization
         </p>
@@ -138,7 +138,7 @@ export function Projects(): JSX.Element {
         {/* Empty State */}
         {filteredProjects.length === 0 && (
           <motion.div
-            className="rounded-xl border bg-card p-12 text-center"
+            className="bg-card rounded-xl border p-12 text-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3 }}
@@ -149,7 +149,7 @@ export function Projects(): JSX.Element {
 
         {/* Project Count */}
         <div className="mt-8 text-center">
-          <p className="text-sm text-muted-foreground">
+          <p className="text-muted-foreground text-sm">
             Showing {filteredProjects.length} of {projects.length} projects
           </p>
         </div>

@@ -51,8 +51,8 @@ export const Home = (): JSX.Element => {
       >
         <div className="mx-auto max-w-6xl">
           {/* Section Header */}
-          <h2 className="mb-4 text-center text-4xl font-bold text-foreground">Featured Projects</h2>
-          <p className="mb-12 text-center text-muted-foreground">
+          <h2 className="text-foreground mb-4 text-center text-4xl font-bold">Featured Projects</h2>
+          <p className="text-muted-foreground mb-12 text-center">
             Explore some of my key achievements and impactful projects
           </p>
 
@@ -72,32 +72,32 @@ export const Home = (): JSX.Element => {
                   whileHover={prefersReducedMotion ? {} : { y: -8, scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <Card className="group h-full backdrop-blur-sm transition-all duration-300 hover:border-primary hover:shadow-lg">
+                  <Card className="hover:border-primary group h-full backdrop-blur-sm transition-all duration-300 hover:shadow-lg">
                     <CardHeader>
                       {/* Category Badge */}
                       <div className="mb-4 flex items-center justify-between">
                         <Badge variant="primary">{project.category}</Badge>
-                        <span className="text-xs text-muted-foreground">{project.year}</span>
+                        <span className="text-muted-foreground text-xs">{project.year}</span>
                       </div>
 
                       {/* Project Title */}
-                      <h3 className="mb-2 text-xl font-bold transition-colors group-hover:text-primary">
+                      <h3 className="group-hover:text-primary mb-2 text-xl font-bold transition-colors">
                         {project.title}
                       </h3>
 
                       {/* Company */}
-                      <p className="mb-3 text-sm font-medium text-primary">{project.company}</p>
+                      <p className="text-primary mb-3 text-sm font-medium">{project.company}</p>
                     </CardHeader>
 
                     <CardContent>
                       {/* Description */}
-                      <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+                      <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
                         {project.description}
                       </p>
 
                       {/* Impact */}
-                      <div className="mb-4 rounded-lg border border-border bg-background p-3">
-                        <p className="text-sm font-medium text-accent-foreground">
+                      <div className="border-border bg-background mb-4 rounded-lg border p-3">
+                        <p className="text-accent-foreground text-sm font-medium">
                           <span className="mr-1">📊</span>
                           {project.impact}
                         </p>
@@ -134,17 +134,17 @@ export const Home = (): JSX.Element => {
       {/* Experience Section */}
       <motion.section id="experience" className="px-4 py-20" {...animation} variants={fadeInUp}>
         <div className="mx-auto mb-12 max-w-6xl">
-          <h2 className="mb-4 text-center text-4xl font-bold text-foreground">
+          <h2 className="text-foreground mb-4 text-center text-4xl font-bold">
             Professional Experience
           </h2>
-          <p className="text-center font-mono text-sm text-muted-foreground">
+          <p className="text-muted-foreground text-center font-mono text-sm">
             {/* Click through the tabs to explore each role */}
           </p>
         </div>
         <Suspense
           fallback={
             <div className="flex h-64 items-center justify-center">
-              <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
+              <div className="border-primary h-8 w-8 animate-spin rounded-full border-4 border-t-transparent" />
             </div>
           }
         >
@@ -155,7 +155,7 @@ export const Home = (): JSX.Element => {
       {/* Education Section */}
       <motion.section id="education" className="px-4 py-20" {...animation} variants={fadeInUp}>
         <div className="mx-auto max-w-4xl">
-          <h2 className="mb-12 text-center text-4xl font-bold text-foreground">Education</h2>
+          <h2 className="text-foreground mb-12 text-center text-4xl font-bold">Education</h2>
           <motion.div
             className="space-y-6"
             variants={staggerContainer}
@@ -165,10 +165,10 @@ export const Home = (): JSX.Element => {
           >
             {resumeData.education.map((edu, index) => (
               <motion.div key={index} variants={fadeInUp}>
-                <Card className="backdrop-blur-sm transition-all duration-300 hover:border-border hover:shadow-lg">
+                <Card className="hover:border-border backdrop-blur-sm transition-all duration-300 hover:shadow-lg">
                   <CardContent className="pt-6">
-                    <h3 className="mb-2 text-2xl font-bold text-foreground">{edu.degree}</h3>
-                    <p className="mb-1 text-lg font-semibold text-primary">{edu.school}</p>
+                    <h3 className="text-foreground mb-2 text-2xl font-bold">{edu.degree}</h3>
+                    <p className="text-primary mb-1 text-lg font-semibold">{edu.school}</p>
                     <p className="text-muted-foreground">
                       {edu.location} • {edu.date}
                     </p>

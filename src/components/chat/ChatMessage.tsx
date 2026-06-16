@@ -87,7 +87,7 @@ export const ChatMessage = memo(({ message, isLastMessage = false }: ChatMessage
         >
           {/* Message Text */}
           {isUser ? (
-            <p className="text-sm leading-relaxed text-foreground">{message.content}</p>
+            <p className="text-foreground text-sm leading-relaxed">{message.content}</p>
           ) : (
             <div className="prose prose-sm max-w-none">
               <Markdown
@@ -98,7 +98,7 @@ export const ChatMessage = memo(({ message, isLastMessage = false }: ChatMessage
                   code: ({ className, children, ...props }) => {
                     const isInline = !className;
                     return isInline ? (
-                      <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-sm" {...props}>
+                      <code className="bg-muted rounded px-1.5 py-0.5 font-mono text-sm" {...props}>
                         {children}
                       </code>
                     ) : (
@@ -135,7 +135,7 @@ export const ChatMessage = memo(({ message, isLastMessage = false }: ChatMessage
                   ? { duration: 0.3 }
                   : { duration: 0.3, repeat: Infinity, repeatType: 'reverse' }
               }
-              className="ml-1 inline-block h-2 w-2 rounded-full bg-primary"
+              className="bg-primary ml-1 inline-block h-2 w-2 rounded-full"
               aria-label="Streaming message"
               aria-live="polite"
             />
@@ -150,13 +150,13 @@ export const ChatMessage = memo(({ message, isLastMessage = false }: ChatMessage
               className="absolute -right-2 -top-2 z-10 h-6 w-6 opacity-0 transition-opacity group-hover:opacity-100"
               aria-label={isCopied ? 'Copied!' : 'Copy message'}
             >
-              {isCopied ? <Check className="h-3 w-3 text-success" /> : <Copy className="h-3 w-3" />}
+              {isCopied ? <Check className="text-success h-3 w-3" /> : <Copy className="h-3 w-3" />}
             </Button>
           )}
         </div>
 
         {/* Timestamp */}
-        <span className="px-1 text-xs text-muted-foreground">{formattedTimestamp}</span>
+        <span className="text-muted-foreground px-1 text-xs">{formattedTimestamp}</span>
       </div>
     </motion.div>
   );

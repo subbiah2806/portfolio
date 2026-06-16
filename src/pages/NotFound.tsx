@@ -7,32 +7,32 @@ export const NotFound = (): JSX.Element => {
       <div className="mx-auto max-w-2xl text-center">
         {/* 404 Illustration */}
         <div className="mb-8">
-          <div className="mx-auto mb-8 flex h-64 w-64 items-center justify-center rounded-full border bg-card/50 backdrop-blur-sm">
+          <div className="bg-card/50 mx-auto mb-8 flex h-64 w-64 items-center justify-center rounded-full border backdrop-blur-sm">
             <div className="text-center">
-              <h1 className="mb-2 text-8xl font-bold text-primary">404</h1>
-              <div className="flex items-center justify-center gap-2 text-muted-foreground">
-                <span className="h-px w-8 bg-border"></span>
+              <h1 className="text-primary mb-2 text-8xl font-bold">404</h1>
+              <div className="text-muted-foreground flex items-center justify-center gap-2">
+                <span className="bg-border h-px w-8"></span>
                 <span className="font-mono text-sm">ERROR</span>
-                <span className="h-px w-8 bg-border"></span>
+                <span className="bg-border h-px w-8"></span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Error Message */}
-        <h2 className="mb-4 text-4xl font-bold text-foreground">Page Not Found</h2>
-        <p className="mb-8 text-lg text-muted-foreground">
+        <h2 className="text-foreground mb-4 text-4xl font-bold">Page Not Found</h2>
+        <p className="text-muted-foreground mb-8 text-lg">
           Oops! The page you&rsquo;re looking for doesn&rsquo;t exist. It might have been moved or
           deleted.
         </p>
 
         {/* Suggested Actions */}
         <div className="mb-8 space-y-4">
-          <p className="text-sm text-muted-foreground">You might want to:</p>
+          <p className="text-muted-foreground text-sm">You might want to:</p>
           <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
             <Link
               to="/"
-              className="inline-flex items-center justify-center gap-2 rounded-lg border border-primary/50 bg-primary/30 px-6 py-3 font-medium text-primary-foreground transition-all duration-300 hover:border-primary hover:bg-primary/40 hover:shadow-medium"
+              className="border-primary/50 bg-primary/30 text-primary-foreground hover:border-primary hover:bg-primary/40 hover:shadow-medium inline-flex items-center justify-center gap-2 rounded-lg border px-6 py-3 font-medium transition-all duration-300"
             >
               <IconHome style={{ fontSize: '20px' }} />
               Go to Home
@@ -40,7 +40,7 @@ export const NotFound = (): JSX.Element => {
 
             <Link
               to="/projects"
-              className="inline-flex items-center justify-center gap-2 rounded-lg border bg-card px-6 py-3 font-medium text-card-foreground transition-all duration-300 hover:border-border hover:bg-card/70 hover:shadow-medium"
+              className="bg-card text-card-foreground hover:border-border hover:bg-card/70 hover:shadow-medium inline-flex items-center justify-center gap-2 rounded-lg border px-6 py-3 font-medium transition-all duration-300"
             >
               <IconFolder style={{ fontSize: '20px' }} />
               View Projects
@@ -49,9 +49,9 @@ export const NotFound = (): JSX.Element => {
         </div>
 
         {/* Additional Help */}
-        <div className="rounded-lg border bg-card p-6 backdrop-blur-sm">
-          <p className="mb-2 text-sm font-medium text-card-foreground">Need Help?</p>
-          <p className="text-sm text-muted-foreground">
+        <div className="bg-card rounded-lg border p-6 backdrop-blur-sm">
+          <p className="text-card-foreground mb-2 text-sm font-medium">Need Help?</p>
+          <p className="text-muted-foreground text-sm">
             If you believe this is an error, please{' '}
             <Link to="/contact" className="text-primary hover:text-primary/80">
               contact me
@@ -62,7 +62,7 @@ export const NotFound = (): JSX.Element => {
 
         {/* Easter Egg - ASCII Art */}
         <div className="mt-12 text-left">
-          <pre className="inline-block rounded-lg border bg-card p-4 font-mono text-xs text-muted-foreground">
+          <pre className="bg-card text-muted-foreground inline-block rounded-lg border p-4 font-mono text-xs">
             {`    ¯\\_(ツ)_/¯
 
  The page is gone,

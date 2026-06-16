@@ -148,7 +148,7 @@ export const Contact = (): JSX.Element => {
         {/* Back Button */}
         <Link
           to="/"
-          className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors duration-300 hover:text-primary"
+          className="text-muted-foreground hover:text-primary mb-8 inline-flex items-center gap-2 text-sm transition-colors duration-300"
         >
           <IconArrowLeft style={{ fontSize: '16px' }} />
           Back to Home
@@ -156,8 +156,8 @@ export const Contact = (): JSX.Element => {
 
         {/* Page Title */}
         <motion.div className="mb-16 text-center" {...animation} variants={fadeInUp}>
-          <h1 className="mb-4 text-5xl font-bold text-foreground">Get In Touch</h1>
-          <p className="text-lg text-muted-foreground">
+          <h1 className="text-foreground mb-4 text-5xl font-bold">Get In Touch</h1>
+          <p className="text-muted-foreground text-lg">
             Have a project in mind? Let&rsquo;s discuss how we can work together.
           </p>
         </motion.div>
@@ -165,7 +165,7 @@ export const Contact = (): JSX.Element => {
         {/* Success Banner */}
         {showSuccessBanner && (
           <motion.div
-            className="mb-8 rounded-lg border border-success/50 bg-success/20 p-4"
+            className="border-success/50 bg-success/20 mb-8 rounded-lg border p-4"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -175,18 +175,18 @@ export const Contact = (): JSX.Element => {
               <div className="flex items-start gap-3">
                 <IconCheckCircle
                   style={{ fontSize: '20px' }}
-                  className="mt-0.5 flex-shrink-0 text-success"
+                  className="text-success mt-0.5 flex-shrink-0"
                 />
                 <div>
-                  <p className="font-medium text-success">Thank you! Your message has been sent.</p>
-                  <p className="mt-1 text-sm text-muted-foreground">
+                  <p className="text-success font-medium">Thank you! Your message has been sent.</p>
+                  <p className="text-muted-foreground mt-1 text-sm">
                     I&rsquo;ll get back to you as soon as possible.
                   </p>
                 </div>
               </div>
               <button
                 onClick={handleCloseBanner}
-                className="clickable text-muted-foreground transition-colors hover:text-foreground"
+                className="clickable text-muted-foreground hover:text-foreground transition-colors"
                 aria-label="Close success message"
               >
                 <IconClose style={{ fontSize: '20px' }} />
@@ -198,7 +198,7 @@ export const Contact = (): JSX.Element => {
         {/* Error Banner */}
         {submitStatus === 'error' && (
           <motion.div
-            className="mb-8 rounded-lg border border-destructive/50 bg-destructive/20 p-4"
+            className="border-destructive/50 bg-destructive/20 mb-8 rounded-lg border p-4"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
@@ -206,15 +206,15 @@ export const Contact = (): JSX.Element => {
             <div className="flex items-start gap-3">
               <IconAlertCircle
                 style={{ fontSize: '20px' }}
-                className="mt-0.5 flex-shrink-0 text-destructive"
+                className="text-destructive mt-0.5 flex-shrink-0"
               />
               <div>
-                <p className="font-medium text-destructive">Oops! Something went wrong.</p>
-                <p className="mt-1 text-sm text-muted-foreground">
+                <p className="text-destructive font-medium">Oops! Something went wrong.</p>
+                <p className="text-muted-foreground mt-1 text-sm">
                   Please try again or email me directly at{' '}
                   <a
                     href="mailto:subbiah2806@gmail.com"
-                    className="text-destructive underline hover:text-destructive/80"
+                    className="text-destructive hover:text-destructive/80 underline"
                   >
                     subbiah2806@gmail.com
                   </a>
@@ -227,8 +227,8 @@ export const Contact = (): JSX.Element => {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
           {/* Contact Information */}
           <motion.div {...animation} variants={fadeInUp}>
-            <h2 className="mb-6 text-2xl font-bold text-foreground">Contact Information</h2>
-            <p className="mb-8 text-muted-foreground">
+            <h2 className="text-foreground mb-6 text-2xl font-bold">Contact Information</h2>
+            <p className="text-muted-foreground mb-8">
               Feel free to reach out through any of these channels. I&rsquo;m always open to
               discussing new projects, creative ideas, or opportunities to be part of your vision.
             </p>
@@ -241,12 +241,12 @@ export const Contact = (): JSX.Element => {
                   href={method.href}
                   target={method.href.startsWith('http') ? '_blank' : undefined}
                   rel={method.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className="clickable flex items-start gap-4 rounded-lg border bg-card p-4 transition-all duration-300 hover:border-primary hover:shadow-medium"
+                  className="clickable bg-card hover:border-primary hover:shadow-medium flex items-start gap-4 rounded-lg border p-4 transition-all duration-300"
                 >
                   <div className="text-primary">{method.icon}</div>
                   <div>
-                    <h3 className="mb-1 font-semibold text-foreground">{method.label}</h3>
-                    <p className="text-sm text-muted-foreground">{method.value}</p>
+                    <h3 className="text-foreground mb-1 font-semibold">{method.label}</h3>
+                    <p className="text-muted-foreground text-sm">{method.value}</p>
                   </div>
                 </a>
               ))}
@@ -254,7 +254,7 @@ export const Contact = (): JSX.Element => {
 
             {/* Social Links */}
             <div className="mt-8">
-              <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-foreground">
+              <h3 className="text-foreground mb-4 text-sm font-semibold uppercase tracking-wider">
                 Connect with me
               </h3>
               <div className="flex gap-4">
@@ -264,7 +264,7 @@ export const Contact = (): JSX.Element => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="clickable flex h-12 w-12 items-center justify-center rounded-lg border bg-card text-muted-foreground transition-all duration-300 hover:border-primary hover:text-primary hover:shadow-medium"
+                    className="clickable bg-card text-muted-foreground hover:border-primary hover:text-primary hover:shadow-medium flex h-12 w-12 items-center justify-center rounded-lg border transition-all duration-300"
                     aria-label={social.label}
                   >
                     {social.icon}
@@ -274,25 +274,25 @@ export const Contact = (): JSX.Element => {
             </div>
 
             {/* Availability Info */}
-            <div className="mt-8 rounded-lg border border-primary/30 bg-primary/10 p-6">
-              <h3 className="mb-2 font-semibold text-primary-foreground">Currently Available</h3>
-              <p className="text-sm text-muted-foreground">
+            <div className="border-primary/30 bg-primary/10 mt-8 rounded-lg border p-6">
+              <h3 className="text-primary-foreground mb-2 font-semibold">Currently Available</h3>
+              <p className="text-muted-foreground text-sm">
                 I&rsquo;m actively seeking new opportunities as a Lead Software Developer. Available
                 for full-time positions and consulting projects.
               </p>
-              <div className="mt-4 flex items-center gap-2 text-xs text-muted-foreground">
+              <div className="text-muted-foreground mt-4 flex items-center gap-2 text-xs">
                 <IconBriefcase style={{ fontSize: '16px' }} />
                 <span>Work Visa: H1B (I-140 Approved)</span>
               </div>
             </div>
 
             {/* Prefer Email */}
-            <div className="mt-6 text-center text-sm text-muted-foreground">
+            <div className="text-muted-foreground mt-6 text-center text-sm">
               <p>
                 Prefer email?{' '}
                 <a
                   href="mailto:subbiah2806@gmail.com"
-                  className="text-primary underline hover:text-primary/80"
+                  className="text-primary hover:text-primary/80 underline"
                 >
                   Send a direct email
                 </a>
@@ -302,7 +302,7 @@ export const Contact = (): JSX.Element => {
 
           {/* Contact Form */}
           <motion.div {...animation} variants={fadeInUp}>
-            <h2 className="mb-6 text-2xl font-bold text-foreground">Send a Message</h2>
+            <h2 className="text-foreground mb-6 text-2xl font-bold">Send a Message</h2>
 
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -347,7 +347,7 @@ export const Contact = (): JSX.Element => {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>
-                        Subject <span className="text-xs text-muted-foreground">(Optional)</span>
+                        Subject <span className="text-muted-foreground text-xs">(Optional)</span>
                       </FormLabel>
                       <FormControl>
                         <Input placeholder="What would you like to discuss?" {...field} />
@@ -374,7 +374,7 @@ export const Contact = (): JSX.Element => {
                         />
                       </FormControl>
                       <FormMessage />
-                      <p className="text-xs text-muted-foreground">
+                      <p className="text-muted-foreground text-xs">
                         Min 10 characters, max 1000 characters
                       </p>
                     </FormItem>

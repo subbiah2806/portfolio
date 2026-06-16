@@ -66,7 +66,7 @@ export const Header = (): JSX.Element => {
 
   return (
     <header
-      className={`fixed left-0 right-0 top-0 z-50 h-16 border-b bg-background/80 backdrop-blur-md transition-all duration-300 ${
+      className={`bg-background/80 fixed left-0 right-0 top-0 z-50 h-16 border-b backdrop-blur-md transition-all duration-300 ${
         isScrolled ? 'shadow-lg' : ''
       }`}
     >
@@ -74,7 +74,7 @@ export const Header = (): JSX.Element => {
         {/* Logo/Name */}
         <Link
           to="/"
-          className="text-xl font-bold text-foreground transition-colors duration-300 hover:text-primary"
+          className="text-foreground hover:text-primary text-xl font-bold transition-colors duration-300"
         >
           Subbiah C.
         </Link>
@@ -92,14 +92,14 @@ export const Header = (): JSX.Element => {
               >
                 {link.label}
                 {isActive(link.path) && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"></span>
+                  <span className="bg-primary absolute bottom-0 left-0 right-0 h-0.5"></span>
                 )}
               </Link>
             ) : (
               <button
                 key={link.path}
                 onClick={() => handleSmoothScroll(link.path)}
-                className="text-sm font-medium text-muted-foreground transition-all duration-300 hover:text-primary"
+                className="text-muted-foreground hover:text-primary text-sm font-medium transition-all duration-300"
               >
                 {link.label}
               </button>
@@ -144,7 +144,7 @@ export const Header = (): JSX.Element => {
                     ) : (
                       <button
                         onClick={() => handleSmoothScroll(link.path)}
-                        className="text-lg font-medium text-foreground transition-colors duration-300 hover:text-primary"
+                        className="text-foreground hover:text-primary text-lg font-medium transition-colors duration-300"
                       >
                         {link.label}
                       </button>
@@ -153,7 +153,7 @@ export const Header = (): JSX.Element => {
                 ))}
 
                 {/* Mobile Controls */}
-                <div className="mt-8 flex gap-4 border-t border-border pt-6">
+                <div className="border-border mt-8 flex gap-4 border-t pt-6">
                   <AudioToggle />
                   <ThemeToggle />
                   <CursorToggle />

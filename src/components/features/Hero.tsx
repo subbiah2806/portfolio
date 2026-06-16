@@ -23,24 +23,24 @@ export function Hero(): JSX.Element {
   };
   return (
     <div className="relative flex min-h-screen items-center justify-center overflow-hidden px-4">
-      <div className="max-w-4xl animate-fade-in text-center">
-        <div className="mb-8 inline-block animate-slide-up">
+      <div className="animate-fade-in max-w-4xl text-center">
+        <div className="animate-slide-up mb-8 inline-block">
           <Badge className="font-mono">Open to opportunities</Badge>
         </div>
 
-        <h1 className="mb-6 animate-slide-up text-5xl font-bold text-foreground md:text-7xl">
+        <h1 className="animate-slide-up text-foreground mb-6 text-5xl font-bold md:text-7xl">
           {resumeData.name}
         </h1>
 
-        <p className="mb-4 animate-slide-up text-xl font-semibold text-card-foreground md:text-2xl">
+        <p className="animate-slide-up text-card-foreground mb-4 text-xl font-semibold md:text-2xl">
           Lead Software Developer
         </p>
 
-        <p className="mx-auto mb-8 max-w-3xl animate-slide-up text-lg leading-relaxed text-muted-foreground">
+        <p className="animate-slide-up text-muted-foreground mx-auto mb-8 max-w-3xl text-lg leading-relaxed">
           {resumeData.summary}
         </p>
 
-        <div className="mb-8 flex animate-slide-up flex-wrap justify-center gap-4 text-sm text-muted-foreground">
+        <div className="animate-slide-up text-muted-foreground mb-8 flex flex-wrap justify-center gap-4 text-sm">
           <div className="flex items-center gap-2">
             <MapPin className="h-5 w-5" />
             {resumeData.location}
@@ -55,7 +55,7 @@ export function Hero(): JSX.Element {
           </div>
         </div>
 
-        <div className="flex animate-slide-up flex-wrap justify-center gap-4">
+        <div className="animate-slide-up flex flex-wrap justify-center gap-4">
           <Button asChild size="lg" className="clickable rounded-full">
             <a href={`mailto:${resumeData.email}`}>Get in Touch</a>
           </Button>

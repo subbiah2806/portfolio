@@ -34,8 +34,8 @@ export const Chat = (): JSX.Element => {
         {/* Page Header */}
         <motion.div className="mb-6 text-center" {...animation} variants={fadeInUp}>
           <div className="mb-3 flex items-center justify-center gap-2">
-            <MessageSquare className="h-8 w-8 text-primary" />
-            <h1 className="text-3xl font-bold text-foreground sm:text-4xl">Chat with AI</h1>
+            <MessageSquare className="text-primary h-8 w-8" />
+            <h1 className="text-foreground text-3xl font-bold sm:text-4xl">Chat with AI</h1>
           </div>
           <p className="text-muted-foreground">
             Have a conversation about my portfolio, experience, and expertise
@@ -54,7 +54,7 @@ export const Chat = (): JSX.Element => {
 
         {/* Info Footer */}
         <motion.div
-          className="mt-6 text-center text-xs text-muted-foreground"
+          className="text-muted-foreground mt-6 text-center text-xs"
           initial={prefersReducedMotion ? {} : { opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}

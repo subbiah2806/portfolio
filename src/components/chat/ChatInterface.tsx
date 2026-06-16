@@ -88,7 +88,7 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({
       {/* Header */}
       <CardHeader className="flex flex-row items-center justify-between space-y-0 border-b pb-4">
         <CardTitle className="flex items-center gap-2 text-xl font-semibold">
-          <MessageSquare className="h-5 w-5 text-primary" aria-hidden="true" />
+          <MessageSquare className="text-primary h-5 w-5" aria-hidden="true" />
           {title}
         </CardTitle>
 
@@ -126,14 +126,14 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({
               className="flex h-full flex-col items-center justify-center gap-4 text-center"
             >
               <div
-                className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10"
+                className="bg-primary/10 flex h-16 w-16 items-center justify-center rounded-full"
                 aria-hidden="true"
               >
-                <MessageSquare className="h-8 w-8 text-primary" />
+                <MessageSquare className="text-primary h-8 w-8" />
               </div>
               <div className="space-y-2">
-                <h3 className="text-lg font-semibold text-foreground">Start a Conversation</h3>
-                <p className="max-w-md text-sm text-muted-foreground">{welcomeMessage}</p>
+                <h3 className="text-foreground text-lg font-semibold">Start a Conversation</h3>
+                <p className="text-muted-foreground max-w-md text-sm">{welcomeMessage}</p>
               </div>
 
               {/* Suggested Prompts */}
@@ -177,22 +177,22 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({
             <motion.div
               initial={prefersReducedMotion ? {} : { opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="flex items-start gap-2 rounded-lg border border-destructive bg-destructive/10 p-3"
+              className="border-destructive bg-destructive/10 flex items-start gap-2 rounded-lg border p-3"
               role="alert"
               aria-live="assertive"
             >
               <AlertCircle
-                className="mt-0.5 h-4 w-4 shrink-0 text-destructive"
+                className="text-destructive mt-0.5 h-4 w-4 shrink-0"
                 aria-hidden="true"
               />
               <div className="flex-1 space-y-1">
-                <p className="text-sm font-medium text-destructive">Error</p>
-                <p className="text-xs text-destructive/90">{error}</p>
+                <p className="text-destructive text-sm font-medium">Error</p>
+                <p className="text-destructive/90 text-xs">{error}</p>
                 <Button
                   variant="ghost"
                   size="sm"
                   onClick={clearError}
-                  className="h-auto p-0 text-xs text-destructive hover:text-destructive/90"
+                  className="text-destructive hover:text-destructive/90 h-auto p-0 text-xs"
                   aria-label="Dismiss error message"
                 >
                   Dismiss
