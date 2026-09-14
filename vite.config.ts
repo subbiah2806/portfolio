@@ -27,7 +27,7 @@ export default defineConfig(({ mode }) => {
     base: env.VITE_BASE_PATH || '/',
     resolve: {
       alias: {
-        '@allsetlabs/forge': path.resolve(__dirname, '../component/src'),
+        '@allsetlabs/forge': path.resolve(__dirname, '../forge/src'),
       },
       // CRITICAL: Prevents React duplication in monorepo - DO NOT REMOVE
       dedupe: ['react', 'react-dom'],

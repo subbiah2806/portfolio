@@ -11,6 +11,21 @@
   "openToRemote": true,
   "experience": [
     {
+      "company": "Kforce",
+      "location": "Westlake, TX",
+      "position": "Software Developer",
+      "startDate": "2025-11",
+      "endDate": "present",
+      "companyDescription": "Kforce is a technology and finance staffing firm. Placed as Software Developer at Fidelity Investments, one of the world's largest financial services companies, building internal developer tooling and enterprise AI infrastructure.",
+      "achievements": [
+        "Developed and maintained Hugo-based static websites for internal developer documentation portals, enabling teams across Fidelity to publish and consume standardized tooling guides.",
+        "Built and enhanced Backstage, Fidelity's internal developer portal, integrating SonarQube, Jenkins, and dependency scanning to create a unified service catalog — giving engineers a single pane of glass for ticket tracking, API inventory, on-call ownership, and application health across all enterprise systems.",
+        "Engineered the Knowledge Platform, a RAG vector database ingesting all internal Fidelity documentation (AWS, Docker, Kubernetes, Jenkins, and Fidelity-specific workflows), and exposed it as an MCP server connected to every AI developer tool across user systems — ensuring AI-generated guidance adheres to Fidelity's enterprise standards instead of generic web knowledge.",
+        "Implemented Kubernetes deployments via Helm charts and managed secrets using HashiCorp Vault for Knowledge Platform services.",
+        "Built backend services in Python with SQL and DynamoDB for data ingestion, storage, and retrieval across the Knowledge Platform pipeline."
+      ]
+    },
+    {
       "company": "Praetorian",
       "location": "Remote",
       "position": "Lead Software Developer",
@@ -56,8 +71,7 @@
         "Integral contributor in creating and integrating user interfaces, upgrading applications, and employing coding styles which included useSelector, useDispatch, lazy load-store, and route which led to applications remaining current on the node and react versions",
         "Automated repeated Git and JIRA workflow which saved developers 16 man hours weekly",
         "Shifted class-based components to functional components with React hooks which enabled developers to adapt to the latest coding standards",
-        "Minimized subscription costs through building in-house chatbots, single-click onboarding, self-trail, and step-by-step onboarding instead of using subscription services like Bento",
-        "Reignited weekly Sprint which led to clear weekly estimates and aided in more efficient planning and precise execution of 20% more tasks"
+        "Minimized subscription costs through building in-house chatbots, single-click onboarding, self-trail, and step-by-step onboarding instead of using subscription services like Bento"
       ],
       "companyDescription": "A security automation platform specializing in advanced SOAR, threat detection, and response workflows for cybersecurity teams."
     },
@@ -71,7 +85,6 @@
         "Within 18 months employed AngularJS, Vue.js, and Protractor Automation applications and completed 3 projects",
         "Implemented $state.go and improved Applications navigation speed by 50%",
         "Piloted and guided 2 junior developers on a significant and successful Web End to End (E2E) testing methodology automation project and reduced the QA load time by half",
-        "Acquired transferrable internationalization knowledge from Apple Genius Vue.js web application",
         "Performed UI team 1 to 1 sessions to resolve challenges",
         "Created new user groups and restricted functionalities to prevent data theft"
       ],
@@ -106,6 +119,7 @@
       "Cursor AI",
       "Prompt Engineering",
       "RAG",
+      "MCP (Model Context Protocol)",
       "AI-Powered UX"
     ],
     "Performance": [
@@ -119,6 +133,8 @@
     "Backend": [
       "Go",
       "Node.js",
+      "Python",
+      "SQL",
       "AWS Lambda",
       "Amazon SQS",
       "Neo4j",
@@ -126,19 +142,31 @@
       "REST APIs",
       "AWS Cognito"
     ],
-    "DevOps & Cloud": ["Git", "GitHub Actions", "AWS CloudFormation", "Amazon EC2", "LogRocket"]
+    "DevOps & Cloud": [
+      "Git",
+      "GitHub Actions",
+      "Jenkins",
+      "Kubernetes",
+      "Helm",
+      "HashiCorp Vault",
+      "AWS CloudFormation",
+      "Amazon EC2",
+      "LogRocket"
+    ]
   },
   "education": [
     {
       "institution": "Texas A&M University - Kingsville",
       "degree": "Master of Science",
-      "dates": "August 2016 - May 2018"
+      "startDate": "2016-08",
+      "endDate": "2018-05"
     },
     {
       "institution": "SAVEETHA ENGINEERING COLLEGE",
       "degree": "Bachelor of Science",
-      "dates": "August 2011 - August 2015"
+      "startDate": "2011-08",
+      "endDate": "2015-08"
     }
   ],
-  "summary": "Lead Software Developer with 7+ years of experience building web applications for enterprise security platforms. Specialize in React, Vue, and TypeScript, with expertise in Redux state management, code reviews, and leading teams through modern framework migrations. Architected scalable solutions, and consistently delivered performant applications serving hundreds of enterprise clients."
+  "summary": "Lead Software Developer with 8+ years of experience building web applications for enterprise platforms. Specialize in React, Vue, and TypeScript, with deep expertise in Redux state management, AI tooling integration, and internal developer platform engineering. Most recently built RAG-powered MCP knowledge infrastructure and Backstage service catalogs at Fidelity Investments. Consistently delivered scalable, performant solutions serving enterprise teams."
 }

@@ -20,7 +20,7 @@ export const resumeData: ResumeData = {
   workVisa: 'H1b (I140 Approved)',
 
   summary:
-    'Lead Software Developer with 7+ years of experience building web applications for enterprise security platforms. Specialize in React, Vue, and TypeScript, with recent focus on integrating AI tools into development workflows to boost team productivity. Architected scalable solutions, and consistently delivered performant applications serving hundreds of enterprise clients.',
+    'Lead Software Developer with 8+ years of experience building web applications for enterprise platforms. Specialize in React, Vue, and TypeScript, with deep expertise in Redux state management, AI tooling integration, and internal developer platform engineering. Most recently built RAG-powered MCP knowledge infrastructure and Backstage service catalogs at Fidelity Investments. Consistently delivered scalable, performant solutions serving enterprise teams.',
 
   skills: {
     frontend: ['React 18', 'Vue 3', 'TypeScript', 'Next.js', 'Redux', 'React Query', 'TanStack'],
@@ -31,6 +31,7 @@ export const resumeData: ResumeData = {
       'Cursor AI',
       'Prompt Engineering',
       'RAG',
+      'MCP (Model Context Protocol)',
       'AI-Powered UX',
     ],
     performance: [
@@ -41,12 +42,27 @@ export const resumeData: ResumeData = {
       'Storybook',
     ],
     styling: ['Tailwind CSS', 'CSS-in-JS', 'Responsive Design', 'Design Systems', 'Material UI'],
-    backend: ['Go', 'Node.js', 'AWS Lambda', 'Amazon SQS', 'Neo4j', 'DynamoDB', 'REST APIs'],
-    devOps: ['Git', 'GitHub Actions', 'AWS CloudFormation', 'Amazon EC2', 'LogRocket'],
+    backend: ['Go', 'Node.js', 'Python', 'SQL', 'AWS Lambda', 'Amazon SQS', 'Neo4j', 'DynamoDB', 'REST APIs'],
+    devOps: ['Git', 'GitHub Actions', 'Jenkins', 'Kubernetes', 'Helm', 'HashiCorp Vault', 'AWS CloudFormation', 'Amazon EC2', 'LogRocket'],
     security: ['AWS Cognito', 'CORS', 'XSS/CSRF Prevention'],
   },
 
   experience: [
+    {
+      title: 'Software Developer',
+      company: 'Kforce (Fidelity Investments)',
+      location: 'Westlake, TX',
+      period: 'Nov 2025 – Present',
+      description:
+        'Placed at Fidelity Investments via Kforce staffing, developing internal developer tooling and enterprise AI infrastructure. Built service catalog integrations and a RAG-powered knowledge platform connecting internal Fidelity documentation to AI tools across the organization.',
+      achievements: [
+        'Developed and maintained Hugo-based static websites for internal developer documentation portals, enabling teams across Fidelity to publish and consume standardized tooling guides.',
+        'Built and enhanced Backstage, Fidelity\'s internal developer portal, integrating SonarQube, Jenkins, and dependency scanning to create a unified service catalog — giving engineers a single pane of glass for ticket tracking, API inventory, on-call ownership, and application health across all enterprise systems.',
+        'Engineered the Knowledge Platform, a RAG vector database ingesting all internal Fidelity documentation (AWS, Docker, Kubernetes, Jenkins, and Fidelity-specific workflows), and exposed it as an MCP server connected to every AI developer tool across user systems — ensuring AI-generated guidance adheres to Fidelity\'s enterprise standards instead of generic web knowledge.',
+        'Implemented Kubernetes deployments via Helm charts and managed secrets using HashiCorp Vault for Knowledge Platform services.',
+        'Built backend services in Python with SQL and DynamoDB for data ingestion, storage, and retrieval across the Knowledge Platform pipeline.',
+      ],
+    },
     {
       title: 'Lead Software Developer',
       company: 'Praetorian',
@@ -93,7 +109,6 @@ export const resumeData: ResumeData = {
         'Automated repeated Git and JIRA workflow which saved developers 16 man hours weekly.',
         'Shifted class-based components to functional components with React hooks which enabled developers to adapt to the latest coding standards.',
         'Minimized subscription costs through building in-house chatbots, single-click onboarding, self-trail, and step-by-step onboarding instead of using subscription services like Bento.',
-        'Reignited weekly Sprint which led to clear weekly estimates and aided in more efficient planning and precise execution of 20% more tasks.',
       ],
     },
     {
@@ -107,7 +122,6 @@ export const resumeData: ResumeData = {
         'Within 18 months employed AngularJS, Vue.js, and Protractor Automation applications and completed 3 projects.',
         'Implemented $state.go and improved Applications navigation speed by 50%.',
         'Piloted and guided 2 junior developers on a significant and successful Web End to End (E2E) testing methodology automation project and reduced the QA load time by half.',
-        'Acquired transferrable internationalization knowledge from Apple Genius Vue.js web application.',
       ],
     },
     {
