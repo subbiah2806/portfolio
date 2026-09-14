@@ -9,11 +9,10 @@
     "analyze": "ANALYZE=true vite build && open dist/stats.html",
     "preview": "vite preview",
     "type-check": "tsc --noEmit",
-    "reset": "rm -rf ./nodemodules && rm -rf package-lock.json",
-    "install-link": "npm run reset && npm i && cd ../component && rm -rf ./nodemodules && rm -rf package-lock.json && npm i && npm link && cd ../portfolio && npm link @allsetlabs/forge"
+    "reset": "rm -rf ./nodemodules && rm -rf package-lock.json"
   },
   "dependencies": {
-    "@allsetlabs/forge": "file:../forge",
+    "@allsetlabs/forge": "git+https://github.com/allsetlabs/forge.git#5c1e935e184e4a3d373b748febbfe32ef96b5aa1",
     "@anthropic-ai/sdk": "0.67.0",
     "@hookform/resolvers": "5.2.2",
     "framer-motion": "^13.2.0",

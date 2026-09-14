@@ -24,7 +24,7 @@ src/
 └── styles/         # Global styles
 ```
 
-Stack: React + Vite + TypeScript + Tailwind CSS + Framer Motion + React Router v7. Uses `@allsetlabs/forge` from `../forge`.
+Stack: React + Vite + TypeScript + Tailwind CSS + Framer Motion + React Router v7. Uses `@allsetlabs/forge`, installed as a pinned git dependency (`git+https://github.com/allsetlabs/forge.git#<commit>`) rather than the usual `file:../forge` link — this repo lives standalone under `subbiah2806/portfolio` and its GitHub Pages build has no monorepo sibling to resolve a local path against. Bump the pinned commit manually when forge changes are needed.
 
 ## Development Commands
 
