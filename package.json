@@ -12,7 +12,7 @@
     "reset": "rm -rf ./nodemodules && rm -rf package-lock.json"
   },
   "dependencies": {
-    "@allsetlabs/forge": "git+https://github.com/allsetlabs/forge.git#5c1e935e184e4a3d373b748febbfe32ef96b5aa1",
+    "@allsetlabs/forge": "git+https://github.com/allsetlabs/forge.git#790db4963def45dd18d9048946e0d07411e40b4e",
     "@anthropic-ai/sdk": "0.67.0",
     "@hookform/resolvers": "5.2.2",
     "framer-motion": "^13.2.0",

@@ -1,7 +1,6 @@
 import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 import { visualizer } from 'rollup-plugin-visualizer';
-import path from 'path';
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
@@ -26,9 +25,9 @@ export default defineConfig(({ mode }) => {
     ],
     base: env.VITE_BASE_PATH || '/',
     resolve: {
-      alias: {
-        '@allsetlabs/forge': path.resolve(__dirname, '../forge/src'),
-      },
+      // @allsetlabs/forge resolves through its own package.json "exports" map
+      // (it's an installed git dependency, not a monorepo-local file: link) —
+      // no alias needed here.
       // CRITICAL: Prevents React duplication in monorepo - DO NOT REMOVE
       dedupe: ['react', 'react-dom'],
     },
