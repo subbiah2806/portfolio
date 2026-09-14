@@ -32,7 +32,24 @@ export default defineConfig(({ mode }) => {
       dedupe: ['react', 'react-dom'],
     },
     optimizeDeps: {
-      include: ['react', 'react-dom'],
+      // pdfmake ships CJS with no real ESM default export (forge's resume
+      // generator imports it). It's normally discovered by Vite's dep
+      // scanner and pre-bundled with CJS->ESM interop — but that scanner
+      // doesn't crawl inside an excluded package's source (see forge
+      // below), so it must be listed explicitly or imports of it break
+      // with "does not provide an export named 'default'".
+      include: ['react', 'react-dom', 'pdfmake/build/pdfmake.js', 'pdfmake/build/vfs_fonts.js'],
+      // @allsetlabs/forge maps every path as its own subpath export
+      // ("./*": "./src/*"), so Vite's dep pre-bundler treats each deep
+      // import (e.g. an entry reached only through a lazy-loaded route)
+      // as a separate optimize entry and can emit more than one copy of
+      // a shared module — including its ThemeContext, breaking
+      // useThemeContext with "must be used within a ThemeProvider".
+      // Excluding it makes Vite serve it as source instead, so every
+      // import resolves to the same module instance (as it did when this
+      // was a monorepo file: link, never pre-bundled since it lived
+      // outside node_modules).
+      exclude: ['@allsetlabs/forge'],
     },
   };
 });
